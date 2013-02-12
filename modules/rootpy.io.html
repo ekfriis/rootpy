@@ -1,0 +1,2518 @@
+
+<!DOCTYPE html><html>
+<head>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8"/>
+    
+        <title>4.10.3. io Package &mdash; rootpy dev documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        <script type="text/javascript">
+            var DOCUMENTATION_OPTIONS = {
+                URL_ROOT:'../',
+                VERSION:'dev',
+                COLLAPSE_INDEX:false,
+                FILE_SUFFIX:'.html',
+                HAS_SOURCE:  true
+            };
+        </script>
+            <script type="text/javascript" src="../_static/jquery.js"></script>
+            <script type="text/javascript" src="../_static/underscore.js"></script>
+            <script type="text/javascript" src="../_static/doctools.js"></script>
+            <script type="text/javascript" src="../_static/bootstrap-dropdown.js"></script>
+        <link rel="top" title="rootpy dev documentation" href="../index.html"/>
+            <link rel="up" title="4. rootpy Package" href="modules.html"/>
+            <link rel="next" title="4.10.4. rootpy.logger Package" href="rootpy.logging.html"/>
+            <link rel="prev" title="4.10.2. data Package" href="rootpy.data.html"/> 
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    
+</head>
+<body>
+
+    <div class="navbar navbar-static-top">
+        <div class="navbar-inner">
+            <div class="container">
+
+    <div class="related">
+        <ul class="nav">
+                <li class=""><a class="brand" href="../index.html">rootpy</a></li>
+                <li>
+                    <a href="../genindex.html"
+                       title="General Index" accesskey="I">index</a>
+                </li>
+                <li>
+                    <a href="../py-modindex.html"
+                       title="Python Module Index" >modules</a>
+                </li>
+                <li>
+                    <a href="rootpy.logging.html"
+                       title="4.10.4. rootpy.logger Package" accesskey="N">next</a>
+                </li>
+                <li>
+                    <a href="rootpy.data.html"
+                       title="4.10.2. data Package" accesskey="P">previous</a>
+                </li>
+                <li><a href="../user_guide.html"
+                        >&lt;no title&gt;</a>
+                </li>
+                <li><a href="modules.html"
+                        accesskey="U">4. rootpy Package</a>
+                </li> 
+        </ul>
+    </div>
+                <div class="pull-right">
+                    
+        <form class="navbar-search" action="../search.html"
+              method="get">
+            <input type="text" name="q" placeholder="search"/>
+            <input type="hidden" name="check_keywords" value="yes"/>
+            <input type="hidden" name="area" value="default"/>
+        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<ul class="quick-links">
+    <li><strong>Quick links</strong></li>
+    <li>
+        <a href="https://github.com/rootpy/rootpy/">GitHub</a>
+    </li>
+    <li>
+        <a href="https://github.com/rootpy/rootpy/issues?state=open">Issues</a>
+    </li>
+    <li class="divider">&middot;</li>
+    <li>
+        <iframe class="github-btn"
+                src="http://ghbtns.com/github-btn.html?user=rootpy&repo=rootpy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="110px" height="20px"></iframe>
+    </li>
+    <li>
+        <iframe class="github-btn"
+                src="http://ghbtns.com/github-btn.html?user=rootpy&repo=rootpy&type=fork&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="94px" height="20px"></iframe>
+    </li>
+
+    <!--<li class="divider">&middot;</li>
+    <li class="follow-btn">
+        <a href="https://twitter.com/"
+           class="twitter-follow-button" data-width="145px"
+           data-link-color="#0069D6" data-show-count="false">Follow
+            @</a>
+    </li>
+    <li class="tweet-btn">
+        <a href="https://twitter.com/share" class="twitter-share-button"
+           data-url="http://rootpy.org" data-count="horizontal"
+           data-via="twbootstrap"
+           data-related=":Creator of rootpy">Tweet</a>
+       </li>-->
+    <li class="plusone-container">
+        <g:plusone size="medium"></g:plusone>
+    </li>
+</ul>  
+    <div class="container">
+        <div class="content row">
+                <div class="span9">
+                    
+  <div class="section" id="io-package">
+<h1>4.10.3. io Package<a class="headerlink" href="#io-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>4.10.3.1. <a class="reference external" href="http://docs.python.org/2/library/io.html#io" title="(in Python v2.7)"><tt class="xref py py-mod docutils literal"><span class="pre">io</span></tt></a> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-rootpy.io"></span><dl class="exception">
+<dt id="rootpy.io.DoesNotExist">
+<em class="property">exception </em><tt class="descclassname">rootpy.io.</tt><tt class="descname">DoesNotExist</tt><a class="reference internal" href="../_modules/rootpy/io.html#DoesNotExist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.io.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></tt></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-rootpy.io.file">
+<span id="file-module"></span><h2>4.10.3.2. <tt class="xref py py-mod docutils literal"><span class="pre">file</span></tt> Module<a class="headerlink" href="#module-rootpy.io.file" title="Permalink to this headline">¶</a></h2>
+<p>This module enhances IO-related ROOT functionality</p>
+<dl class="class">
+<dt id="rootpy.io.file.Directory">
+<em class="property">class </em><tt class="descclassname">rootpy.io.file.</tt><tt class="descname">Directory</tt><big>(</big><em>name</em>, <em>title</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/io/file.html#Directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.io.file.Directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">rootpy.io.file._DirectoryBase</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">ROOT.TDirectoryFile</span></tt></p>
+<p>Inherits from TDirectory</p>
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.abstract_method">
+<tt class="descname">abstract_method</tt><a class="headerlink" href="#rootpy.io.file.Directory.abstract_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::AbstractMethod(const char* method)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.add">
+<tt class="descname">add</tt><a class="headerlink" href="#rootpy.io.file.Directory.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::Add(TObject* obj, Bool_t replace = kFALSE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.add_directory">
+<tt class="descname">add_directory</tt><a class="headerlink" href="#rootpy.io.file.Directory.add_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TDirectory::AddDirectory(Bool_t add = kTRUE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.add_directory_status">
+<tt class="descname">add_directory_status</tt><a class="headerlink" href="#rootpy.io.file.Directory.add_directory_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Bool_t TDirectory::AddDirectoryStatus()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.append">
+<tt class="descname">append</tt><a class="headerlink" href="#rootpy.io.file.Directory.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::Append(TObject* obj, Bool_t replace = kFALSE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.append_key">
+<tt class="descname">append_key</tt><a class="headerlink" href="#rootpy.io.file.Directory.append_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::AppendKey(TKey* key)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.append_pad">
+<tt class="descname">append_pad</tt><a class="headerlink" href="#rootpy.io.file.Directory.append_pad" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::AppendPad(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.browse">
+<tt class="descname">browse</tt><a class="headerlink" href="#rootpy.io.file.Directory.browse" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::Browse(TBrowser* b)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.build">
+<tt class="descname">build</tt><a class="headerlink" href="#rootpy.io.file.Directory.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::Build(TFile* motherFile = 0, TDirectory* motherDir = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.class">
+<tt class="descname">class</tt><a class="headerlink" href="#rootpy.io.file.Directory.class" title="Permalink to this definition">¶</a></dt>
+<dd><p>static TClass* TDirectoryFile::Class()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.class__name">
+<tt class="descname">class__name</tt><a class="headerlink" href="#rootpy.io.file.Directory.class__name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TDirectoryFile::Class_Name()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.class__version">
+<tt class="descname">class__version</tt><a class="headerlink" href="#rootpy.io.file.Directory.class__version" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Version_t TDirectoryFile::Class_Version()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.class_name">
+<tt class="descname">class_name</tt><a class="headerlink" href="#rootpy.io.file.Directory.class_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::ClassName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.clear">
+<tt class="descname">clear</tt><a class="headerlink" href="#rootpy.io.file.Directory.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectory::Clear(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.clone_object">
+<tt class="descname">clone_object</tt><a class="headerlink" href="#rootpy.io.file.Directory.clone_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TDirectoryFile::CloneObject(const TObject* obj, Bool_t autoadd = kTRUE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.close">
+<tt class="descname">close</tt><a class="headerlink" href="#rootpy.io.file.Directory.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::Close(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.compare">
+<tt class="descname">compare</tt><a class="headerlink" href="#rootpy.io.file.Directory.compare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TNamed::Compare(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.copy">
+<tt class="descname">copy</tt><a class="headerlink" href="#rootpy.io.file.Directory.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::Copy(TObject&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.current_directory">
+<tt class="descname">current_directory</tt><a class="headerlink" href="#rootpy.io.file.Directory.current_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>static TDirectory*&amp; TDirectory::CurrentDirectory()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.decl_file_line">
+<tt class="descname">decl_file_line</tt><a class="headerlink" href="#rootpy.io.file.Directory.decl_file_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>static int TDirectoryFile::DeclFileLine()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.decl_file_name">
+<tt class="descname">decl_file_name</tt><a class="headerlink" href="#rootpy.io.file.Directory.decl_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TDirectoryFile::DeclFileName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.decode_name_cycle">
+<tt class="descname">decode_name_cycle</tt><a class="headerlink" href="#rootpy.io.file.Directory.decode_name_cycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TDirectory::DecodeNameCycle(const char* namecycle, char* name, Short_t&amp; cycle)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.delete">
+<tt class="descname">delete</tt><a class="headerlink" href="#rootpy.io.file.Directory.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::Delete(const char* namecycle = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.delete_all">
+<tt class="descname">delete_all</tt><a class="headerlink" href="#rootpy.io.file.Directory.delete_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectory::DeleteAll(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.dictionary">
+<tt class="descname">dictionary</tt><a class="headerlink" href="#rootpy.io.file.Directory.dictionary" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TDirectoryFile::Dictionary()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.distanceto_primitive">
+<tt class="descname">distanceto_primitive</tt><a class="headerlink" href="#rootpy.io.file.Directory.distanceto_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::DistancetoPrimitive(Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.draw">
+<tt class="descname">draw</tt><a class="headerlink" href="#rootpy.io.file.Directory.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectory::Draw(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.draw_class">
+<tt class="descname">draw_class</tt><a class="headerlink" href="#rootpy.io.file.Directory.draw_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::DrawClass()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.draw_clone">
+<tt class="descname">draw_clone</tt><a class="headerlink" href="#rootpy.io.file.Directory.draw_clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::DrawClone(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.dump">
+<tt class="descname">dump</tt><a class="headerlink" href="#rootpy.io.file.Directory.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Dump()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.encode_name_cycle">
+<tt class="descname">encode_name_cycle</tt><a class="headerlink" href="#rootpy.io.file.Directory.encode_name_cycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TDirectory::EncodeNameCycle(char* buffer, const char* name, Short_t cycle)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.error">
+<tt class="descname">error</tt><a class="headerlink" href="#rootpy.io.file.Directory.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Error(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.execute">
+<tt class="descname">execute</tt><a class="headerlink" href="#rootpy.io.file.Directory.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Execute(const char* method, const char* params, Int_t* error = 0)
+void TObject::Execute(TMethod* method, TObjArray* params, Int_t* error = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.execute_event">
+<tt class="descname">execute_event</tt><a class="headerlink" href="#rootpy.io.file.Directory.execute_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::ExecuteEvent(Int_t event, Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.fatal">
+<tt class="descname">fatal</tt><a class="headerlink" href="#rootpy.io.file.Directory.fatal" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Fatal(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.fill_buffer">
+<tt class="descname">fill_buffer</tt><a class="headerlink" href="#rootpy.io.file.Directory.fill_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::FillBuffer(char*&amp; buffer)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.find_key">
+<tt class="descname">find_key</tt><a class="headerlink" href="#rootpy.io.file.Directory.find_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>TKey* TDirectoryFile::FindKey(const char* keyname)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.find_key_any">
+<tt class="descname">find_key_any</tt><a class="headerlink" href="#rootpy.io.file.Directory.find_key_any" title="Permalink to this definition">¶</a></dt>
+<dd><p>TKey* TDirectoryFile::FindKeyAny(const char* keyname)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.find_object">
+<tt class="descname">find_object</tt><a class="headerlink" href="#rootpy.io.file.Directory.find_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TDirectory::FindObject(const char* name)
+TObject* TDirectory::FindObject(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.find_object_any">
+<tt class="descname">find_object_any</tt><a class="headerlink" href="#rootpy.io.file.Directory.find_object_any" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TDirectoryFile::FindObjectAny(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.find_object_any_file">
+<tt class="descname">find_object_any_file</tt><a class="headerlink" href="#rootpy.io.file.Directory.find_object_any_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TDirectoryFile::FindObjectAnyFile(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_buffer_size">
+<tt class="descname">get_buffer_size</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_buffer_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::GetBufferSize()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_creation_date">
+<tt class="descname">get_creation_date</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_creation_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>const TDatime&amp; TDirectoryFile::GetCreationDate()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_draw_option">
+<tt class="descname">get_draw_option</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_draw_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option_t* TObject::GetDrawOption()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_dtor_only">
+<tt class="descname">get_dtor_only</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_dtor_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Long_t TObject::GetDtorOnly()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_file">
+<tt class="descname">get_file</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>TFile* TDirectoryFile::GetFile()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_icon_name">
+<tt class="descname">get_icon_name</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_icon_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetIconName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_key">
+<tt class="descname">get_key</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>TKey* TDirectoryFile::GetKey(const char* name, Short_t cycle = 9999)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_list">
+<tt class="descname">get_list</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>TList* TDirectory::GetList()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_list_of_keys">
+<tt class="descname">get_list_of_keys</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_list_of_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>TList* TDirectoryFile::GetListOfKeys()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_modification_date">
+<tt class="descname">get_modification_date</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_modification_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>const TDatime&amp; TDirectoryFile::GetModificationDate()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_mother">
+<tt class="descname">get_mother</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_mother" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TDirectory::GetMother()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_mother_dir">
+<tt class="descname">get_mother_dir</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_mother_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>TDirectory* TDirectory::GetMotherDir()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_name">
+<tt class="descname">get_name</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TNamed::GetName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_nbytes_keys">
+<tt class="descname">get_nbytes_keys</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_nbytes_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::GetNbytesKeys()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_nkeys">
+<tt class="descname">get_nkeys</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_nkeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::GetNkeys()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_object_checked">
+<tt class="descname">get_object_checked</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_object_checked" title="Permalink to this definition">¶</a></dt>
+<dd><p>void* TDirectoryFile::GetObjectChecked(const char* namecycle, const char* classname)
+void* TDirectoryFile::GetObjectChecked(const char* namecycle, const TClass* cl)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_object_info">
+<tt class="descname">get_object_info</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_object_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>char* TObject::GetObjectInfo(Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_object_stat">
+<tt class="descname">get_object_stat</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_object_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Bool_t TObject::GetObjectStat()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_object_unchecked">
+<tt class="descname">get_object_unchecked</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_object_unchecked" title="Permalink to this definition">¶</a></dt>
+<dd><p>void* TDirectoryFile::GetObjectUnchecked(const char* namecycle)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_option">
+<tt class="descname">get_option</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option_t* TObject::GetOption()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_path">
+<tt class="descname">get_path</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TDirectory::GetPath()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_path_static">
+<tt class="descname">get_path_static</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_path_static" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TDirectory::GetPathStatic()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_seek_dir">
+<tt class="descname">get_seek_dir</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_seek_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TDirectoryFile::GetSeekDir()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_seek_keys">
+<tt class="descname">get_seek_keys</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_seek_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TDirectoryFile::GetSeekKeys()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_seek_parent">
+<tt class="descname">get_seek_parent</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_seek_parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TDirectoryFile::GetSeekParent()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_title">
+<tt class="descname">get_title</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TNamed::GetTitle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_unique_id">
+<tt class="descname">get_unique_id</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>UInt_t TObject::GetUniqueID()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.get_uuid">
+<tt class="descname">get_uuid</tt><a class="headerlink" href="#rootpy.io.file.Directory.get_uuid" title="Permalink to this definition">¶</a></dt>
+<dd><p>TUUID TDirectory::GetUUID()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.handle_timer">
+<tt class="descname">handle_timer</tt><a class="headerlink" href="#rootpy.io.file.Directory.handle_timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::HandleTimer(TTimer* timer)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.hash">
+<tt class="descname">hash</tt><a class="headerlink" href="#rootpy.io.file.Directory.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>ULong_t TNamed::Hash()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.impl_file_line">
+<tt class="descname">impl_file_line</tt><a class="headerlink" href="#rootpy.io.file.Directory.impl_file_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>static int TDirectoryFile::ImplFileLine()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.impl_file_name">
+<tt class="descname">impl_file_name</tt><a class="headerlink" href="#rootpy.io.file.Directory.impl_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TDirectoryFile::ImplFileName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.info">
+<tt class="descname">info</tt><a class="headerlink" href="#rootpy.io.file.Directory.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Info(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.inherits_from">
+<tt class="descname">inherits_from</tt><a class="headerlink" href="#rootpy.io.file.Directory.inherits_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::InheritsFrom(const char* classname)
+Bool_t TObject::InheritsFrom(const TClass* cl)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.inspect">
+<tt class="descname">inspect</tt><a class="headerlink" href="#rootpy.io.file.Directory.inspect" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Inspect()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.invert_bit">
+<tt class="descname">invert_bit</tt><a class="headerlink" href="#rootpy.io.file.Directory.invert_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::InvertBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.is_a">
+<tt class="descname">is_a</tt><a class="headerlink" href="#rootpy.io.file.Directory.is_a" title="Permalink to this definition">¶</a></dt>
+<dd><p>TClass* TDirectoryFile::IsA()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.is_equal">
+<tt class="descname">is_equal</tt><a class="headerlink" href="#rootpy.io.file.Directory.is_equal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsEqual(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.is_folder">
+<tt class="descname">is_folder</tt><a class="headerlink" href="#rootpy.io.file.Directory.is_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TDirectory::IsFolder()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.is_modified">
+<tt class="descname">is_modified</tt><a class="headerlink" href="#rootpy.io.file.Directory.is_modified" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TDirectoryFile::IsModified()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.is_on_heap">
+<tt class="descname">is_on_heap</tt><a class="headerlink" href="#rootpy.io.file.Directory.is_on_heap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsOnHeap()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.is_sortable">
+<tt class="descname">is_sortable</tt><a class="headerlink" href="#rootpy.io.file.Directory.is_sortable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TNamed::IsSortable()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.is_writable">
+<tt class="descname">is_writable</tt><a class="headerlink" href="#rootpy.io.file.Directory.is_writable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TDirectoryFile::IsWritable()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.is_zombie">
+<tt class="descname">is_zombie</tt><a class="headerlink" href="#rootpy.io.file.Directory.is_zombie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsZombie()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.may_not_use">
+<tt class="descname">may_not_use</tt><a class="headerlink" href="#rootpy.io.file.Directory.may_not_use" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::MayNotUse(const char* method)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.notify">
+<tt class="descname">notify</tt><a class="headerlink" href="#rootpy.io.file.Directory.notify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::Notify()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.obsolete">
+<tt class="descname">obsolete</tt><a class="headerlink" href="#rootpy.io.file.Directory.obsolete" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Obsolete(const char* method, const char* asOfVers, const char* removedFromVers)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.open_file">
+<tt class="descname">open_file</tt><a class="headerlink" href="#rootpy.io.file.Directory.open_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>TFile* TDirectoryFile::OpenFile(const char* name, Option_t* option = &#8220;&#8221;, const char* ftitle = &#8220;&#8221;, Int_t compress = 1, Int_t netopt = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.paint">
+<tt class="descname">paint</tt><a class="headerlink" href="#rootpy.io.file.Directory.paint" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectory::Paint(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.pop">
+<tt class="descname">pop</tt><a class="headerlink" href="#rootpy.io.file.Directory.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Pop()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.print">
+<tt class="descname">print</tt><a class="headerlink" href="#rootpy.io.file.Directory.print" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectory::Print(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.purge">
+<tt class="descname">purge</tt><a class="headerlink" href="#rootpy.io.file.Directory.purge" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::Purge(Short_t nkeep = 1)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.read">
+<tt class="descname">read</tt><a class="headerlink" href="#rootpy.io.file.Directory.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Read(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.read_all">
+<tt class="descname">read_all</tt><a class="headerlink" href="#rootpy.io.file.Directory.read_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::ReadAll(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.read_keys">
+<tt class="descname">read_keys</tt><a class="headerlink" href="#rootpy.io.file.Directory.read_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::ReadKeys(Bool_t forceRead = kTRUE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.read_t_object">
+<tt class="descname">read_t_object</tt><a class="headerlink" href="#rootpy.io.file.Directory.read_t_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::ReadTObject(TObject* obj, const char* keyname)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.recursive_remove">
+<tt class="descname">recursive_remove</tt><a class="headerlink" href="#rootpy.io.file.Directory.recursive_remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectory::RecursiveRemove(TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.remove">
+<tt class="descname">remove</tt><a class="headerlink" href="#rootpy.io.file.Directory.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TDirectory::Remove(TObject*)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.reset_after_merge">
+<tt class="descname">reset_after_merge</tt><a class="headerlink" href="#rootpy.io.file.Directory.reset_after_merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::ResetAfterMerge(TFileMergeInfo*)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.reset_bit">
+<tt class="descname">reset_bit</tt><a class="headerlink" href="#rootpy.io.file.Directory.reset_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::ResetBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.save">
+<tt class="descname">save</tt><a class="headerlink" href="#rootpy.io.file.Directory.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::Save()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.save_as">
+<tt class="descname">save_as</tt><a class="headerlink" href="#rootpy.io.file.Directory.save_as" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SaveAs(const char* filename = &#8220;&#8221;, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.save_object_as">
+<tt class="descname">save_object_as</tt><a class="headerlink" href="#rootpy.io.file.Directory.save_object_as" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::SaveObjectAs(const TObject* obj, const char* filename = &#8220;&#8221;, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.save_primitive">
+<tt class="descname">save_primitive</tt><a class="headerlink" href="#rootpy.io.file.Directory.save_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SavePrimitive(basic_ostream&lt;char,char_traits&lt;char&gt; &gt;&amp; out, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.save_self">
+<tt class="descname">save_self</tt><a class="headerlink" href="#rootpy.io.file.Directory.save_self" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::SaveSelf(Bool_t force = kFALSE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.set_bit">
+<tt class="descname">set_bit</tt><a class="headerlink" href="#rootpy.io.file.Directory.set_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetBit(UInt_t f, Bool_t set)
+void TObject::SetBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.set_buffer_size">
+<tt class="descname">set_buffer_size</tt><a class="headerlink" href="#rootpy.io.file.Directory.set_buffer_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::SetBufferSize(Int_t bufsize)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.set_draw_option">
+<tt class="descname">set_draw_option</tt><a class="headerlink" href="#rootpy.io.file.Directory.set_draw_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetDrawOption(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.set_dtor_only">
+<tt class="descname">set_dtor_only</tt><a class="headerlink" href="#rootpy.io.file.Directory.set_dtor_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TObject::SetDtorOnly(void* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.set_modified">
+<tt class="descname">set_modified</tt><a class="headerlink" href="#rootpy.io.file.Directory.set_modified" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::SetModified()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.set_mother">
+<tt class="descname">set_mother</tt><a class="headerlink" href="#rootpy.io.file.Directory.set_mother" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectory::SetMother(TObject* mother)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.set_name">
+<tt class="descname">set_name</tt><a class="headerlink" href="#rootpy.io.file.Directory.set_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectory::SetName(const char* newname)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.set_name_title">
+<tt class="descname">set_name_title</tt><a class="headerlink" href="#rootpy.io.file.Directory.set_name_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TNamed::SetNameTitle(const char* name, const char* title)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.set_object_stat">
+<tt class="descname">set_object_stat</tt><a class="headerlink" href="#rootpy.io.file.Directory.set_object_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TObject::SetObjectStat(Bool_t stat)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.set_seek_dir">
+<tt class="descname">set_seek_dir</tt><a class="headerlink" href="#rootpy.io.file.Directory.set_seek_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::SetSeekDir(Long64_t v)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.set_t_ref_action">
+<tt class="descname">set_t_ref_action</tt><a class="headerlink" href="#rootpy.io.file.Directory.set_t_ref_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::SetTRefAction(TObject* ref, TObject* parent)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.set_title">
+<tt class="descname">set_title</tt><a class="headerlink" href="#rootpy.io.file.Directory.set_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TNamed::SetTitle(const char* title = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.set_unique_id">
+<tt class="descname">set_unique_id</tt><a class="headerlink" href="#rootpy.io.file.Directory.set_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetUniqueID(UInt_t uid)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.set_writable">
+<tt class="descname">set_writable</tt><a class="headerlink" href="#rootpy.io.file.Directory.set_writable" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::SetWritable(Bool_t writable = kTRUE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.show_members">
+<tt class="descname">show_members</tt><a class="headerlink" href="#rootpy.io.file.Directory.show_members" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::ShowMembers(TMemberInspector&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.sizeof">
+<tt class="descname">sizeof</tt><a class="headerlink" href="#rootpy.io.file.Directory.sizeof" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::Sizeof()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.streamer">
+<tt class="descname">streamer</tt><a class="headerlink" href="#rootpy.io.file.Directory.streamer" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::Streamer(TBuffer&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.streamer_n_virtual">
+<tt class="descname">streamer_n_virtual</tt><a class="headerlink" href="#rootpy.io.file.Directory.streamer_n_virtual" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::StreamerNVirtual(TBuffer&amp; ClassDef_StreamerNVirtual_b)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.sys_error">
+<tt class="descname">sys_error</tt><a class="headerlink" href="#rootpy.io.file.Directory.sys_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SysError(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.test_bit">
+<tt class="descname">test_bit</tt><a class="headerlink" href="#rootpy.io.file.Directory.test_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::TestBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.test_bits">
+<tt class="descname">test_bits</tt><a class="headerlink" href="#rootpy.io.file.Directory.test_bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::TestBits(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.use_current_style">
+<tt class="descname">use_current_style</tt><a class="headerlink" href="#rootpy.io.file.Directory.use_current_style" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::UseCurrentStyle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.warning">
+<tt class="descname">warning</tt><a class="headerlink" href="#rootpy.io.file.Directory.warning" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Warning(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.write">
+<tt class="descname">write</tt><a class="headerlink" href="#rootpy.io.file.Directory.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::Write(const char* name = 0, Int_t opt = 0, Int_t bufsize = 0)
+Int_t TDirectoryFile::Write(const char* name = 0, Int_t opt = 0, Int_t bufsize = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.write_dir_header">
+<tt class="descname">write_dir_header</tt><a class="headerlink" href="#rootpy.io.file.Directory.write_dir_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::WriteDirHeader()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.write_keys">
+<tt class="descname">write_keys</tt><a class="headerlink" href="#rootpy.io.file.Directory.write_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::WriteKeys()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.write_object_any">
+<tt class="descname">write_object_any</tt><a class="headerlink" href="#rootpy.io.file.Directory.write_object_any" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::WriteObjectAny(const void* obj, const char* classname, const char* name, Option_t* option = &#8220;&#8221;, Int_t bufsize = 0)
+Int_t TDirectoryFile::WriteObjectAny(const void* obj, const TClass* cl, const char* name, Option_t* option = &#8220;&#8221;, Int_t bufsize = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.Directory.write_t_object">
+<tt class="descname">write_t_object</tt><a class="headerlink" href="#rootpy.io.file.Directory.write_t_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::WriteTObject(const TObject* obj, const char* name = 0, Option_t* option = &#8220;&#8221;, Int_t bufsize = 0)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.io.file.File">
+<em class="property">class </em><tt class="descclassname">rootpy.io.file.</tt><tt class="descname">File</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/io/file.html#File"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.io.file.File" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">rootpy.io.file._DirectoryBase</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">ROOT.TFile</span></tt></p>
+<p>Wrapper for TFile that adds various convenience functions.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">rootpy.test</span> <span class="kn">import</span> <span class="n">filename</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">File</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s">&#39;read&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="rootpy.io.file.File.abstract_method">
+<tt class="descname">abstract_method</tt><a class="headerlink" href="#rootpy.io.file.File.abstract_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::AbstractMethod(const char* method)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.add">
+<tt class="descname">add</tt><a class="headerlink" href="#rootpy.io.file.File.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::Add(TObject* obj, Bool_t replace = kFALSE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.add_directory">
+<tt class="descname">add_directory</tt><a class="headerlink" href="#rootpy.io.file.File.add_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TDirectory::AddDirectory(Bool_t add = kTRUE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.add_directory_status">
+<tt class="descname">add_directory_status</tt><a class="headerlink" href="#rootpy.io.file.File.add_directory_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Bool_t TDirectory::AddDirectoryStatus()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.append">
+<tt class="descname">append</tt><a class="headerlink" href="#rootpy.io.file.File.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::Append(TObject* obj, Bool_t replace = kFALSE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.append_key">
+<tt class="descname">append_key</tt><a class="headerlink" href="#rootpy.io.file.File.append_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::AppendKey(TKey* key)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.append_pad">
+<tt class="descname">append_pad</tt><a class="headerlink" href="#rootpy.io.file.File.append_pad" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::AppendPad(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.async_open">
+<tt class="descname">async_open</tt><a class="headerlink" href="#rootpy.io.file.File.async_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>static TFileOpenHandle* TFile::AsyncOpen(const char* name, Option_t* option = &#8220;&#8221;, const char* ftitle = &#8220;&#8221;, Int_t compress = 1, Int_t netopt = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.browse">
+<tt class="descname">browse</tt><a class="headerlink" href="#rootpy.io.file.File.browse" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::Browse(TBrowser* b)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.build">
+<tt class="descname">build</tt><a class="headerlink" href="#rootpy.io.file.File.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::Build(TFile* motherFile = 0, TDirectory* motherDir = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.class">
+<tt class="descname">class</tt><a class="headerlink" href="#rootpy.io.file.File.class" title="Permalink to this definition">¶</a></dt>
+<dd><p>static TClass* TFile::Class()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.class__name">
+<tt class="descname">class__name</tt><a class="headerlink" href="#rootpy.io.file.File.class__name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TFile::Class_Name()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.class__version">
+<tt class="descname">class__version</tt><a class="headerlink" href="#rootpy.io.file.File.class__version" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Version_t TFile::Class_Version()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.class_name">
+<tt class="descname">class_name</tt><a class="headerlink" href="#rootpy.io.file.File.class_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::ClassName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.clear">
+<tt class="descname">clear</tt><a class="headerlink" href="#rootpy.io.file.File.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectory::Clear(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.clone_object">
+<tt class="descname">clone_object</tt><a class="headerlink" href="#rootpy.io.file.File.clone_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TDirectoryFile::CloneObject(const TObject* obj, Bool_t autoadd = kTRUE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.close">
+<tt class="descname">close</tt><a class="headerlink" href="#rootpy.io.file.File.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::Close(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.compare">
+<tt class="descname">compare</tt><a class="headerlink" href="#rootpy.io.file.File.compare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TNamed::Compare(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.copy">
+<tt class="descname">copy</tt><a class="headerlink" href="#rootpy.io.file.File.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::Copy(TObject&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.cp">
+<tt class="descname">cp</tt><a class="headerlink" href="#rootpy.io.file.File.cp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TFile::Cp(const char* dst, Bool_t progressbar = kTRUE, UInt_t buffersize = 1000000)
+static Bool_t TFile::Cp(const char* src, const char* dst, Bool_t progressbar = kTRUE, UInt_t buffersize = 1000000)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.create_key">
+<tt class="descname">create_key</tt><a class="headerlink" href="#rootpy.io.file.File.create_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>TKey* TFile::CreateKey(TDirectory* mother, const TObject* obj, const char* name, Int_t bufsize)
+TKey* TFile::CreateKey(TDirectory* mother, const void* obj, const TClass* cl, const char* name, Int_t bufsize)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.current_directory">
+<tt class="descname">current_directory</tt><a class="headerlink" href="#rootpy.io.file.File.current_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>static TDirectory*&amp; TDirectory::CurrentDirectory()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.current_file">
+<tt class="descname">current_file</tt><a class="headerlink" href="#rootpy.io.file.File.current_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>static TFile*&amp; TFile::CurrentFile()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.decl_file_line">
+<tt class="descname">decl_file_line</tt><a class="headerlink" href="#rootpy.io.file.File.decl_file_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>static int TFile::DeclFileLine()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.decl_file_name">
+<tt class="descname">decl_file_name</tt><a class="headerlink" href="#rootpy.io.file.File.decl_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TFile::DeclFileName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.decode_name_cycle">
+<tt class="descname">decode_name_cycle</tt><a class="headerlink" href="#rootpy.io.file.File.decode_name_cycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TDirectory::DecodeNameCycle(const char* namecycle, char* name, Short_t&amp; cycle)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.delete">
+<tt class="descname">delete</tt><a class="headerlink" href="#rootpy.io.file.File.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::Delete(const char* namecycle = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.delete_all">
+<tt class="descname">delete_all</tt><a class="headerlink" href="#rootpy.io.file.File.delete_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectory::DeleteAll(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.dictionary">
+<tt class="descname">dictionary</tt><a class="headerlink" href="#rootpy.io.file.File.dictionary" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TFile::Dictionary()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.distanceto_primitive">
+<tt class="descname">distanceto_primitive</tt><a class="headerlink" href="#rootpy.io.file.File.distanceto_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::DistancetoPrimitive(Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.draw">
+<tt class="descname">draw</tt><a class="headerlink" href="#rootpy.io.file.File.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::Draw(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.draw_class">
+<tt class="descname">draw_class</tt><a class="headerlink" href="#rootpy.io.file.File.draw_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::DrawClass()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.draw_clone">
+<tt class="descname">draw_clone</tt><a class="headerlink" href="#rootpy.io.file.File.draw_clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::DrawClone(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.draw_map">
+<tt class="descname">draw_map</tt><a class="headerlink" href="#rootpy.io.file.File.draw_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::DrawMap(const char* keys = &#8220;*&#8221;, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.dump">
+<tt class="descname">dump</tt><a class="headerlink" href="#rootpy.io.file.File.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Dump()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.encode_name_cycle">
+<tt class="descname">encode_name_cycle</tt><a class="headerlink" href="#rootpy.io.file.File.encode_name_cycle" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TDirectory::EncodeNameCycle(char* buffer, const char* name, Short_t cycle)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.error">
+<tt class="descname">error</tt><a class="headerlink" href="#rootpy.io.file.File.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Error(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.execute">
+<tt class="descname">execute</tt><a class="headerlink" href="#rootpy.io.file.File.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Execute(const char* method, const char* params, Int_t* error = 0)
+void TObject::Execute(TMethod* method, TObjArray* params, Int_t* error = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.execute_event">
+<tt class="descname">execute_event</tt><a class="headerlink" href="#rootpy.io.file.File.execute_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::ExecuteEvent(Int_t event, Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.fatal">
+<tt class="descname">fatal</tt><a class="headerlink" href="#rootpy.io.file.File.fatal" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Fatal(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.fill_buffer">
+<tt class="descname">fill_buffer</tt><a class="headerlink" href="#rootpy.io.file.File.fill_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::FillBuffer(char*&amp; buffer)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.find_key">
+<tt class="descname">find_key</tt><a class="headerlink" href="#rootpy.io.file.File.find_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>TKey* TDirectoryFile::FindKey(const char* keyname)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.find_key_any">
+<tt class="descname">find_key_any</tt><a class="headerlink" href="#rootpy.io.file.File.find_key_any" title="Permalink to this definition">¶</a></dt>
+<dd><p>TKey* TDirectoryFile::FindKeyAny(const char* keyname)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.find_object">
+<tt class="descname">find_object</tt><a class="headerlink" href="#rootpy.io.file.File.find_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TDirectory::FindObject(const char* name)
+TObject* TDirectory::FindObject(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.find_object_any">
+<tt class="descname">find_object_any</tt><a class="headerlink" href="#rootpy.io.file.File.find_object_any" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TDirectoryFile::FindObjectAny(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.find_object_any_file">
+<tt class="descname">find_object_any_file</tt><a class="headerlink" href="#rootpy.io.file.File.find_object_any_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TDirectoryFile::FindObjectAnyFile(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.flush">
+<tt class="descname">flush</tt><a class="headerlink" href="#rootpy.io.file.File.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::Flush()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_archive">
+<tt class="descname">get_archive</tt><a class="headerlink" href="#rootpy.io.file.File.get_archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>TArchiveFile* TFile::GetArchive()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_archive_offset">
+<tt class="descname">get_archive_offset</tt><a class="headerlink" href="#rootpy.io.file.File.get_archive_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TFile::GetArchiveOffset()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_async_open_status">
+<tt class="descname">get_async_open_status</tt><a class="headerlink" href="#rootpy.io.file.File.get_async_open_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>static TFile::EAsyncOpenStatus TFile::GetAsyncOpenStatus(const char* name)
+static TFile::EAsyncOpenStatus TFile::GetAsyncOpenStatus(TFileOpenHandle* handle)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_best_buffer">
+<tt class="descname">get_best_buffer</tt><a class="headerlink" href="#rootpy.io.file.File.get_best_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::GetBestBuffer()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_buffer_size">
+<tt class="descname">get_buffer_size</tt><a class="headerlink" href="#rootpy.io.file.File.get_buffer_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::GetBufferSize()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_bytes_read">
+<tt class="descname">get_bytes_read</tt><a class="headerlink" href="#rootpy.io.file.File.get_bytes_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TFile::GetBytesRead()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_bytes_read_extra">
+<tt class="descname">get_bytes_read_extra</tt><a class="headerlink" href="#rootpy.io.file.File.get_bytes_read_extra" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TFile::GetBytesReadExtra()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_bytes_to_prefetch">
+<tt class="descname">get_bytes_to_prefetch</tt><a class="headerlink" href="#rootpy.io.file.File.get_bytes_to_prefetch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::GetBytesToPrefetch()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_bytes_written">
+<tt class="descname">get_bytes_written</tt><a class="headerlink" href="#rootpy.io.file.File.get_bytes_written" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TFile::GetBytesWritten()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_cache_file_dir">
+<tt class="descname">get_cache_file_dir</tt><a class="headerlink" href="#rootpy.io.file.File.get_cache_file_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TFile::GetCacheFileDir()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_cache_read">
+<tt class="descname">get_cache_read</tt><a class="headerlink" href="#rootpy.io.file.File.get_cache_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>TFileCacheRead* TFile::GetCacheRead(TObject* tree = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_cache_write">
+<tt class="descname">get_cache_write</tt><a class="headerlink" href="#rootpy.io.file.File.get_cache_write" title="Permalink to this definition">¶</a></dt>
+<dd><p>TFileCacheWrite* TFile::GetCacheWrite()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_class_index">
+<tt class="descname">get_class_index</tt><a class="headerlink" href="#rootpy.io.file.File.get_class_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>TArrayC* TFile::GetClassIndex()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_compression_algorithm">
+<tt class="descname">get_compression_algorithm</tt><a class="headerlink" href="#rootpy.io.file.File.get_compression_algorithm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::GetCompressionAlgorithm()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_compression_factor">
+<tt class="descname">get_compression_factor</tt><a class="headerlink" href="#rootpy.io.file.File.get_compression_factor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Float_t TFile::GetCompressionFactor()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_compression_level">
+<tt class="descname">get_compression_level</tt><a class="headerlink" href="#rootpy.io.file.File.get_compression_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::GetCompressionLevel()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_compression_settings">
+<tt class="descname">get_compression_settings</tt><a class="headerlink" href="#rootpy.io.file.File.get_compression_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::GetCompressionSettings()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_creation_date">
+<tt class="descname">get_creation_date</tt><a class="headerlink" href="#rootpy.io.file.File.get_creation_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>const TDatime&amp; TDirectoryFile::GetCreationDate()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_draw_option">
+<tt class="descname">get_draw_option</tt><a class="headerlink" href="#rootpy.io.file.File.get_draw_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option_t* TObject::GetDrawOption()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_dtor_only">
+<tt class="descname">get_dtor_only</tt><a class="headerlink" href="#rootpy.io.file.File.get_dtor_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Long_t TObject::GetDtorOnly()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_end">
+<tt class="descname">get_end</tt><a class="headerlink" href="#rootpy.io.file.File.get_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TFile::GetEND()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_endpoint_url">
+<tt class="descname">get_endpoint_url</tt><a class="headerlink" href="#rootpy.io.file.File.get_endpoint_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>const TUrl* TFile::GetEndpointUrl()
+static const TUrl* TFile::GetEndpointUrl(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_errno">
+<tt class="descname">get_errno</tt><a class="headerlink" href="#rootpy.io.file.File.get_errno" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::GetErrno()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_fd">
+<tt class="descname">get_fd</tt><a class="headerlink" href="#rootpy.io.file.File.get_fd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::GetFd()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_file">
+<tt class="descname">get_file</tt><a class="headerlink" href="#rootpy.io.file.File.get_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>TFile* TDirectoryFile::GetFile()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_file_bytes_read">
+<tt class="descname">get_file_bytes_read</tt><a class="headerlink" href="#rootpy.io.file.File.get_file_bytes_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Long64_t TFile::GetFileBytesRead()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_file_bytes_written">
+<tt class="descname">get_file_bytes_written</tt><a class="headerlink" href="#rootpy.io.file.File.get_file_bytes_written" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Long64_t TFile::GetFileBytesWritten()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_file_counter">
+<tt class="descname">get_file_counter</tt><a class="headerlink" href="#rootpy.io.file.File.get_file_counter" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Long64_t TFile::GetFileCounter()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_file_read_calls">
+<tt class="descname">get_file_read_calls</tt><a class="headerlink" href="#rootpy.io.file.File.get_file_read_calls" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Int_t TFile::GetFileReadCalls()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_icon_name">
+<tt class="descname">get_icon_name</tt><a class="headerlink" href="#rootpy.io.file.File.get_icon_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetIconName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_key">
+<tt class="descname">get_key</tt><a class="headerlink" href="#rootpy.io.file.File.get_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>TKey* TDirectoryFile::GetKey(const char* name, Short_t cycle = 9999)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_list">
+<tt class="descname">get_list</tt><a class="headerlink" href="#rootpy.io.file.File.get_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>TList* TDirectory::GetList()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_list_of_free">
+<tt class="descname">get_list_of_free</tt><a class="headerlink" href="#rootpy.io.file.File.get_list_of_free" title="Permalink to this definition">¶</a></dt>
+<dd><p>TList* TFile::GetListOfFree()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_list_of_keys">
+<tt class="descname">get_list_of_keys</tt><a class="headerlink" href="#rootpy.io.file.File.get_list_of_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>TList* TDirectoryFile::GetListOfKeys()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_list_of_process_i_ds">
+<tt class="descname">get_list_of_process_i_ds</tt><a class="headerlink" href="#rootpy.io.file.File.get_list_of_process_i_ds" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObjArray* TFile::GetListOfProcessIDs()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_modification_date">
+<tt class="descname">get_modification_date</tt><a class="headerlink" href="#rootpy.io.file.File.get_modification_date" title="Permalink to this definition">¶</a></dt>
+<dd><p>const TDatime&amp; TDirectoryFile::GetModificationDate()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_mother">
+<tt class="descname">get_mother</tt><a class="headerlink" href="#rootpy.io.file.File.get_mother" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TDirectory::GetMother()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_mother_dir">
+<tt class="descname">get_mother_dir</tt><a class="headerlink" href="#rootpy.io.file.File.get_mother_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>TDirectory* TDirectory::GetMotherDir()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_n_process_i_ds">
+<tt class="descname">get_n_process_i_ds</tt><a class="headerlink" href="#rootpy.io.file.File.get_n_process_i_ds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::GetNProcessIDs()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_name">
+<tt class="descname">get_name</tt><a class="headerlink" href="#rootpy.io.file.File.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TNamed::GetName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_nbytes_free">
+<tt class="descname">get_nbytes_free</tt><a class="headerlink" href="#rootpy.io.file.File.get_nbytes_free" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::GetNbytesFree()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_nbytes_info">
+<tt class="descname">get_nbytes_info</tt><a class="headerlink" href="#rootpy.io.file.File.get_nbytes_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::GetNbytesInfo()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_nbytes_keys">
+<tt class="descname">get_nbytes_keys</tt><a class="headerlink" href="#rootpy.io.file.File.get_nbytes_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::GetNbytesKeys()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_nfree">
+<tt class="descname">get_nfree</tt><a class="headerlink" href="#rootpy.io.file.File.get_nfree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::GetNfree()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_nkeys">
+<tt class="descname">get_nkeys</tt><a class="headerlink" href="#rootpy.io.file.File.get_nkeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::GetNkeys()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_object_checked">
+<tt class="descname">get_object_checked</tt><a class="headerlink" href="#rootpy.io.file.File.get_object_checked" title="Permalink to this definition">¶</a></dt>
+<dd><p>void* TDirectoryFile::GetObjectChecked(const char* namecycle, const char* classname)
+void* TDirectoryFile::GetObjectChecked(const char* namecycle, const TClass* cl)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_object_info">
+<tt class="descname">get_object_info</tt><a class="headerlink" href="#rootpy.io.file.File.get_object_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>char* TObject::GetObjectInfo(Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_object_stat">
+<tt class="descname">get_object_stat</tt><a class="headerlink" href="#rootpy.io.file.File.get_object_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Bool_t TObject::GetObjectStat()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_object_unchecked">
+<tt class="descname">get_object_unchecked</tt><a class="headerlink" href="#rootpy.io.file.File.get_object_unchecked" title="Permalink to this definition">¶</a></dt>
+<dd><p>void* TDirectoryFile::GetObjectUnchecked(const char* namecycle)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_only_staged">
+<tt class="descname">get_only_staged</tt><a class="headerlink" href="#rootpy.io.file.File.get_only_staged" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Bool_t TFile::GetOnlyStaged()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_open_timeout">
+<tt class="descname">get_open_timeout</tt><a class="headerlink" href="#rootpy.io.file.File.get_open_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>static UInt_t TFile::GetOpenTimeout()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_option">
+<tt class="descname">get_option</tt><a class="headerlink" href="#rootpy.io.file.File.get_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option_t* TFile::GetOption()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_path">
+<tt class="descname">get_path</tt><a class="headerlink" href="#rootpy.io.file.File.get_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TDirectory::GetPath()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_path_static">
+<tt class="descname">get_path_static</tt><a class="headerlink" href="#rootpy.io.file.File.get_path_static" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TDirectory::GetPathStatic()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_read_calls">
+<tt class="descname">get_read_calls</tt><a class="headerlink" href="#rootpy.io.file.File.get_read_calls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::GetReadCalls()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_readahead_size">
+<tt class="descname">get_readahead_size</tt><a class="headerlink" href="#rootpy.io.file.File.get_readahead_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Int_t TFile::GetReadaheadSize()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_record_header">
+<tt class="descname">get_record_header</tt><a class="headerlink" href="#rootpy.io.file.File.get_record_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::GetRecordHeader(char* buf, Long64_t first, Int_t maxbytes, Int_t&amp; nbytes, Int_t&amp; objlen, Int_t&amp; keylen)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_rel_offset">
+<tt class="descname">get_rel_offset</tt><a class="headerlink" href="#rootpy.io.file.File.get_rel_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TFile::GetRelOffset()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_seek_dir">
+<tt class="descname">get_seek_dir</tt><a class="headerlink" href="#rootpy.io.file.File.get_seek_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TDirectoryFile::GetSeekDir()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_seek_free">
+<tt class="descname">get_seek_free</tt><a class="headerlink" href="#rootpy.io.file.File.get_seek_free" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TFile::GetSeekFree()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_seek_info">
+<tt class="descname">get_seek_info</tt><a class="headerlink" href="#rootpy.io.file.File.get_seek_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TFile::GetSeekInfo()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_seek_keys">
+<tt class="descname">get_seek_keys</tt><a class="headerlink" href="#rootpy.io.file.File.get_seek_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TDirectoryFile::GetSeekKeys()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_seek_parent">
+<tt class="descname">get_seek_parent</tt><a class="headerlink" href="#rootpy.io.file.File.get_seek_parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TDirectoryFile::GetSeekParent()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_size">
+<tt class="descname">get_size</tt><a class="headerlink" href="#rootpy.io.file.File.get_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TFile::GetSize()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_streamer_info_cache">
+<tt class="descname">get_streamer_info_cache</tt><a class="headerlink" href="#rootpy.io.file.File.get_streamer_info_cache" title="Permalink to this definition">¶</a></dt>
+<dd><p>const TList* TFile::GetStreamerInfoCache()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_streamer_info_list">
+<tt class="descname">get_streamer_info_list</tt><a class="headerlink" href="#rootpy.io.file.File.get_streamer_info_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>TList* TFile::GetStreamerInfoList()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_title">
+<tt class="descname">get_title</tt><a class="headerlink" href="#rootpy.io.file.File.get_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TNamed::GetTitle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_type">
+<tt class="descname">get_type</tt><a class="headerlink" href="#rootpy.io.file.File.get_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>static TFile::EFileType TFile::GetType(const char* name, Option_t* option = &#8220;&#8221;, TString* prefix = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_unique_id">
+<tt class="descname">get_unique_id</tt><a class="headerlink" href="#rootpy.io.file.File.get_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>UInt_t TObject::GetUniqueID()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_uuid">
+<tt class="descname">get_uuid</tt><a class="headerlink" href="#rootpy.io.file.File.get_uuid" title="Permalink to this definition">¶</a></dt>
+<dd><p>TUUID TDirectory::GetUUID()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.get_version">
+<tt class="descname">get_version</tt><a class="headerlink" href="#rootpy.io.file.File.get_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::GetVersion()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.handle_timer">
+<tt class="descname">handle_timer</tt><a class="headerlink" href="#rootpy.io.file.File.handle_timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::HandleTimer(TTimer* timer)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.hash">
+<tt class="descname">hash</tt><a class="headerlink" href="#rootpy.io.file.File.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>ULong_t TNamed::Hash()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.impl_file_line">
+<tt class="descname">impl_file_line</tt><a class="headerlink" href="#rootpy.io.file.File.impl_file_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>static int TFile::ImplFileLine()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.impl_file_name">
+<tt class="descname">impl_file_name</tt><a class="headerlink" href="#rootpy.io.file.File.impl_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TFile::ImplFileName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.increment_file_counter">
+<tt class="descname">increment_file_counter</tt><a class="headerlink" href="#rootpy.io.file.File.increment_file_counter" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TFile::IncrementFileCounter()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.increment_process_i_ds">
+<tt class="descname">increment_process_i_ds</tt><a class="headerlink" href="#rootpy.io.file.File.increment_process_i_ds" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::IncrementProcessIDs()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.info">
+<tt class="descname">info</tt><a class="headerlink" href="#rootpy.io.file.File.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Info(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.inherits_from">
+<tt class="descname">inherits_from</tt><a class="headerlink" href="#rootpy.io.file.File.inherits_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::InheritsFrom(const char* classname)
+Bool_t TObject::InheritsFrom(const TClass* cl)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.inspect">
+<tt class="descname">inspect</tt><a class="headerlink" href="#rootpy.io.file.File.inspect" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Inspect()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.invert_bit">
+<tt class="descname">invert_bit</tt><a class="headerlink" href="#rootpy.io.file.File.invert_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::InvertBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.is_a">
+<tt class="descname">is_a</tt><a class="headerlink" href="#rootpy.io.file.File.is_a" title="Permalink to this definition">¶</a></dt>
+<dd><p>TClass* TFile::IsA()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.is_archive">
+<tt class="descname">is_archive</tt><a class="headerlink" href="#rootpy.io.file.File.is_archive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TFile::IsArchive()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.is_binary">
+<tt class="descname">is_binary</tt><a class="headerlink" href="#rootpy.io.file.File.is_binary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TFile::IsBinary()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.is_equal">
+<tt class="descname">is_equal</tt><a class="headerlink" href="#rootpy.io.file.File.is_equal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsEqual(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.is_folder">
+<tt class="descname">is_folder</tt><a class="headerlink" href="#rootpy.io.file.File.is_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TDirectory::IsFolder()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.is_modified">
+<tt class="descname">is_modified</tt><a class="headerlink" href="#rootpy.io.file.File.is_modified" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TDirectoryFile::IsModified()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.is_on_heap">
+<tt class="descname">is_on_heap</tt><a class="headerlink" href="#rootpy.io.file.File.is_on_heap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsOnHeap()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.is_open">
+<tt class="descname">is_open</tt><a class="headerlink" href="#rootpy.io.file.File.is_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TFile::IsOpen()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.is_raw">
+<tt class="descname">is_raw</tt><a class="headerlink" href="#rootpy.io.file.File.is_raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TFile::IsRaw()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.is_sortable">
+<tt class="descname">is_sortable</tt><a class="headerlink" href="#rootpy.io.file.File.is_sortable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TNamed::IsSortable()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.is_writable">
+<tt class="descname">is_writable</tt><a class="headerlink" href="#rootpy.io.file.File.is_writable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TDirectoryFile::IsWritable()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.is_zombie">
+<tt class="descname">is_zombie</tt><a class="headerlink" href="#rootpy.io.file.File.is_zombie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsZombie()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.make_free">
+<tt class="descname">make_free</tt><a class="headerlink" href="#rootpy.io.file.File.make_free" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::MakeFree(Long64_t first, Long64_t last)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.make_project">
+<tt class="descname">make_project</tt><a class="headerlink" href="#rootpy.io.file.File.make_project" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::MakeProject(const char* dirname, const char* classes = &#8220;*&#8221;, Option_t* option = &#8220;new&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.map">
+<tt class="descname">map</tt><a class="headerlink" href="#rootpy.io.file.File.map" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::Map()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.matches">
+<tt class="descname">matches</tt><a class="headerlink" href="#rootpy.io.file.File.matches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TFile::Matches(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.may_not_use">
+<tt class="descname">may_not_use</tt><a class="headerlink" href="#rootpy.io.file.File.may_not_use" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::MayNotUse(const char* method)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.must_flush">
+<tt class="descname">must_flush</tt><a class="headerlink" href="#rootpy.io.file.File.must_flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TFile::MustFlush()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.notify">
+<tt class="descname">notify</tt><a class="headerlink" href="#rootpy.io.file.File.notify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::Notify()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.obsolete">
+<tt class="descname">obsolete</tt><a class="headerlink" href="#rootpy.io.file.File.obsolete" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Obsolete(const char* method, const char* asOfVers, const char* removedFromVers)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.open">
+<tt class="descname">open</tt><a class="headerlink" href="#rootpy.io.file.File.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>static TFile* TFile::Open(const char* name, Option_t* option = &#8220;&#8221;, const char* ftitle = &#8220;&#8221;, Int_t compress = 1, Int_t netopt = 0)
+static TFile* TFile::Open(TFileOpenHandle* handle)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.open_file">
+<tt class="descname">open_file</tt><a class="headerlink" href="#rootpy.io.file.File.open_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>TFile* TDirectoryFile::OpenFile(const char* name, Option_t* option = &#8220;&#8221;, const char* ftitle = &#8220;&#8221;, Int_t compress = 1, Int_t netopt = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.paint">
+<tt class="descname">paint</tt><a class="headerlink" href="#rootpy.io.file.File.paint" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::Paint(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.pop">
+<tt class="descname">pop</tt><a class="headerlink" href="#rootpy.io.file.File.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Pop()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.print">
+<tt class="descname">print</tt><a class="headerlink" href="#rootpy.io.file.File.print" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::Print(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.purge">
+<tt class="descname">purge</tt><a class="headerlink" href="#rootpy.io.file.File.purge" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::Purge(Short_t nkeep = 1)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.re_open">
+<tt class="descname">re_open</tt><a class="headerlink" href="#rootpy.io.file.File.re_open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::ReOpen(Option_t* mode)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.read">
+<tt class="descname">read</tt><a class="headerlink" href="#rootpy.io.file.File.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Read(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.read_all">
+<tt class="descname">read_all</tt><a class="headerlink" href="#rootpy.io.file.File.read_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::ReadAll(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.read_buffer">
+<tt class="descname">read_buffer</tt><a class="headerlink" href="#rootpy.io.file.File.read_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TFile::ReadBuffer(char* buf, Int_t len)
+Bool_t TFile::ReadBuffer(char* buf, Long64_t pos, Int_t len)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.read_buffer_async">
+<tt class="descname">read_buffer_async</tt><a class="headerlink" href="#rootpy.io.file.File.read_buffer_async" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TFile::ReadBufferAsync(Long64_t offs, Int_t len)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.read_buffers">
+<tt class="descname">read_buffers</tt><a class="headerlink" href="#rootpy.io.file.File.read_buffers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TFile::ReadBuffers(char* buf, Long64_t* pos, Int_t* len, Int_t nbuf)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.read_free">
+<tt class="descname">read_free</tt><a class="headerlink" href="#rootpy.io.file.File.read_free" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::ReadFree()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.read_keys">
+<tt class="descname">read_keys</tt><a class="headerlink" href="#rootpy.io.file.File.read_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::ReadKeys(Bool_t forceRead = kTRUE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.read_process_id">
+<tt class="descname">read_process_id</tt><a class="headerlink" href="#rootpy.io.file.File.read_process_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>TProcessID* TFile::ReadProcessID(UShort_t pidf)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.read_streamer_info">
+<tt class="descname">read_streamer_info</tt><a class="headerlink" href="#rootpy.io.file.File.read_streamer_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::ReadStreamerInfo()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.read_t_object">
+<tt class="descname">read_t_object</tt><a class="headerlink" href="#rootpy.io.file.File.read_t_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::ReadTObject(TObject* obj, const char* keyname)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.recover">
+<tt class="descname">recover</tt><a class="headerlink" href="#rootpy.io.file.File.recover" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::Recover()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.recursive_remove">
+<tt class="descname">recursive_remove</tt><a class="headerlink" href="#rootpy.io.file.File.recursive_remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectory::RecursiveRemove(TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.remove">
+<tt class="descname">remove</tt><a class="headerlink" href="#rootpy.io.file.File.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TDirectory::Remove(TObject*)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.reset_after_merge">
+<tt class="descname">reset_after_merge</tt><a class="headerlink" href="#rootpy.io.file.File.reset_after_merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::ResetAfterMerge(TFileMergeInfo*)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.reset_bit">
+<tt class="descname">reset_bit</tt><a class="headerlink" href="#rootpy.io.file.File.reset_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::ResetBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.reset_errno">
+<tt class="descname">reset_errno</tt><a class="headerlink" href="#rootpy.io.file.File.reset_errno" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::ResetErrno()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.save">
+<tt class="descname">save</tt><a class="headerlink" href="#rootpy.io.file.File.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::Save()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.save_as">
+<tt class="descname">save_as</tt><a class="headerlink" href="#rootpy.io.file.File.save_as" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SaveAs(const char* filename = &#8220;&#8221;, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.save_object_as">
+<tt class="descname">save_object_as</tt><a class="headerlink" href="#rootpy.io.file.File.save_object_as" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::SaveObjectAs(const TObject* obj, const char* filename = &#8220;&#8221;, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.save_primitive">
+<tt class="descname">save_primitive</tt><a class="headerlink" href="#rootpy.io.file.File.save_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SavePrimitive(basic_ostream&lt;char,char_traits&lt;char&gt; &gt;&amp; out, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.save_self">
+<tt class="descname">save_self</tt><a class="headerlink" href="#rootpy.io.file.File.save_self" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::SaveSelf(Bool_t force = kFALSE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.seek">
+<tt class="descname">seek</tt><a class="headerlink" href="#rootpy.io.file.File.seek" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::Seek(Long64_t offset, TFile::ERelativeTo pos = kBeg)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_bit">
+<tt class="descname">set_bit</tt><a class="headerlink" href="#rootpy.io.file.File.set_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetBit(UInt_t f, Bool_t set)
+void TObject::SetBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_buffer_size">
+<tt class="descname">set_buffer_size</tt><a class="headerlink" href="#rootpy.io.file.File.set_buffer_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::SetBufferSize(Int_t bufsize)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_cache_file_dir">
+<tt class="descname">set_cache_file_dir</tt><a class="headerlink" href="#rootpy.io.file.File.set_cache_file_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Bool_t TFile::SetCacheFileDir(const char* cacheDir, Bool_t operateDisconnected = kTRUE, Bool_t forceCacheread = kFALSE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_cache_read">
+<tt class="descname">set_cache_read</tt><a class="headerlink" href="#rootpy.io.file.File.set_cache_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::SetCacheRead(TFileCacheRead* cache, TObject* tree = 0, TFile::ECacheAction action = kDisconnect)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_cache_write">
+<tt class="descname">set_cache_write</tt><a class="headerlink" href="#rootpy.io.file.File.set_cache_write" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::SetCacheWrite(TFileCacheWrite* cache)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_compression_algorithm">
+<tt class="descname">set_compression_algorithm</tt><a class="headerlink" href="#rootpy.io.file.File.set_compression_algorithm" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::SetCompressionAlgorithm(Int_t algorithm = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_compression_level">
+<tt class="descname">set_compression_level</tt><a class="headerlink" href="#rootpy.io.file.File.set_compression_level" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::SetCompressionLevel(Int_t level = 1)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_compression_settings">
+<tt class="descname">set_compression_settings</tt><a class="headerlink" href="#rootpy.io.file.File.set_compression_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::SetCompressionSettings(Int_t settings = 1)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_draw_option">
+<tt class="descname">set_draw_option</tt><a class="headerlink" href="#rootpy.io.file.File.set_draw_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetDrawOption(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_dtor_only">
+<tt class="descname">set_dtor_only</tt><a class="headerlink" href="#rootpy.io.file.File.set_dtor_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TObject::SetDtorOnly(void* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_end">
+<tt class="descname">set_end</tt><a class="headerlink" href="#rootpy.io.file.File.set_end" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::SetEND(Long64_t last)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_file_bytes_read">
+<tt class="descname">set_file_bytes_read</tt><a class="headerlink" href="#rootpy.io.file.File.set_file_bytes_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TFile::SetFileBytesRead(Long64_t bytes = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_file_bytes_written">
+<tt class="descname">set_file_bytes_written</tt><a class="headerlink" href="#rootpy.io.file.File.set_file_bytes_written" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TFile::SetFileBytesWritten(Long64_t bytes = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_file_read_calls">
+<tt class="descname">set_file_read_calls</tt><a class="headerlink" href="#rootpy.io.file.File.set_file_read_calls" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TFile::SetFileReadCalls(Int_t readcalls = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_modified">
+<tt class="descname">set_modified</tt><a class="headerlink" href="#rootpy.io.file.File.set_modified" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::SetModified()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_mother">
+<tt class="descname">set_mother</tt><a class="headerlink" href="#rootpy.io.file.File.set_mother" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectory::SetMother(TObject* mother)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_name">
+<tt class="descname">set_name</tt><a class="headerlink" href="#rootpy.io.file.File.set_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectory::SetName(const char* newname)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_name_title">
+<tt class="descname">set_name_title</tt><a class="headerlink" href="#rootpy.io.file.File.set_name_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TNamed::SetNameTitle(const char* name, const char* title)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_object_stat">
+<tt class="descname">set_object_stat</tt><a class="headerlink" href="#rootpy.io.file.File.set_object_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TObject::SetObjectStat(Bool_t stat)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_offset">
+<tt class="descname">set_offset</tt><a class="headerlink" href="#rootpy.io.file.File.set_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::SetOffset(Long64_t offset, TFile::ERelativeTo pos = kBeg)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_only_staged">
+<tt class="descname">set_only_staged</tt><a class="headerlink" href="#rootpy.io.file.File.set_only_staged" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Bool_t TFile::SetOnlyStaged(Bool_t onlystaged)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_open_timeout">
+<tt class="descname">set_open_timeout</tt><a class="headerlink" href="#rootpy.io.file.File.set_open_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>static UInt_t TFile::SetOpenTimeout(UInt_t timeout)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_option">
+<tt class="descname">set_option</tt><a class="headerlink" href="#rootpy.io.file.File.set_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::SetOption(Option_t* option = &#8220;&gt;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_read_calls">
+<tt class="descname">set_read_calls</tt><a class="headerlink" href="#rootpy.io.file.File.set_read_calls" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::SetReadCalls(Int_t readcalls = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_read_streamer_info">
+<tt class="descname">set_read_streamer_info</tt><a class="headerlink" href="#rootpy.io.file.File.set_read_streamer_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TFile::SetReadStreamerInfo(Bool_t readinfo = kTRUE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_readahead_size">
+<tt class="descname">set_readahead_size</tt><a class="headerlink" href="#rootpy.io.file.File.set_readahead_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TFile::SetReadaheadSize(Int_t bufsize = 256000)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_seek_dir">
+<tt class="descname">set_seek_dir</tt><a class="headerlink" href="#rootpy.io.file.File.set_seek_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::SetSeekDir(Long64_t v)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_t_ref_action">
+<tt class="descname">set_t_ref_action</tt><a class="headerlink" href="#rootpy.io.file.File.set_t_ref_action" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::SetTRefAction(TObject* ref, TObject* parent)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_title">
+<tt class="descname">set_title</tt><a class="headerlink" href="#rootpy.io.file.File.set_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TNamed::SetTitle(const char* title = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_unique_id">
+<tt class="descname">set_unique_id</tt><a class="headerlink" href="#rootpy.io.file.File.set_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetUniqueID(UInt_t uid)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.set_writable">
+<tt class="descname">set_writable</tt><a class="headerlink" href="#rootpy.io.file.File.set_writable" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::SetWritable(Bool_t writable = kTRUE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.show_members">
+<tt class="descname">show_members</tt><a class="headerlink" href="#rootpy.io.file.File.show_members" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::ShowMembers(TMemberInspector&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.show_streamer_info">
+<tt class="descname">show_streamer_info</tt><a class="headerlink" href="#rootpy.io.file.File.show_streamer_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::ShowStreamerInfo()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.shrink_cache_file_dir">
+<tt class="descname">shrink_cache_file_dir</tt><a class="headerlink" href="#rootpy.io.file.File.shrink_cache_file_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Bool_t TFile::ShrinkCacheFileDir(Long64_t shrinkSize, Long_t cleanupInteval = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.sizeof">
+<tt class="descname">sizeof</tt><a class="headerlink" href="#rootpy.io.file.File.sizeof" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::Sizeof()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.streamer">
+<tt class="descname">streamer</tt><a class="headerlink" href="#rootpy.io.file.File.streamer" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::Streamer(TBuffer&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.streamer_n_virtual">
+<tt class="descname">streamer_n_virtual</tt><a class="headerlink" href="#rootpy.io.file.File.streamer_n_virtual" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::StreamerNVirtual(TBuffer&amp; ClassDef_StreamerNVirtual_b)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.sum_buffer">
+<tt class="descname">sum_buffer</tt><a class="headerlink" href="#rootpy.io.file.File.sum_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::SumBuffer(Int_t bufsize)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.sys_error">
+<tt class="descname">sys_error</tt><a class="headerlink" href="#rootpy.io.file.File.sys_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SysError(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.test_bit">
+<tt class="descname">test_bit</tt><a class="headerlink" href="#rootpy.io.file.File.test_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::TestBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.test_bits">
+<tt class="descname">test_bits</tt><a class="headerlink" href="#rootpy.io.file.File.test_bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::TestBits(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.use_cache">
+<tt class="descname">use_cache</tt><a class="headerlink" href="#rootpy.io.file.File.use_cache" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::UseCache(Int_t maxCacheSize = 10, Int_t pageSize = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.use_current_style">
+<tt class="descname">use_current_style</tt><a class="headerlink" href="#rootpy.io.file.File.use_current_style" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::UseCurrentStyle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.warning">
+<tt class="descname">warning</tt><a class="headerlink" href="#rootpy.io.file.File.warning" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Warning(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.write">
+<tt class="descname">write</tt><a class="headerlink" href="#rootpy.io.file.File.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TFile::Write(const char* name = 0, Int_t opt = 0, Int_t bufsiz = 0)
+Int_t TFile::Write(const char* name = 0, Int_t opt = 0, Int_t bufsiz = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.write_buffer">
+<tt class="descname">write_buffer</tt><a class="headerlink" href="#rootpy.io.file.File.write_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TFile::WriteBuffer(const char* buf, Int_t len)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.write_dir_header">
+<tt class="descname">write_dir_header</tt><a class="headerlink" href="#rootpy.io.file.File.write_dir_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::WriteDirHeader()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.write_free">
+<tt class="descname">write_free</tt><a class="headerlink" href="#rootpy.io.file.File.write_free" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::WriteFree()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.write_header">
+<tt class="descname">write_header</tt><a class="headerlink" href="#rootpy.io.file.File.write_header" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::WriteHeader()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.write_keys">
+<tt class="descname">write_keys</tt><a class="headerlink" href="#rootpy.io.file.File.write_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TDirectoryFile::WriteKeys()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.write_object_any">
+<tt class="descname">write_object_any</tt><a class="headerlink" href="#rootpy.io.file.File.write_object_any" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::WriteObjectAny(const void* obj, const char* classname, const char* name, Option_t* option = &#8220;&#8221;, Int_t bufsize = 0)
+Int_t TDirectoryFile::WriteObjectAny(const void* obj, const TClass* cl, const char* name, Option_t* option = &#8220;&#8221;, Int_t bufsize = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.write_process_id">
+<tt class="descname">write_process_id</tt><a class="headerlink" href="#rootpy.io.file.File.write_process_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>UShort_t TFile::WriteProcessID(TProcessID* pid)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.write_streamer_info">
+<tt class="descname">write_streamer_info</tt><a class="headerlink" href="#rootpy.io.file.File.write_streamer_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TFile::WriteStreamerInfo()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.io.file.File.write_t_object">
+<tt class="descname">write_t_object</tt><a class="headerlink" href="#rootpy.io.file.File.write_t_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TDirectoryFile::WriteTObject(const TObject* obj, const char* name = 0, Option_t* option = &#8220;&#8221;, Int_t bufsize = 0)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-rootpy.io.utils">
+<span id="utils-module"></span><h2>4.10.3.3. <tt class="xref py py-mod docutils literal"><span class="pre">utils</span></tt> Module<a class="headerlink" href="#module-rootpy.io.utils" title="Permalink to this headline">¶</a></h2>
+<p>This module contains os.path/walk-like
+utilities for the ROOT TFile &#8216;filesystem&#8217;</p>
+<dl class="function">
+<dt id="rootpy.io.utils.cp">
+<tt class="descclassname">rootpy.io.utils.</tt><tt class="descname">cp</tt><big>(</big><em>src</em>, <em>dest_dir</em>, <em>newname=None</em>, <em>exclude=None</em><big>)</big><a class="reference internal" href="../_modules/rootpy/io/utils.html#cp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.io.utils.cp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy an object into another TDirectory.</p>
+<p>[src] or [dest_dir] can either be passed as path strings, or as
+ROOT objects themselves.</p>
+<p>If &lt;src&gt; is a TDirectory, the objects will be copied recursively.</p>
+<p>[exclude] can optionally be a function which takes (path, object_name)
+and if returns True excludes objects from being copied.</p>
+<p>The copied object can optionally be given a [newname].</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rootpy.io.utils.mkdir">
+<tt class="descclassname">rootpy.io.utils.</tt><tt class="descname">mkdir</tt><big>(</big><em>dest_path</em>, <em>recurse=False</em><big>)</big><a class="reference internal" href="../_modules/rootpy/io/utils.html#mkdir"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.io.utils.mkdir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make a new directory relative to the CWD</p>
+<p>If recurse is True, create parent directories as required.</p>
+<p>Return the newly created TDirectory</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rootpy.io.utils.rm">
+<tt class="descclassname">rootpy.io.utils.</tt><tt class="descname">rm</tt><big>(</big><em>path_to_object</em>, <em>cycle=';*'</em><big>)</big><a class="reference internal" href="../_modules/rootpy/io/utils.html#rm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.io.utils.rm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete an object in a TDirectory</p>
+<p>You must pass the path string, relative to the CWD</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rootpy.io.utils.splitfile">
+<tt class="descclassname">rootpy.io.utils.</tt><tt class="descname">splitfile</tt><big>(</big><em>path</em><big>)</big><a class="reference internal" href="../_modules/rootpy/io/utils.html#splitfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.io.utils.splitfile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rootpy.io.utils.walk">
+<tt class="descclassname">rootpy.io.utils.</tt><tt class="descname">walk</tt><big>(</big><em>tdirectory</em>, <em>top=None</em>, <em>path=None</em>, <em>depth=0</em>, <em>maxdepth=-1</em>, <em>class_pattern=None</em><big>)</big><a class="reference internal" href="../_modules/rootpy/io/utils.html#walk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.io.utils.walk" title="Permalink to this definition">¶</a></dt>
+<dd><p>For each directory in the directory tree rooted at top (including top
+itself, but excluding &#8216;.&#8217; and &#8216;..&#8217;), yields a 3-tuple</p>
+<p>dirpath, dirnames, filenames</p>
+<p>dirpath is a string, the path to the directory.  dirnames is a list of the
+names of the subdirectories in dirpath (excluding &#8216;.&#8217; and &#8216;..&#8217;).  filenames
+is a list of the names of the non-directory files/objects in dirpath.  Note
+that the names in the lists are just names, with no path components.  To get
+a full path (which begins with top) to a file or directory in dirpath, do
+os.path.join(dirpath, name).</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+                    
+                        <div id="disqus_thread"></div>
+                        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    
+                </div>
+                <div class="span3">
+                    
+        <div class="sphinxsidebar">
+            <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.10.3. io Package</a><ul>
+<li><a class="reference internal" href="#id1">4.10.3.1. <tt class="docutils literal"><span class="pre">io</span></tt> Package</a></li>
+<li><a class="reference internal" href="#module-rootpy.io.file">4.10.3.2. <tt class="docutils literal"><span class="pre">file</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-rootpy.io.utils">4.10.3.3. <tt class="docutils literal"><span class="pre">utils</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="rootpy.data.html"
+                        title="previous chapter">4.10.2. data Package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="rootpy.logging.html"
+                        title="next chapter">4.10.4. <tt class="docutils literal"><span class="pre">rootpy.logger</span></tt> Package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/modules/rootpy.io.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+            </div>
+        </div>
+                </div>
+            
+        </div>
+    </div>
+    <div class="footer">
+        
+        <div class="container">
+                    &copy;
+                        Copyright 2013, rootpy developers.
+                Created using <a
+                        href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3
+                    .
+                <!--Theme <a href="https://github.com/scotch/sphinx-bootstrap">Sphinx-Bootstrap</a>
+                adapted from
+                <a href="http://twitter.github.com/bootstrap/">Twitter's
+                    Bootstrap</a> by <a href="http://www.scotchmedia.com">Scotch
+                    Media</a> -->
+        </div>
+    </div>
+
+
+    <!-- disqus -->
+    <script type="text/javascript">
+        var disqus_title = '4.10.3. io Package &mdash; rootpy dev documentation';
+        var disqus_identifier ='code' + '.' + "rootpy" + window.location.pathname.replace('/', '.');
+    </script>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = "rootpy"; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+<script type="text/javascript">
+    $('.nav .active').on('click', function () {
+        e.preventDefault()
+        $(this).siblings().toggle()
+    });
+</script>
+
+<!-- plusone -->
+<script type="text/javascript">
+    (function () {
+        var po = document.createElement('script');
+        po.type = 'text/javascript';
+        po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+</script>
+
+<!-- twitter -->
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+
+</body>
+</html>

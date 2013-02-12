@@ -1,0 +1,3714 @@
+
+<!DOCTYPE html><html>
+<head>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8"/>
+    
+        <title>4.10.5.1.2. physics Package &mdash; rootpy dev documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        <script type="text/javascript">
+            var DOCUMENTATION_OPTIONS = {
+                URL_ROOT:'../',
+                VERSION:'dev',
+                COLLAPSE_INDEX:false,
+                FILE_SUFFIX:'.html',
+                HAS_SOURCE:  true
+            };
+        </script>
+            <script type="text/javascript" src="../_static/jquery.js"></script>
+            <script type="text/javascript" src="../_static/underscore.js"></script>
+            <script type="text/javascript" src="../_static/doctools.js"></script>
+            <script type="text/javascript" src="../_static/bootstrap-dropdown.js"></script>
+        <link rel="top" title="rootpy dev documentation" href="../index.html"/>
+            <link rel="up" title="4.10.5. math Package" href="rootpy.math.html"/>
+            <link rel="next" title="4.10.5.1.3. stats Package" href="rootpy.math.stats.html"/>
+            <link rel="prev" title="4.10.5.1.1. linalg Package" href="rootpy.math.linalg.html"/> 
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    
+</head>
+<body>
+
+    <div class="navbar navbar-static-top">
+        <div class="navbar-inner">
+            <div class="container">
+
+    <div class="related">
+        <ul class="nav">
+                <li class=""><a class="brand" href="../index.html">rootpy</a></li>
+                <li>
+                    <a href="../genindex.html"
+                       title="General Index" accesskey="I">index</a>
+                </li>
+                <li>
+                    <a href="../py-modindex.html"
+                       title="Python Module Index" >modules</a>
+                </li>
+                <li>
+                    <a href="rootpy.math.stats.html"
+                       title="4.10.5.1.3. stats Package" accesskey="N">next</a>
+                </li>
+                <li>
+                    <a href="rootpy.math.linalg.html"
+                       title="4.10.5.1.1. linalg Package" accesskey="P">previous</a>
+                </li>
+                <li><a href="../user_guide.html"
+                        >&lt;no title&gt;</a>
+                </li>
+                <li><a href="modules.html"
+                        >4. rootpy Package</a>
+                </li>
+                <li><a href="rootpy.math.html"
+                        accesskey="U">4.10.5. math Package</a>
+                </li> 
+        </ul>
+    </div>
+                <div class="pull-right">
+                    
+        <form class="navbar-search" action="../search.html"
+              method="get">
+            <input type="text" name="q" placeholder="search"/>
+            <input type="hidden" name="check_keywords" value="yes"/>
+            <input type="hidden" name="area" value="default"/>
+        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<ul class="quick-links">
+    <li><strong>Quick links</strong></li>
+    <li>
+        <a href="https://github.com/rootpy/rootpy/">GitHub</a>
+    </li>
+    <li>
+        <a href="https://github.com/rootpy/rootpy/issues?state=open">Issues</a>
+    </li>
+    <li class="divider">&middot;</li>
+    <li>
+        <iframe class="github-btn"
+                src="http://ghbtns.com/github-btn.html?user=rootpy&repo=rootpy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="110px" height="20px"></iframe>
+    </li>
+    <li>
+        <iframe class="github-btn"
+                src="http://ghbtns.com/github-btn.html?user=rootpy&repo=rootpy&type=fork&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="94px" height="20px"></iframe>
+    </li>
+
+    <!--<li class="divider">&middot;</li>
+    <li class="follow-btn">
+        <a href="https://twitter.com/"
+           class="twitter-follow-button" data-width="145px"
+           data-link-color="#0069D6" data-show-count="false">Follow
+            @</a>
+    </li>
+    <li class="tweet-btn">
+        <a href="https://twitter.com/share" class="twitter-share-button"
+           data-url="http://rootpy.org" data-count="horizontal"
+           data-via="twbootstrap"
+           data-related=":Creator of rootpy">Tweet</a>
+       </li>-->
+    <li class="plusone-container">
+        <g:plusone size="medium"></g:plusone>
+    </li>
+</ul>  
+    <div class="container">
+        <div class="content row">
+                <div class="span9">
+                    
+  <div class="section" id="physics-package">
+<h1>4.10.5.1.2. physics Package<a class="headerlink" href="#physics-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-rootpy.math.physics.measure">
+<span id="measure-module"></span><h2>4.10.5.1.2.1. <tt class="xref py py-mod docutils literal"><span class="pre">measure</span></tt> Module<a class="headerlink" href="#module-rootpy.math.physics.measure" title="Permalink to this headline">¶</a></h2>
+<p>A module containing scale factors for physical quantities</p>
+<dl class="function">
+<dt id="rootpy.math.physics.measure.convert">
+<tt class="descclassname">rootpy.math.physics.measure.</tt><tt class="descname">convert</tt><big>(</big><em>origin</em>, <em>target</em><big>)</big><a class="reference internal" href="../_modules/rootpy/math/physics/measure.html#convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.math.physics.measure.convert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the factor required to multiply the
+origin by to express in terms of target</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-rootpy.math.physics.vector">
+<span id="vector-module"></span><h2>4.10.5.1.2.2. <tt class="xref py py-mod docutils literal"><span class="pre">vector</span></tt> Module<a class="headerlink" href="#module-rootpy.math.physics.vector" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rootpy.math.physics.vector.LorentzRotation">
+<em class="property">class </em><tt class="descclassname">rootpy.math.physics.vector.</tt><tt class="descname">LorentzRotation</tt><big>(</big><em>Double_t</em>, <em>Double_t</em>, <em>Double_t</em><big>)</big><a class="reference internal" href="../_modules/rootpy/math/physics/vector.html#LorentzRotation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">rootpy.math.physics.vector._arithmetic_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">rootpy.core._copy_construct_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">rootpy.core._repr_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">rootpy.core._resetable_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">ROOT.TLorentzRotation</span></tt></p>
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.abstract_method">
+<tt class="descname">abstract_method</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.abstract_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::AbstractMethod(const char* method)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.append_pad">
+<tt class="descname">append_pad</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.append_pad" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::AppendPad(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.boost">
+<tt class="descname">boost</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.boost" title="Permalink to this definition">¶</a></dt>
+<dd><p>TLorentzRotation&amp; TLorentzRotation::Boost(Double_t bx, Double_t by, Double_t bz)
+TLorentzRotation&amp; TLorentzRotation::Boost(const TVector3&amp; b)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.browse">
+<tt class="descname">browse</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.browse" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Browse(TBrowser* b)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.class">
+<tt class="descname">class</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.class" title="Permalink to this definition">¶</a></dt>
+<dd><p>static TClass* TLorentzRotation::Class()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.class__name">
+<tt class="descname">class__name</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.class__name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TLorentzRotation::Class_Name()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.class__version">
+<tt class="descname">class__version</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.class__version" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Version_t TLorentzRotation::Class_Version()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.class_name">
+<tt class="descname">class_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.class_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::ClassName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.clear">
+<tt class="descname">clear</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Clear(Option_t* = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.clone">
+<tt class="descname">clone</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::Clone(const char* newname = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.compare">
+<tt class="descname">compare</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.compare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Compare(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.copy">
+<tt class="descname">copy</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Copy(TObject&amp; object)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.decl_file_line">
+<tt class="descname">decl_file_line</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.decl_file_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>static int TLorentzRotation::DeclFileLine()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.decl_file_name">
+<tt class="descname">decl_file_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.decl_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TLorentzRotation::DeclFileName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.delete">
+<tt class="descname">delete</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Delete(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.dictionary">
+<tt class="descname">dictionary</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.dictionary" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TLorentzRotation::Dictionary()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.distanceto_primitive">
+<tt class="descname">distanceto_primitive</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.distanceto_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::DistancetoPrimitive(Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.draw">
+<tt class="descname">draw</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Draw(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.draw_class">
+<tt class="descname">draw_class</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.draw_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::DrawClass()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.draw_clone">
+<tt class="descname">draw_clone</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.draw_clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::DrawClone(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.dump">
+<tt class="descname">dump</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Dump()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.error">
+<tt class="descname">error</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Error(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.execute">
+<tt class="descname">execute</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Execute(const char* method, const char* params, Int_t* error = 0)
+void TObject::Execute(TMethod* method, TObjArray* params, Int_t* error = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.execute_event">
+<tt class="descname">execute_event</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.execute_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::ExecuteEvent(Int_t event, Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.fatal">
+<tt class="descname">fatal</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.fatal" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Fatal(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.find_object">
+<tt class="descname">find_object</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.find_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::FindObject(const char* name)
+TObject* TObject::FindObject(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.get_draw_option">
+<tt class="descname">get_draw_option</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.get_draw_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option_t* TObject::GetDrawOption()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.get_dtor_only">
+<tt class="descname">get_dtor_only</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.get_dtor_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Long_t TObject::GetDtorOnly()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.get_icon_name">
+<tt class="descname">get_icon_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.get_icon_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetIconName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.get_name">
+<tt class="descname">get_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.get_object_info">
+<tt class="descname">get_object_info</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.get_object_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>char* TObject::GetObjectInfo(Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.get_object_stat">
+<tt class="descname">get_object_stat</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.get_object_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Bool_t TObject::GetObjectStat()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.get_option">
+<tt class="descname">get_option</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.get_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option_t* TObject::GetOption()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.get_title">
+<tt class="descname">get_title</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.get_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetTitle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.get_unique_id">
+<tt class="descname">get_unique_id</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.get_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>UInt_t TObject::GetUniqueID()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.handle_timer">
+<tt class="descname">handle_timer</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.handle_timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::HandleTimer(TTimer* timer)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.hash">
+<tt class="descname">hash</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>ULong_t TObject::Hash()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.impl_file_line">
+<tt class="descname">impl_file_line</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.impl_file_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>static int TLorentzRotation::ImplFileLine()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.impl_file_name">
+<tt class="descname">impl_file_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.impl_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TLorentzRotation::ImplFileName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.info">
+<tt class="descname">info</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Info(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.inherits_from">
+<tt class="descname">inherits_from</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.inherits_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::InheritsFrom(const char* classname)
+Bool_t TObject::InheritsFrom(const TClass* cl)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.inspect">
+<tt class="descname">inspect</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.inspect" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Inspect()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.inverse">
+<tt class="descname">inverse</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.inverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>TLorentzRotation TLorentzRotation::Inverse()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.invert">
+<tt class="descname">invert</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.invert" title="Permalink to this definition">¶</a></dt>
+<dd><p>TLorentzRotation&amp; TLorentzRotation::Invert()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.invert_bit">
+<tt class="descname">invert_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.invert_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::InvertBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.is_a">
+<tt class="descname">is_a</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.is_a" title="Permalink to this definition">¶</a></dt>
+<dd><p>TClass* TLorentzRotation::IsA()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.is_equal">
+<tt class="descname">is_equal</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.is_equal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsEqual(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.is_folder">
+<tt class="descname">is_folder</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.is_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsFolder()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.is_identity">
+<tt class="descname">is_identity</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.is_identity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TLorentzRotation::IsIdentity()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.is_on_heap">
+<tt class="descname">is_on_heap</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.is_on_heap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsOnHeap()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.is_sortable">
+<tt class="descname">is_sortable</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.is_sortable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsSortable()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.is_zombie">
+<tt class="descname">is_zombie</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.is_zombie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsZombie()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.matrix_multiplication">
+<tt class="descname">matrix_multiplication</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.matrix_multiplication" title="Permalink to this definition">¶</a></dt>
+<dd><p>TLorentzRotation TLorentzRotation::MatrixMultiplication(const TLorentzRotation&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.may_not_use">
+<tt class="descname">may_not_use</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.may_not_use" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::MayNotUse(const char* method)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.notify">
+<tt class="descname">notify</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.notify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::Notify()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.obsolete">
+<tt class="descname">obsolete</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.obsolete" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Obsolete(const char* method, const char* asOfVers, const char* removedFromVers)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.paint">
+<tt class="descname">paint</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.paint" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Paint(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.pop">
+<tt class="descname">pop</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Pop()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.print">
+<tt class="descname">print</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.print" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Print(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.read">
+<tt class="descname">read</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Read(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.recursive_remove">
+<tt class="descname">recursive_remove</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.recursive_remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::RecursiveRemove(TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.reset_bit">
+<tt class="descname">reset_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.reset_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::ResetBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.rotate">
+<tt class="descname">rotate</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>TLorentzRotation&amp; TLorentzRotation::Rotate(Double_t angle, const TVector3&amp; axis)
+TLorentzRotation&amp; TLorentzRotation::Rotate(Double_t angle, const TVector3* axis)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.rotate_x">
+<tt class="descname">rotate_x</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.rotate_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>TLorentzRotation&amp; TLorentzRotation::RotateX(Double_t angle)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.rotate_y">
+<tt class="descname">rotate_y</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.rotate_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>TLorentzRotation&amp; TLorentzRotation::RotateY(Double_t angle)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.rotate_z">
+<tt class="descname">rotate_z</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.rotate_z" title="Permalink to this definition">¶</a></dt>
+<dd><p>TLorentzRotation&amp; TLorentzRotation::RotateZ(Double_t angle)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.save_as">
+<tt class="descname">save_as</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.save_as" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SaveAs(const char* filename = &#8220;&#8221;, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.save_primitive">
+<tt class="descname">save_primitive</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.save_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SavePrimitive(basic_ostream&lt;char,char_traits&lt;char&gt; &gt;&amp; out, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.set_bit">
+<tt class="descname">set_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.set_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetBit(UInt_t f, Bool_t set)
+void TObject::SetBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.set_draw_option">
+<tt class="descname">set_draw_option</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.set_draw_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetDrawOption(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.set_dtor_only">
+<tt class="descname">set_dtor_only</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.set_dtor_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TObject::SetDtorOnly(void* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.set_object_stat">
+<tt class="descname">set_object_stat</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.set_object_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TObject::SetObjectStat(Bool_t stat)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.set_unique_id">
+<tt class="descname">set_unique_id</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.set_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetUniqueID(UInt_t uid)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.show_members">
+<tt class="descname">show_members</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.show_members" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzRotation::ShowMembers(TMemberInspector&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.streamer">
+<tt class="descname">streamer</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.streamer" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzRotation::Streamer(TBuffer&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.streamer_n_virtual">
+<tt class="descname">streamer_n_virtual</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.streamer_n_virtual" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzRotation::StreamerNVirtual(TBuffer&amp; ClassDef_StreamerNVirtual_b)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.sys_error">
+<tt class="descname">sys_error</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.sys_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SysError(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.test_bit">
+<tt class="descname">test_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.test_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::TestBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.test_bits">
+<tt class="descname">test_bits</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.test_bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::TestBits(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.transform">
+<tt class="descname">transform</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>TLorentzRotation&amp; TLorentzRotation::Transform(const TLorentzRotation&amp; m)
+TLorentzRotation&amp; TLorentzRotation::Transform(const TRotation&amp; m)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.tt">
+<tt class="descname">tt</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.tt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzRotation::TT()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.tx">
+<tt class="descname">tx</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.tx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzRotation::TX()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.ty">
+<tt class="descname">ty</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.ty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzRotation::TY()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.tz">
+<tt class="descname">tz</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.tz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzRotation::TZ()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.use_current_style">
+<tt class="descname">use_current_style</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.use_current_style" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::UseCurrentStyle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.vector_multiplication">
+<tt class="descname">vector_multiplication</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.vector_multiplication" title="Permalink to this definition">¶</a></dt>
+<dd><p>TLorentzVector TLorentzRotation::VectorMultiplication(const TLorentzVector&amp; p)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.warning">
+<tt class="descname">warning</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.warning" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Warning(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.write">
+<tt class="descname">write</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Write(const char* name = 0, Int_t option = 0, Int_t bufsize = 0)
+Int_t TObject::Write(const char* name = 0, Int_t option = 0, Int_t bufsize = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.xt">
+<tt class="descname">xt</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.xt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzRotation::XT()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.xx">
+<tt class="descname">xx</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.xx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzRotation::XX()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.xy">
+<tt class="descname">xy</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzRotation::XY()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.xz">
+<tt class="descname">xz</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.xz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzRotation::XZ()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.yt">
+<tt class="descname">yt</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.yt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzRotation::YT()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.yx">
+<tt class="descname">yx</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.yx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzRotation::YX()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.yy">
+<tt class="descname">yy</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.yy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzRotation::YY()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.yz">
+<tt class="descname">yz</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.yz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzRotation::YZ()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.zt">
+<tt class="descname">zt</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.zt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzRotation::ZT()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.zx">
+<tt class="descname">zx</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.zx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzRotation::ZX()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.zy">
+<tt class="descname">zy</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.zy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzRotation::ZY()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzRotation.zz">
+<tt class="descname">zz</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzRotation.zz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzRotation::ZZ()</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.math.physics.vector.LorentzVector">
+<em class="property">class </em><tt class="descclassname">rootpy.math.physics.vector.</tt><tt class="descname">LorentzVector</tt><big>(</big><em>Double_t x=0.0</em>, <em>Double_t y=0.0</em>, <em>Double_t z=0.0</em>, <em>Double_t t=0.0</em><big>)</big><a class="reference internal" href="../_modules/rootpy/math/physics/vector.html#LorentzVector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">rootpy.math.physics.vector._arithmetic_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">rootpy.core._copy_construct_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">rootpy.core._repr_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">rootpy.core._resetable_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">ROOT.TLorentzVector</span></tt></p>
+<dl class="method">
+<dt id="rootpy.math.physics.vector.LorentzVector.Angle">
+<tt class="descname">Angle</tt><big>(</big><em>other</em><big>)</big><a class="reference internal" href="../_modules/rootpy/math/physics/vector.html#LorentzVector.Angle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.Angle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.math.physics.vector.LorentzVector.BoostVector">
+<tt class="descname">BoostVector</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/math/physics/vector.html#LorentzVector.BoostVector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.BoostVector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.abstract_method">
+<tt class="descname">abstract_method</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.abstract_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::AbstractMethod(const char* method)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.math.physics.vector.LorentzVector.angle">
+<tt class="descname">angle</tt><big>(</big><em>other</em><big>)</big><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.angle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.append_pad">
+<tt class="descname">append_pad</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.append_pad" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::AppendPad(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.beta">
+<tt class="descname">beta</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.beta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Beta()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.boost">
+<tt class="descname">boost</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.boost" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::Boost(Double_t, Double_t, Double_t)
+void TLorentzVector::Boost(const TVector3&amp; b)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.math.physics.vector.LorentzVector.boost_vector">
+<tt class="descname">boost_vector</tt><big>(</big><big>)</big><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.boost_vector" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.browse">
+<tt class="descname">browse</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.browse" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Browse(TBrowser* b)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.class">
+<tt class="descname">class</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.class" title="Permalink to this definition">¶</a></dt>
+<dd><p>static TClass* TLorentzVector::Class()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.class__name">
+<tt class="descname">class__name</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.class__name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TLorentzVector::Class_Name()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.class__version">
+<tt class="descname">class__version</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.class__version" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Version_t TLorentzVector::Class_Version()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.class_name">
+<tt class="descname">class_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.class_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::ClassName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.clear">
+<tt class="descname">clear</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Clear(Option_t* = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.clone">
+<tt class="descname">clone</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::Clone(const char* newname = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.compare">
+<tt class="descname">compare</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.compare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Compare(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.copy">
+<tt class="descname">copy</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Copy(TObject&amp; object)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.cos_theta">
+<tt class="descname">cos_theta</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.cos_theta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::CosTheta()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.decl_file_line">
+<tt class="descname">decl_file_line</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.decl_file_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>static int TLorentzVector::DeclFileLine()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.decl_file_name">
+<tt class="descname">decl_file_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.decl_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TLorentzVector::DeclFileName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.delete">
+<tt class="descname">delete</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Delete(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.delta_phi">
+<tt class="descname">delta_phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.delta_phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::DeltaPhi(const TLorentzVector&amp; v)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.delta_r">
+<tt class="descname">delta_r</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.delta_r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::DeltaR(const TLorentzVector&amp; v)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.dictionary">
+<tt class="descname">dictionary</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.dictionary" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TLorentzVector::Dictionary()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.distanceto_primitive">
+<tt class="descname">distanceto_primitive</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.distanceto_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::DistancetoPrimitive(Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.dot">
+<tt class="descname">dot</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Dot(const TLorentzVector&amp; q)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.dr_eta_phi">
+<tt class="descname">dr_eta_phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.dr_eta_phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::DrEtaPhi(const TLorentzVector&amp; v)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.draw">
+<tt class="descname">draw</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Draw(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.draw_class">
+<tt class="descname">draw_class</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.draw_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::DrawClass()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.draw_clone">
+<tt class="descname">draw_clone</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.draw_clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::DrawClone(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.dump">
+<tt class="descname">dump</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Dump()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.e">
+<tt class="descname">e</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.e" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::E()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.energy">
+<tt class="descname">energy</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.energy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Energy()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.error">
+<tt class="descname">error</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Error(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.et">
+<tt class="descname">et</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.et" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Et()
+Double_t TLorentzVector::Et(const TVector3&amp; v)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.et2">
+<tt class="descname">et2</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.et2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Et2()
+Double_t TLorentzVector::Et2(const TVector3&amp; v)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.eta">
+<tt class="descname">eta</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.eta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Eta()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.eta_phi_vector">
+<tt class="descname">eta_phi_vector</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.eta_phi_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>TVector2 TLorentzVector::EtaPhiVector()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.execute">
+<tt class="descname">execute</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Execute(const char* method, const char* params, Int_t* error = 0)
+void TObject::Execute(TMethod* method, TObjArray* params, Int_t* error = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.execute_event">
+<tt class="descname">execute_event</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.execute_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::ExecuteEvent(Int_t event, Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.fatal">
+<tt class="descname">fatal</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.fatal" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Fatal(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.find_object">
+<tt class="descname">find_object</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.find_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::FindObject(const char* name)
+TObject* TObject::FindObject(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.gamma">
+<tt class="descname">gamma</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.gamma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Gamma()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.get_draw_option">
+<tt class="descname">get_draw_option</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.get_draw_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option_t* TObject::GetDrawOption()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.get_dtor_only">
+<tt class="descname">get_dtor_only</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.get_dtor_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Long_t TObject::GetDtorOnly()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.get_icon_name">
+<tt class="descname">get_icon_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.get_icon_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetIconName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.get_name">
+<tt class="descname">get_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.get_object_info">
+<tt class="descname">get_object_info</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.get_object_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>char* TObject::GetObjectInfo(Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.get_object_stat">
+<tt class="descname">get_object_stat</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.get_object_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Bool_t TObject::GetObjectStat()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.get_option">
+<tt class="descname">get_option</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.get_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option_t* TObject::GetOption()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.get_title">
+<tt class="descname">get_title</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.get_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetTitle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.get_unique_id">
+<tt class="descname">get_unique_id</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.get_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>UInt_t TObject::GetUniqueID()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.get_xyzt">
+<tt class="descname">get_xyzt</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.get_xyzt" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::GetXYZT(Double_t* carray)
+void TLorentzVector::GetXYZT(Float_t* carray)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.handle_timer">
+<tt class="descname">handle_timer</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.handle_timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::HandleTimer(TTimer* timer)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.hash">
+<tt class="descname">hash</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>ULong_t TObject::Hash()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.impl_file_line">
+<tt class="descname">impl_file_line</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.impl_file_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>static int TLorentzVector::ImplFileLine()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.impl_file_name">
+<tt class="descname">impl_file_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.impl_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TLorentzVector::ImplFileName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.info">
+<tt class="descname">info</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Info(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.inherits_from">
+<tt class="descname">inherits_from</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.inherits_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::InheritsFrom(const char* classname)
+Bool_t TObject::InheritsFrom(const TClass* cl)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.inspect">
+<tt class="descname">inspect</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.inspect" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Inspect()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.invert_bit">
+<tt class="descname">invert_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.invert_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::InvertBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.is_a">
+<tt class="descname">is_a</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.is_a" title="Permalink to this definition">¶</a></dt>
+<dd><p>TClass* TLorentzVector::IsA()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.is_equal">
+<tt class="descname">is_equal</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.is_equal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsEqual(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.is_folder">
+<tt class="descname">is_folder</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.is_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsFolder()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.is_on_heap">
+<tt class="descname">is_on_heap</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.is_on_heap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsOnHeap()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.is_sortable">
+<tt class="descname">is_sortable</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.is_sortable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsSortable()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.is_zombie">
+<tt class="descname">is_zombie</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.is_zombie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsZombie()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.m">
+<tt class="descname">m</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.m" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::M()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.m2">
+<tt class="descname">m2</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.m2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::M2()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.mag">
+<tt class="descname">mag</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.mag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Mag()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.mag2">
+<tt class="descname">mag2</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.mag2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Mag2()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.may_not_use">
+<tt class="descname">may_not_use</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.may_not_use" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::MayNotUse(const char* method)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.minus">
+<tt class="descname">minus</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.minus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Minus()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.mt">
+<tt class="descname">mt</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.mt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Mt()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.mt2">
+<tt class="descname">mt2</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.mt2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Mt2()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.notify">
+<tt class="descname">notify</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.notify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::Notify()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.obsolete">
+<tt class="descname">obsolete</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.obsolete" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Obsolete(const char* method, const char* asOfVers, const char* removedFromVers)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.p">
+<tt class="descname">p</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::P()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.paint">
+<tt class="descname">paint</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.paint" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Paint(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.perp">
+<tt class="descname">perp</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.perp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Perp()
+Double_t TLorentzVector::Perp(const TVector3&amp; v)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.perp2">
+<tt class="descname">perp2</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.perp2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Perp2()
+Double_t TLorentzVector::Perp2(const TVector3&amp; v)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.phi">
+<tt class="descname">phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Phi()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.plus">
+<tt class="descname">plus</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.plus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Plus()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.pop">
+<tt class="descname">pop</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Pop()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.print">
+<tt class="descname">print</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.print" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::Print(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.pseudo_rapidity">
+<tt class="descname">pseudo_rapidity</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.pseudo_rapidity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::PseudoRapidity()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.pt">
+<tt class="descname">pt</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.pt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Pt()
+Double_t TLorentzVector::Pt(const TVector3&amp; v)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.px">
+<tt class="descname">px</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.px" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Px()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.py">
+<tt class="descname">py</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.py" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Py()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.pz">
+<tt class="descname">pz</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.pz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Pz()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.rapidity">
+<tt class="descname">rapidity</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.rapidity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Rapidity()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.read">
+<tt class="descname">read</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Read(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.recursive_remove">
+<tt class="descname">recursive_remove</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.recursive_remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::RecursiveRemove(TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.reset_bit">
+<tt class="descname">reset_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.reset_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::ResetBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.rho">
+<tt class="descname">rho</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.rho" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Rho()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.rotate">
+<tt class="descname">rotate</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::Rotate(Double_t a, const TVector3&amp; v)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.rotate_uz">
+<tt class="descname">rotate_uz</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.rotate_uz" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::RotateUz(TVector3&amp; newUzVector)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.rotate_x">
+<tt class="descname">rotate_x</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.rotate_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::RotateX(Double_t angle)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.rotate_y">
+<tt class="descname">rotate_y</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.rotate_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::RotateY(Double_t angle)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.rotate_z">
+<tt class="descname">rotate_z</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.rotate_z" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::RotateZ(Double_t angle)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.save_as">
+<tt class="descname">save_as</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.save_as" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SaveAs(const char* filename = &#8220;&#8221;, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.save_primitive">
+<tt class="descname">save_primitive</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.save_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SavePrimitive(basic_ostream&lt;char,char_traits&lt;char&gt; &gt;&amp; out, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_bit">
+<tt class="descname">set_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetBit(UInt_t f, Bool_t set)
+void TObject::SetBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_draw_option">
+<tt class="descname">set_draw_option</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_draw_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetDrawOption(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_dtor_only">
+<tt class="descname">set_dtor_only</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_dtor_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TObject::SetDtorOnly(void* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_e">
+<tt class="descname">set_e</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_e" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetE(Double_t a)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_object_stat">
+<tt class="descname">set_object_stat</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_object_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TObject::SetObjectStat(Bool_t stat)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_perp">
+<tt class="descname">set_perp</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_perp" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetPerp(Double_t r)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_phi">
+<tt class="descname">set_phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetPhi(Double_t phi)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_pt_eta_phi_e">
+<tt class="descname">set_pt_eta_phi_e</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_pt_eta_phi_e" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetPtEtaPhiE(Double_t pt, Double_t eta, Double_t phi, Double_t e)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_pt_eta_phi_m">
+<tt class="descname">set_pt_eta_phi_m</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_pt_eta_phi_m" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetPtEtaPhiM(Double_t pt, Double_t eta, Double_t phi, Double_t m)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_px">
+<tt class="descname">set_px</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_px" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetPx(Double_t a)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_px_py_pz_e">
+<tt class="descname">set_px_py_pz_e</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_px_py_pz_e" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetPxPyPzE(Double_t px, Double_t py, Double_t pz, Double_t e)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_py">
+<tt class="descname">set_py</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_py" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetPy(Double_t a)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_pz">
+<tt class="descname">set_pz</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_pz" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetPz(Double_t a)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_rho">
+<tt class="descname">set_rho</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_rho" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetRho(Double_t rho)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_t">
+<tt class="descname">set_t</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_t" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetT(Double_t a)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_theta">
+<tt class="descname">set_theta</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_theta" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetTheta(Double_t th)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_unique_id">
+<tt class="descname">set_unique_id</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetUniqueID(UInt_t uid)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_vect">
+<tt class="descname">set_vect</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_vect" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetVect(const TVector3&amp; p)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_vect_m">
+<tt class="descname">set_vect_m</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_vect_m" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetVectM(const TVector3&amp; spatial, Double_t mass)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_vect_mag">
+<tt class="descname">set_vect_mag</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_vect_mag" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetVectMag(const TVector3&amp; spatial, Double_t magnitude)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_x">
+<tt class="descname">set_x</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetX(Double_t a)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_xyzm">
+<tt class="descname">set_xyzm</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_xyzm" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetXYZM(Double_t x, Double_t y, Double_t z, Double_t m)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_xyzt">
+<tt class="descname">set_xyzt</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_xyzt" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetXYZT(Double_t x, Double_t y, Double_t z, Double_t t)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_y">
+<tt class="descname">set_y</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetY(Double_t a)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.set_z">
+<tt class="descname">set_z</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.set_z" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::SetZ(Double_t a)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.show_members">
+<tt class="descname">show_members</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.show_members" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::ShowMembers(TMemberInspector&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.streamer">
+<tt class="descname">streamer</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.streamer" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::Streamer(TBuffer&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.streamer_n_virtual">
+<tt class="descname">streamer_n_virtual</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.streamer_n_virtual" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TLorentzVector::StreamerNVirtual(TBuffer&amp; ClassDef_StreamerNVirtual_b)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.sys_error">
+<tt class="descname">sys_error</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.sys_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SysError(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.t">
+<tt class="descname">t</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.t" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::T()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.test_bit">
+<tt class="descname">test_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.test_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::TestBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.test_bits">
+<tt class="descname">test_bits</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.test_bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::TestBits(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.theta">
+<tt class="descname">theta</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.theta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Theta()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.transform">
+<tt class="descname">transform</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>TLorentzVector&amp; TLorentzVector::Transform(const TRotation&amp; m)
+TLorentzVector&amp; TLorentzVector::Transform(const TLorentzRotation&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.use_current_style">
+<tt class="descname">use_current_style</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.use_current_style" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::UseCurrentStyle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.vect">
+<tt class="descname">vect</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.vect" title="Permalink to this definition">¶</a></dt>
+<dd><p>TVector3 TLorentzVector::Vect()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.warning">
+<tt class="descname">warning</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.warning" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Warning(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.write">
+<tt class="descname">write</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Write(const char* name = 0, Int_t option = 0, Int_t bufsize = 0)
+Int_t TObject::Write(const char* name = 0, Int_t option = 0, Int_t bufsize = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.x">
+<tt class="descname">x</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::X()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.y">
+<tt class="descname">y</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Y()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.LorentzVector.z">
+<tt class="descname">z</tt><a class="headerlink" href="#rootpy.math.physics.vector.LorentzVector.z" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TLorentzVector::Z()</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.math.physics.vector.Rotation">
+<em class="property">class </em><tt class="descclassname">rootpy.math.physics.vector.</tt><tt class="descname">Rotation</tt><big>(</big><em>const TRotation&amp;</em><big>)</big><a class="reference internal" href="../_modules/rootpy/math/physics/vector.html#Rotation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.math.physics.vector.Rotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">rootpy.math.physics.vector._arithmetic_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">rootpy.core._copy_construct_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">rootpy.core._repr_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">rootpy.core._resetable_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">ROOT.TRotation</span></tt></p>
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.abstract_method">
+<tt class="descname">abstract_method</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.abstract_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::AbstractMethod(const char* method)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.angle_axis">
+<tt class="descname">angle_axis</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.angle_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TRotation::AngleAxis(Double_t&amp;, TVector3&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.append_pad">
+<tt class="descname">append_pad</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.append_pad" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::AppendPad(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.browse">
+<tt class="descname">browse</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.browse" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Browse(TBrowser* b)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.class">
+<tt class="descname">class</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.class" title="Permalink to this definition">¶</a></dt>
+<dd><p>static TClass* TRotation::Class()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.class__name">
+<tt class="descname">class__name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.class__name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TRotation::Class_Name()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.class__version">
+<tt class="descname">class__version</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.class__version" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Version_t TRotation::Class_Version()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.class_name">
+<tt class="descname">class_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.class_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::ClassName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.clear">
+<tt class="descname">clear</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Clear(Option_t* = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.clone">
+<tt class="descname">clone</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::Clone(const char* newname = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.compare">
+<tt class="descname">compare</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.compare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Compare(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.copy">
+<tt class="descname">copy</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Copy(TObject&amp; object)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.decl_file_line">
+<tt class="descname">decl_file_line</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.decl_file_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>static int TRotation::DeclFileLine()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.decl_file_name">
+<tt class="descname">decl_file_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.decl_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TRotation::DeclFileName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.delete">
+<tt class="descname">delete</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Delete(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.dictionary">
+<tt class="descname">dictionary</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.dictionary" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TRotation::Dictionary()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.distanceto_primitive">
+<tt class="descname">distanceto_primitive</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.distanceto_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::DistancetoPrimitive(Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.draw">
+<tt class="descname">draw</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Draw(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.draw_class">
+<tt class="descname">draw_class</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.draw_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::DrawClass()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.draw_clone">
+<tt class="descname">draw_clone</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.draw_clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::DrawClone(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.dump">
+<tt class="descname">dump</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Dump()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.error">
+<tt class="descname">error</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Error(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.execute">
+<tt class="descname">execute</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Execute(const char* method, const char* params, Int_t* error = 0)
+void TObject::Execute(TMethod* method, TObjArray* params, Int_t* error = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.execute_event">
+<tt class="descname">execute_event</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.execute_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::ExecuteEvent(Int_t event, Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.fatal">
+<tt class="descname">fatal</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.fatal" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Fatal(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.find_object">
+<tt class="descname">find_object</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.find_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::FindObject(const char* name)
+TObject* TObject::FindObject(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.get_draw_option">
+<tt class="descname">get_draw_option</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.get_draw_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option_t* TObject::GetDrawOption()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.get_dtor_only">
+<tt class="descname">get_dtor_only</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.get_dtor_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Long_t TObject::GetDtorOnly()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.get_icon_name">
+<tt class="descname">get_icon_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.get_icon_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetIconName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.get_name">
+<tt class="descname">get_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.get_object_info">
+<tt class="descname">get_object_info</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.get_object_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>char* TObject::GetObjectInfo(Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.get_object_stat">
+<tt class="descname">get_object_stat</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.get_object_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Bool_t TObject::GetObjectStat()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.get_option">
+<tt class="descname">get_option</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.get_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option_t* TObject::GetOption()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.get_title">
+<tt class="descname">get_title</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.get_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetTitle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.get_unique_id">
+<tt class="descname">get_unique_id</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.get_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>UInt_t TObject::GetUniqueID()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.get_x_phi">
+<tt class="descname">get_x_phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.get_x_phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::GetXPhi()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.get_x_psi">
+<tt class="descname">get_x_psi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.get_x_psi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::GetXPsi()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.get_x_theta">
+<tt class="descname">get_x_theta</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.get_x_theta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::GetXTheta()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.get_y_phi">
+<tt class="descname">get_y_phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.get_y_phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::GetYPhi()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.get_y_psi">
+<tt class="descname">get_y_psi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.get_y_psi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::GetYPsi()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.get_y_theta">
+<tt class="descname">get_y_theta</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.get_y_theta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::GetYTheta()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.handle_timer">
+<tt class="descname">handle_timer</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.handle_timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::HandleTimer(TTimer* timer)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.hash">
+<tt class="descname">hash</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>ULong_t TObject::Hash()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.impl_file_line">
+<tt class="descname">impl_file_line</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.impl_file_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>static int TRotation::ImplFileLine()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.impl_file_name">
+<tt class="descname">impl_file_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.impl_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TRotation::ImplFileName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.info">
+<tt class="descname">info</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Info(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.inherits_from">
+<tt class="descname">inherits_from</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.inherits_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::InheritsFrom(const char* classname)
+Bool_t TObject::InheritsFrom(const TClass* cl)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.inspect">
+<tt class="descname">inspect</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.inspect" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Inspect()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.inverse">
+<tt class="descname">inverse</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.inverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRotation TRotation::Inverse()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.invert">
+<tt class="descname">invert</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.invert" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRotation&amp; TRotation::Invert()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.invert_bit">
+<tt class="descname">invert_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.invert_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::InvertBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.is_a">
+<tt class="descname">is_a</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.is_a" title="Permalink to this definition">¶</a></dt>
+<dd><p>TClass* TRotation::IsA()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.is_equal">
+<tt class="descname">is_equal</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.is_equal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsEqual(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.is_folder">
+<tt class="descname">is_folder</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.is_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsFolder()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.is_identity">
+<tt class="descname">is_identity</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.is_identity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TRotation::IsIdentity()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.is_on_heap">
+<tt class="descname">is_on_heap</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.is_on_heap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsOnHeap()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.is_sortable">
+<tt class="descname">is_sortable</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.is_sortable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsSortable()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.is_zombie">
+<tt class="descname">is_zombie</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.is_zombie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsZombie()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.make_basis">
+<tt class="descname">make_basis</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.make_basis" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TRotation::MakeBasis(TVector3&amp; xAxis, TVector3&amp; yAxis, TVector3&amp; zAxis)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.may_not_use">
+<tt class="descname">may_not_use</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.may_not_use" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::MayNotUse(const char* method)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.notify">
+<tt class="descname">notify</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.notify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::Notify()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.obsolete">
+<tt class="descname">obsolete</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.obsolete" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Obsolete(const char* method, const char* asOfVers, const char* removedFromVers)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.paint">
+<tt class="descname">paint</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.paint" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Paint(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.phi_x">
+<tt class="descname">phi_x</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.phi_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::PhiX()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.phi_y">
+<tt class="descname">phi_y</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.phi_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::PhiY()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.phi_z">
+<tt class="descname">phi_z</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.phi_z" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::PhiZ()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.pop">
+<tt class="descname">pop</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Pop()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.print">
+<tt class="descname">print</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.print" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Print(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.read">
+<tt class="descname">read</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Read(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.recursive_remove">
+<tt class="descname">recursive_remove</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.recursive_remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::RecursiveRemove(TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.reset_bit">
+<tt class="descname">reset_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.reset_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::ResetBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.rotate">
+<tt class="descname">rotate</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRotation&amp; TRotation::Rotate(Double_t, const TVector3&amp;)
+TRotation&amp; TRotation::Rotate(Double_t psi, const TVector3* p)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.rotate_axes">
+<tt class="descname">rotate_axes</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.rotate_axes" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRotation&amp; TRotation::RotateAxes(const TVector3&amp; newX, const TVector3&amp; newY, const TVector3&amp; newZ)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.rotate_x">
+<tt class="descname">rotate_x</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.rotate_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRotation&amp; TRotation::RotateX(Double_t)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.rotate_x_euler_angles">
+<tt class="descname">rotate_x_euler_angles</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.rotate_x_euler_angles" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRotation&amp; TRotation::RotateXEulerAngles(Double_t phi, Double_t theta, Double_t psi)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.rotate_y">
+<tt class="descname">rotate_y</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.rotate_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRotation&amp; TRotation::RotateY(Double_t)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.rotate_y_euler_angles">
+<tt class="descname">rotate_y_euler_angles</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.rotate_y_euler_angles" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRotation&amp; TRotation::RotateYEulerAngles(Double_t phi, Double_t theta, Double_t psi)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.rotate_z">
+<tt class="descname">rotate_z</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.rotate_z" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRotation&amp; TRotation::RotateZ(Double_t)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.save_as">
+<tt class="descname">save_as</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.save_as" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SaveAs(const char* filename = &#8220;&#8221;, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.save_primitive">
+<tt class="descname">save_primitive</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.save_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SavePrimitive(basic_ostream&lt;char,char_traits&lt;char&gt; &gt;&amp; out, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_bit">
+<tt class="descname">set_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetBit(UInt_t f, Bool_t set)
+void TObject::SetBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_draw_option">
+<tt class="descname">set_draw_option</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_draw_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetDrawOption(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_dtor_only">
+<tt class="descname">set_dtor_only</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_dtor_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TObject::SetDtorOnly(void* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_object_stat">
+<tt class="descname">set_object_stat</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_object_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TObject::SetObjectStat(Bool_t stat)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_to_identity">
+<tt class="descname">set_to_identity</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_to_identity" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRotation&amp; TRotation::SetToIdentity()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_unique_id">
+<tt class="descname">set_unique_id</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetUniqueID(UInt_t uid)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_x_axis">
+<tt class="descname">set_x_axis</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_x_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRotation&amp; TRotation::SetXAxis(const TVector3&amp; axis)
+TRotation&amp; TRotation::SetXAxis(const TVector3&amp; axis, const TVector3&amp; xyPlane)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_x_euler_angles">
+<tt class="descname">set_x_euler_angles</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_x_euler_angles" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRotation&amp; TRotation::SetXEulerAngles(Double_t phi, Double_t theta, Double_t psi)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_x_phi">
+<tt class="descname">set_x_phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_x_phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TRotation::SetXPhi(Double_t)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_x_psi">
+<tt class="descname">set_x_psi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_x_psi" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TRotation::SetXPsi(Double_t)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_x_theta">
+<tt class="descname">set_x_theta</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_x_theta" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TRotation::SetXTheta(Double_t)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_y_axis">
+<tt class="descname">set_y_axis</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_y_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRotation&amp; TRotation::SetYAxis(const TVector3&amp; axis)
+TRotation&amp; TRotation::SetYAxis(const TVector3&amp; axis, const TVector3&amp; yzPlane)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_y_euler_angles">
+<tt class="descname">set_y_euler_angles</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_y_euler_angles" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRotation&amp; TRotation::SetYEulerAngles(Double_t phi, Double_t theta, Double_t psi)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_y_phi">
+<tt class="descname">set_y_phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_y_phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TRotation::SetYPhi(Double_t)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_y_psi">
+<tt class="descname">set_y_psi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_y_psi" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TRotation::SetYPsi(Double_t)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_y_theta">
+<tt class="descname">set_y_theta</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_y_theta" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TRotation::SetYTheta(Double_t)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.set_z_axis">
+<tt class="descname">set_z_axis</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.set_z_axis" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRotation&amp; TRotation::SetZAxis(const TVector3&amp; axis)
+TRotation&amp; TRotation::SetZAxis(const TVector3&amp; axis, const TVector3&amp; zxPlane)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.show_members">
+<tt class="descname">show_members</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.show_members" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TRotation::ShowMembers(TMemberInspector&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.streamer">
+<tt class="descname">streamer</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.streamer" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TRotation::Streamer(TBuffer&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.streamer_n_virtual">
+<tt class="descname">streamer_n_virtual</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.streamer_n_virtual" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TRotation::StreamerNVirtual(TBuffer&amp; ClassDef_StreamerNVirtual_b)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.sys_error">
+<tt class="descname">sys_error</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.sys_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SysError(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.test_bit">
+<tt class="descname">test_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.test_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::TestBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.test_bits">
+<tt class="descname">test_bits</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.test_bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::TestBits(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.theta_x">
+<tt class="descname">theta_x</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.theta_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::ThetaX()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.theta_y">
+<tt class="descname">theta_y</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.theta_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::ThetaY()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.theta_z">
+<tt class="descname">theta_z</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.theta_z" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::ThetaZ()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.transform">
+<tt class="descname">transform</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>TRotation&amp; TRotation::Transform(const TRotation&amp; m)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.use_current_style">
+<tt class="descname">use_current_style</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.use_current_style" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::UseCurrentStyle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.warning">
+<tt class="descname">warning</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.warning" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Warning(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.write">
+<tt class="descname">write</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Write(const char* name = 0, Int_t option = 0, Int_t bufsize = 0)
+Int_t TObject::Write(const char* name = 0, Int_t option = 0, Int_t bufsize = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.xx">
+<tt class="descname">xx</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.xx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::XX()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.xy">
+<tt class="descname">xy</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::XY()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.xz">
+<tt class="descname">xz</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.xz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::XZ()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.yx">
+<tt class="descname">yx</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.yx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::YX()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.yy">
+<tt class="descname">yy</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.yy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::YY()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.yz">
+<tt class="descname">yz</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.yz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::YZ()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.zx">
+<tt class="descname">zx</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.zx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::ZX()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.zy">
+<tt class="descname">zy</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.zy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::ZY()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Rotation.zz">
+<tt class="descname">zz</tt><a class="headerlink" href="#rootpy.math.physics.vector.Rotation.zz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TRotation::ZZ()</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.math.physics.vector.Vector2">
+<em class="property">class </em><tt class="descclassname">rootpy.math.physics.vector.</tt><tt class="descname">Vector2</tt><big>(</big><em>Double_t x0</em>, <em>Double_t y0</em><big>)</big><a class="reference internal" href="../_modules/rootpy/math/physics/vector.html#Vector2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.math.physics.vector.Vector2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">rootpy.math.physics.vector._arithmetic_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">rootpy.core._copy_construct_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">rootpy.core._resetable_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">rootpy.core._repr_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">ROOT.TVector2</span></tt></p>
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.abstract_method">
+<tt class="descname">abstract_method</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.abstract_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::AbstractMethod(const char* method)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.append_pad">
+<tt class="descname">append_pad</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.append_pad" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::AppendPad(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.browse">
+<tt class="descname">browse</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.browse" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Browse(TBrowser* b)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.class">
+<tt class="descname">class</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.class" title="Permalink to this definition">¶</a></dt>
+<dd><p>static TClass* TVector2::Class()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.class__name">
+<tt class="descname">class__name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.class__name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TVector2::Class_Name()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.class__version">
+<tt class="descname">class__version</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.class__version" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Version_t TVector2::Class_Version()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.class_name">
+<tt class="descname">class_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.class_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::ClassName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.clear">
+<tt class="descname">clear</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Clear(Option_t* = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.clone">
+<tt class="descname">clone</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::Clone(const char* newname = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.compare">
+<tt class="descname">compare</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.compare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Compare(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.copy">
+<tt class="descname">copy</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Copy(TObject&amp; object)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.decl_file_line">
+<tt class="descname">decl_file_line</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.decl_file_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>static int TVector2::DeclFileLine()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.decl_file_name">
+<tt class="descname">decl_file_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.decl_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TVector2::DeclFileName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.delete">
+<tt class="descname">delete</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Delete(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.delta_phi">
+<tt class="descname">delta_phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.delta_phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector2::DeltaPhi(const TVector2&amp; v)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.dictionary">
+<tt class="descname">dictionary</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.dictionary" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TVector2::Dictionary()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.distanceto_primitive">
+<tt class="descname">distanceto_primitive</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.distanceto_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::DistancetoPrimitive(Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.draw">
+<tt class="descname">draw</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Draw(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.draw_class">
+<tt class="descname">draw_class</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.draw_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::DrawClass()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.draw_clone">
+<tt class="descname">draw_clone</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.draw_clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::DrawClone(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.dump">
+<tt class="descname">dump</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Dump()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.error">
+<tt class="descname">error</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Error(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.execute">
+<tt class="descname">execute</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Execute(const char* method, const char* params, Int_t* error = 0)
+void TObject::Execute(TMethod* method, TObjArray* params, Int_t* error = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.execute_event">
+<tt class="descname">execute_event</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.execute_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::ExecuteEvent(Int_t event, Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.fatal">
+<tt class="descname">fatal</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.fatal" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Fatal(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.find_object">
+<tt class="descname">find_object</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.find_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::FindObject(const char* name)
+TObject* TObject::FindObject(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.get_draw_option">
+<tt class="descname">get_draw_option</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.get_draw_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option_t* TObject::GetDrawOption()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.get_dtor_only">
+<tt class="descname">get_dtor_only</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.get_dtor_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Long_t TObject::GetDtorOnly()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.get_icon_name">
+<tt class="descname">get_icon_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.get_icon_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetIconName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.get_name">
+<tt class="descname">get_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.get_object_info">
+<tt class="descname">get_object_info</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.get_object_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>char* TObject::GetObjectInfo(Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.get_object_stat">
+<tt class="descname">get_object_stat</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.get_object_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Bool_t TObject::GetObjectStat()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.get_option">
+<tt class="descname">get_option</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.get_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option_t* TObject::GetOption()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.get_title">
+<tt class="descname">get_title</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.get_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetTitle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.get_unique_id">
+<tt class="descname">get_unique_id</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.get_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>UInt_t TObject::GetUniqueID()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.handle_timer">
+<tt class="descname">handle_timer</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.handle_timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::HandleTimer(TTimer* timer)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.hash">
+<tt class="descname">hash</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>ULong_t TObject::Hash()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.impl_file_line">
+<tt class="descname">impl_file_line</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.impl_file_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>static int TVector2::ImplFileLine()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.impl_file_name">
+<tt class="descname">impl_file_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.impl_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TVector2::ImplFileName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.info">
+<tt class="descname">info</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Info(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.inherits_from">
+<tt class="descname">inherits_from</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.inherits_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::InheritsFrom(const char* classname)
+Bool_t TObject::InheritsFrom(const TClass* cl)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.inspect">
+<tt class="descname">inspect</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.inspect" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Inspect()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.invert_bit">
+<tt class="descname">invert_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.invert_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::InvertBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.is_a">
+<tt class="descname">is_a</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.is_a" title="Permalink to this definition">¶</a></dt>
+<dd><p>TClass* TVector2::IsA()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.is_equal">
+<tt class="descname">is_equal</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.is_equal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsEqual(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.is_folder">
+<tt class="descname">is_folder</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.is_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsFolder()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.is_on_heap">
+<tt class="descname">is_on_heap</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.is_on_heap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsOnHeap()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.is_sortable">
+<tt class="descname">is_sortable</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.is_sortable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsSortable()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.is_zombie">
+<tt class="descname">is_zombie</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.is_zombie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsZombie()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.may_not_use">
+<tt class="descname">may_not_use</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.may_not_use" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::MayNotUse(const char* method)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.mod">
+<tt class="descname">mod</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.mod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector2::Mod()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.mod2">
+<tt class="descname">mod2</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.mod2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector2::Mod2()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.norm">
+<tt class="descname">norm</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>TVector2 TVector2::Norm(const TVector2&amp; v)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.notify">
+<tt class="descname">notify</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.notify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::Notify()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.obsolete">
+<tt class="descname">obsolete</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.obsolete" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Obsolete(const char* method, const char* asOfVers, const char* removedFromVers)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.ort">
+<tt class="descname">ort</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.ort" title="Permalink to this definition">¶</a></dt>
+<dd><p>TVector2 TVector2::Ort()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.paint">
+<tt class="descname">paint</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.paint" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Paint(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.phi">
+<tt class="descname">phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector2::Phi()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.phi_0_2pi">
+<tt class="descname">phi_0_2pi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.phi_0_2pi" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Double_t TVector2::Phi_0_2pi(Double_t x)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.phi_mpi_pi">
+<tt class="descname">phi_mpi_pi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.phi_mpi_pi" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Double_t TVector2::Phi_mpi_pi(Double_t x)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.pop">
+<tt class="descname">pop</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Pop()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.print">
+<tt class="descname">print</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.print" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector2::Print(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.proj">
+<tt class="descname">proj</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.proj" title="Permalink to this definition">¶</a></dt>
+<dd><p>TVector2 TVector2::Proj(const TVector2&amp; v)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.px">
+<tt class="descname">px</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.px" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector2::Px()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.py">
+<tt class="descname">py</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.py" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector2::Py()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.read">
+<tt class="descname">read</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Read(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.recursive_remove">
+<tt class="descname">recursive_remove</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.recursive_remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::RecursiveRemove(TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.reset_bit">
+<tt class="descname">reset_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.reset_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::ResetBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.rotate">
+<tt class="descname">rotate</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>TVector2 TVector2::Rotate(Double_t phi)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.save_as">
+<tt class="descname">save_as</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.save_as" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SaveAs(const char* filename = &#8220;&#8221;, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.save_primitive">
+<tt class="descname">save_primitive</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.save_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SavePrimitive(basic_ostream&lt;char,char_traits&lt;char&gt; &gt;&amp; out, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.set">
+<tt class="descname">set</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector2::Set(const TVector2&amp; v)
+void TVector2::Set(Double_t x0, Double_t y0)
+void TVector2::Set(float x0, float y0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.set_bit">
+<tt class="descname">set_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.set_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetBit(UInt_t f, Bool_t set)
+void TObject::SetBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.set_draw_option">
+<tt class="descname">set_draw_option</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.set_draw_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetDrawOption(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.set_dtor_only">
+<tt class="descname">set_dtor_only</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.set_dtor_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TObject::SetDtorOnly(void* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.set_mag_phi">
+<tt class="descname">set_mag_phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.set_mag_phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector2::SetMagPhi(Double_t mag, Double_t phi)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.set_object_stat">
+<tt class="descname">set_object_stat</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.set_object_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TObject::SetObjectStat(Bool_t stat)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.set_unique_id">
+<tt class="descname">set_unique_id</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.set_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetUniqueID(UInt_t uid)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.show_members">
+<tt class="descname">show_members</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.show_members" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector2::ShowMembers(TMemberInspector&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.streamer">
+<tt class="descname">streamer</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.streamer" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector2::Streamer(TBuffer&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.streamer_n_virtual">
+<tt class="descname">streamer_n_virtual</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.streamer_n_virtual" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector2::StreamerNVirtual(TBuffer&amp; ClassDef_StreamerNVirtual_b)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.sys_error">
+<tt class="descname">sys_error</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.sys_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SysError(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.test_bit">
+<tt class="descname">test_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.test_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::TestBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.test_bits">
+<tt class="descname">test_bits</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.test_bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::TestBits(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.unit">
+<tt class="descname">unit</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>TVector2 TVector2::Unit()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.use_current_style">
+<tt class="descname">use_current_style</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.use_current_style" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::UseCurrentStyle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.warning">
+<tt class="descname">warning</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.warning" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Warning(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.write">
+<tt class="descname">write</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Write(const char* name = 0, Int_t option = 0, Int_t bufsize = 0)
+Int_t TObject::Write(const char* name = 0, Int_t option = 0, Int_t bufsize = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.x">
+<tt class="descname">x</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector2::X()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector2.y">
+<tt class="descname">y</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector2.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector2::Y()</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.math.physics.vector.Vector3">
+<em class="property">class </em><tt class="descclassname">rootpy.math.physics.vector.</tt><tt class="descname">Vector3</tt><big>(</big><em>Double_t x=0.0</em>, <em>Double_t y=0.0</em>, <em>Double_t z=0.0</em><big>)</big><a class="reference internal" href="../_modules/rootpy/math/physics/vector.html#Vector3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.math.physics.vector.Vector3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">rootpy.math.physics.vector._arithmetic_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">rootpy.core._copy_construct_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">rootpy.core._repr_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">rootpy.core._resetable_mixin</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">ROOT.TVector3</span></tt></p>
+<dl class="method">
+<dt id="rootpy.math.physics.vector.Vector3.Angle">
+<tt class="descname">Angle</tt><big>(</big><em>other</em><big>)</big><a class="reference internal" href="../_modules/rootpy/math/physics/vector.html#Vector3.Angle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.Angle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.abstract_method">
+<tt class="descname">abstract_method</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.abstract_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::AbstractMethod(const char* method)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.math.physics.vector.Vector3.angle">
+<tt class="descname">angle</tt><big>(</big><em>other</em><big>)</big><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.angle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.append_pad">
+<tt class="descname">append_pad</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.append_pad" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::AppendPad(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.browse">
+<tt class="descname">browse</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.browse" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Browse(TBrowser* b)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.class">
+<tt class="descname">class</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.class" title="Permalink to this definition">¶</a></dt>
+<dd><p>static TClass* TVector3::Class()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.class__name">
+<tt class="descname">class__name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.class__name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TVector3::Class_Name()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.class__version">
+<tt class="descname">class__version</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.class__version" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Version_t TVector3::Class_Version()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.class_name">
+<tt class="descname">class_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.class_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::ClassName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.clear">
+<tt class="descname">clear</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Clear(Option_t* = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.clone">
+<tt class="descname">clone</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::Clone(const char* newname = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.compare">
+<tt class="descname">compare</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.compare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Compare(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.copy">
+<tt class="descname">copy</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Copy(TObject&amp; object)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.cos_theta">
+<tt class="descname">cos_theta</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.cos_theta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::CosTheta()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.cross">
+<tt class="descname">cross</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.cross" title="Permalink to this definition">¶</a></dt>
+<dd><p>TVector3 TVector3::Cross(const TVector3&amp; p)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.decl_file_line">
+<tt class="descname">decl_file_line</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.decl_file_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>static int TVector3::DeclFileLine()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.decl_file_name">
+<tt class="descname">decl_file_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.decl_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TVector3::DeclFileName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.delete">
+<tt class="descname">delete</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Delete(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.delta_phi">
+<tt class="descname">delta_phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.delta_phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::DeltaPhi(const TVector3&amp; v)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.delta_r">
+<tt class="descname">delta_r</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.delta_r" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::DeltaR(const TVector3&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.dictionary">
+<tt class="descname">dictionary</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.dictionary" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TVector3::Dictionary()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.distanceto_primitive">
+<tt class="descname">distanceto_primitive</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.distanceto_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::DistancetoPrimitive(Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.dot">
+<tt class="descname">dot</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::Dot(const TVector3&amp; p)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.dr_eta_phi">
+<tt class="descname">dr_eta_phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.dr_eta_phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::DrEtaPhi(const TVector3&amp; v)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.draw">
+<tt class="descname">draw</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Draw(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.draw_class">
+<tt class="descname">draw_class</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.draw_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::DrawClass()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.draw_clone">
+<tt class="descname">draw_clone</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.draw_clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::DrawClone(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.dump">
+<tt class="descname">dump</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Dump()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.error">
+<tt class="descname">error</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Error(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.eta">
+<tt class="descname">eta</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.eta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::Eta()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.eta_phi_vector">
+<tt class="descname">eta_phi_vector</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.eta_phi_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>TVector2 TVector3::EtaPhiVector()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.execute">
+<tt class="descname">execute</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Execute(const char* method, const char* params, Int_t* error = 0)
+void TObject::Execute(TMethod* method, TObjArray* params, Int_t* error = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.execute_event">
+<tt class="descname">execute_event</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.execute_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::ExecuteEvent(Int_t event, Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.fatal">
+<tt class="descname">fatal</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.fatal" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Fatal(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.find_object">
+<tt class="descname">find_object</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.find_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::FindObject(const char* name)
+TObject* TObject::FindObject(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.get_draw_option">
+<tt class="descname">get_draw_option</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.get_draw_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option_t* TObject::GetDrawOption()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.get_dtor_only">
+<tt class="descname">get_dtor_only</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.get_dtor_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Long_t TObject::GetDtorOnly()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.get_icon_name">
+<tt class="descname">get_icon_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.get_icon_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetIconName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.get_name">
+<tt class="descname">get_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.get_object_info">
+<tt class="descname">get_object_info</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.get_object_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>char* TObject::GetObjectInfo(Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.get_object_stat">
+<tt class="descname">get_object_stat</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.get_object_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Bool_t TObject::GetObjectStat()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.get_option">
+<tt class="descname">get_option</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.get_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option_t* TObject::GetOption()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.get_title">
+<tt class="descname">get_title</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.get_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetTitle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.get_unique_id">
+<tt class="descname">get_unique_id</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.get_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>UInt_t TObject::GetUniqueID()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.get_xyz">
+<tt class="descname">get_xyz</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.get_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::GetXYZ(Double_t* carray)
+void TVector3::GetXYZ(Float_t* carray)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.handle_timer">
+<tt class="descname">handle_timer</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.handle_timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::HandleTimer(TTimer* timer)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.hash">
+<tt class="descname">hash</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>ULong_t TObject::Hash()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.impl_file_line">
+<tt class="descname">impl_file_line</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.impl_file_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>static int TVector3::ImplFileLine()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.impl_file_name">
+<tt class="descname">impl_file_name</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.impl_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TVector3::ImplFileName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.info">
+<tt class="descname">info</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Info(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.inherits_from">
+<tt class="descname">inherits_from</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.inherits_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::InheritsFrom(const char* classname)
+Bool_t TObject::InheritsFrom(const TClass* cl)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.inspect">
+<tt class="descname">inspect</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.inspect" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Inspect()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.invert_bit">
+<tt class="descname">invert_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.invert_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::InvertBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.is_a">
+<tt class="descname">is_a</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.is_a" title="Permalink to this definition">¶</a></dt>
+<dd><p>TClass* TVector3::IsA()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.is_equal">
+<tt class="descname">is_equal</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.is_equal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsEqual(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.is_folder">
+<tt class="descname">is_folder</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.is_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsFolder()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.is_on_heap">
+<tt class="descname">is_on_heap</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.is_on_heap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsOnHeap()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.is_sortable">
+<tt class="descname">is_sortable</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.is_sortable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsSortable()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.is_zombie">
+<tt class="descname">is_zombie</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.is_zombie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsZombie()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.mag">
+<tt class="descname">mag</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.mag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::Mag()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.mag2">
+<tt class="descname">mag2</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.mag2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::Mag2()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.may_not_use">
+<tt class="descname">may_not_use</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.may_not_use" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::MayNotUse(const char* method)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.notify">
+<tt class="descname">notify</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.notify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::Notify()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.obsolete">
+<tt class="descname">obsolete</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.obsolete" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Obsolete(const char* method, const char* asOfVers, const char* removedFromVers)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.orthogonal">
+<tt class="descname">orthogonal</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.orthogonal" title="Permalink to this definition">¶</a></dt>
+<dd><p>TVector3 TVector3::Orthogonal()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.paint">
+<tt class="descname">paint</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.paint" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Paint(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.perp">
+<tt class="descname">perp</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.perp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::Perp()
+Double_t TVector3::Perp(const TVector3&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.perp2">
+<tt class="descname">perp2</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.perp2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::Perp2()
+Double_t TVector3::Perp2(const TVector3&amp; p)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.phi">
+<tt class="descname">phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::Phi()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.pop">
+<tt class="descname">pop</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Pop()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.print">
+<tt class="descname">print</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.print" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::Print(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.pseudo_rapidity">
+<tt class="descname">pseudo_rapidity</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.pseudo_rapidity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::PseudoRapidity()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.pt">
+<tt class="descname">pt</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.pt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::Pt()
+Double_t TVector3::Pt(const TVector3&amp; p)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.px">
+<tt class="descname">px</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.px" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::Px()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.py">
+<tt class="descname">py</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.py" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::Py()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.pz">
+<tt class="descname">pz</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.pz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::Pz()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.read">
+<tt class="descname">read</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Read(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.recursive_remove">
+<tt class="descname">recursive_remove</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.recursive_remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::RecursiveRemove(TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.reset_bit">
+<tt class="descname">reset_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.reset_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::ResetBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.rotate">
+<tt class="descname">rotate</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.rotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::Rotate(Double_t, const TVector3&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.rotate_uz">
+<tt class="descname">rotate_uz</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.rotate_uz" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::RotateUz(const TVector3&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.rotate_x">
+<tt class="descname">rotate_x</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.rotate_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::RotateX(Double_t)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.rotate_y">
+<tt class="descname">rotate_y</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.rotate_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::RotateY(Double_t)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.rotate_z">
+<tt class="descname">rotate_z</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.rotate_z" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::RotateZ(Double_t)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.save_as">
+<tt class="descname">save_as</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.save_as" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SaveAs(const char* filename = &#8220;&#8221;, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.save_primitive">
+<tt class="descname">save_primitive</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.save_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SavePrimitive(basic_ostream&lt;char,char_traits&lt;char&gt; &gt;&amp; out, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.set_bit">
+<tt class="descname">set_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.set_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetBit(UInt_t f, Bool_t set)
+void TObject::SetBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.set_draw_option">
+<tt class="descname">set_draw_option</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.set_draw_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetDrawOption(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.set_dtor_only">
+<tt class="descname">set_dtor_only</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.set_dtor_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TObject::SetDtorOnly(void* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.set_mag">
+<tt class="descname">set_mag</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.set_mag" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::SetMag(Double_t ma)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.set_mag_theta_phi">
+<tt class="descname">set_mag_theta_phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.set_mag_theta_phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::SetMagThetaPhi(Double_t mag, Double_t theta, Double_t phi)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.set_object_stat">
+<tt class="descname">set_object_stat</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.set_object_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TObject::SetObjectStat(Bool_t stat)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.set_perp">
+<tt class="descname">set_perp</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.set_perp" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::SetPerp(Double_t r)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.set_phi">
+<tt class="descname">set_phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.set_phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::SetPhi(Double_t)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.set_pt_eta_phi">
+<tt class="descname">set_pt_eta_phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.set_pt_eta_phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::SetPtEtaPhi(Double_t pt, Double_t eta, Double_t phi)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.set_pt_theta_phi">
+<tt class="descname">set_pt_theta_phi</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.set_pt_theta_phi" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::SetPtThetaPhi(Double_t pt, Double_t theta, Double_t phi)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.set_theta">
+<tt class="descname">set_theta</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.set_theta" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::SetTheta(Double_t)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.set_unique_id">
+<tt class="descname">set_unique_id</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.set_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetUniqueID(UInt_t uid)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.set_x">
+<tt class="descname">set_x</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.set_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::SetX(Double_t xx)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.set_xyz">
+<tt class="descname">set_xyz</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.set_xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::SetXYZ(Double_t xx, Double_t yy, Double_t zz)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.set_y">
+<tt class="descname">set_y</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.set_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::SetY(Double_t yy)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.set_z">
+<tt class="descname">set_z</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.set_z" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::SetZ(Double_t zz)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.show_members">
+<tt class="descname">show_members</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.show_members" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::ShowMembers(TMemberInspector&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.streamer">
+<tt class="descname">streamer</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.streamer" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::Streamer(TBuffer&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.streamer_n_virtual">
+<tt class="descname">streamer_n_virtual</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.streamer_n_virtual" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TVector3::StreamerNVirtual(TBuffer&amp; ClassDef_StreamerNVirtual_b)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.sys_error">
+<tt class="descname">sys_error</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.sys_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SysError(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.test_bit">
+<tt class="descname">test_bit</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.test_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::TestBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.test_bits">
+<tt class="descname">test_bits</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.test_bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::TestBits(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.theta">
+<tt class="descname">theta</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.theta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TVector3::Theta()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.transform">
+<tt class="descname">transform</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>TVector3&amp; TVector3::Transform(const TRotation&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.unit">
+<tt class="descname">unit</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.unit" title="Permalink to this definition">¶</a></dt>
+<dd><p>TVector3 TVector3::Unit()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.use_current_style">
+<tt class="descname">use_current_style</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.use_current_style" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::UseCurrentStyle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.warning">
+<tt class="descname">warning</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.warning" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Warning(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.write">
+<tt class="descname">write</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Write(const char* name = 0, Int_t option = 0, Int_t bufsize = 0)
+Int_t TObject::Write(const char* name = 0, Int_t option = 0, Int_t bufsize = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.math.physics.vector.Vector3.x_yvector">
+<tt class="descname">x_yvector</tt><a class="headerlink" href="#rootpy.math.physics.vector.Vector3.x_yvector" title="Permalink to this definition">¶</a></dt>
+<dd><p>TVector2 TVector3::XYvector()</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+                    
+                        <div id="disqus_thread"></div>
+                        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    
+                </div>
+                <div class="span3">
+                    
+        <div class="sphinxsidebar">
+            <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.10.5.1.2. physics Package</a><ul>
+<li><a class="reference internal" href="#module-rootpy.math.physics.measure">4.10.5.1.2.1. <tt class="docutils literal"><span class="pre">measure</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-rootpy.math.physics.vector">4.10.5.1.2.2. <tt class="docutils literal"><span class="pre">vector</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="rootpy.math.linalg.html"
+                        title="previous chapter">4.10.5.1.1. linalg Package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="rootpy.math.stats.html"
+                        title="next chapter">4.10.5.1.3. stats Package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/modules/rootpy.math.physics.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+            </div>
+        </div>
+                </div>
+            
+        </div>
+    </div>
+    <div class="footer">
+        
+        <div class="container">
+                    &copy;
+                        Copyright 2013, rootpy developers.
+                Created using <a
+                        href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3
+                    .
+                <!--Theme <a href="https://github.com/scotch/sphinx-bootstrap">Sphinx-Bootstrap</a>
+                adapted from
+                <a href="http://twitter.github.com/bootstrap/">Twitter's
+                    Bootstrap</a> by <a href="http://www.scotchmedia.com">Scotch
+                    Media</a> -->
+        </div>
+    </div>
+
+
+    <!-- disqus -->
+    <script type="text/javascript">
+        var disqus_title = '4.10.5.1.2. physics Package &mdash; rootpy dev documentation';
+        var disqus_identifier ='code' + '.' + "rootpy" + window.location.pathname.replace('/', '.');
+    </script>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = "rootpy"; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+<script type="text/javascript">
+    $('.nav .active').on('click', function () {
+        e.preventDefault()
+        $(this).siblings().toggle()
+    });
+</script>
+
+<!-- plusone -->
+<script type="text/javascript">
+    (function () {
+        var po = document.createElement('script');
+        po.type = 'text/javascript';
+        po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+</script>
+
+<!-- twitter -->
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+
+</body>
+</html>

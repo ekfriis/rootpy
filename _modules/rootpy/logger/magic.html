@@ -1,0 +1,517 @@
+
+<!DOCTYPE html><html>
+<head>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8"/>
+    
+        <title>rootpy.logger.magic &mdash; rootpy dev documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../../_static/sphinx-bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css"/>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        <script type="text/javascript">
+            var DOCUMENTATION_OPTIONS = {
+                URL_ROOT:'../../../',
+                VERSION:'dev',
+                COLLAPSE_INDEX:false,
+                FILE_SUFFIX:'.html',
+                HAS_SOURCE:  true
+            };
+        </script>
+            <script type="text/javascript" src="../../../_static/jquery.js"></script>
+            <script type="text/javascript" src="../../../_static/underscore.js"></script>
+            <script type="text/javascript" src="../../../_static/doctools.js"></script>
+            <script type="text/javascript" src="../../../_static/bootstrap-dropdown.js"></script>
+        <link rel="top" title="rootpy dev documentation" href="../../../index.html"/>
+            <link rel="up" title="rootpy.logger" href="../logger.html"/> 
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    
+</head>
+<body>
+
+    <div class="navbar navbar-static-top">
+        <div class="navbar-inner">
+            <div class="container">
+
+    <div class="related">
+        <ul class="nav">
+                <li class=""><a class="brand" href="../../../index.html">rootpy</a></li>
+                <li>
+                    <a href="../../../genindex.html"
+                       title="General Index" accesskey="I">index</a>
+                </li>
+                <li>
+                    <a href="../../../py-modindex.html"
+                       title="Python Module Index" >modules</a>
+                </li>
+                <li><a href="../../index.html"
+                        >Module code</a>
+                </li>
+                <li><a href="../logger.html"
+                        accesskey="U">rootpy.logger</a>
+                </li> 
+        </ul>
+    </div>
+                <div class="pull-right">
+                    
+        <form class="navbar-search" action="../../../search.html"
+              method="get">
+            <input type="text" name="q" placeholder="search"/>
+            <input type="hidden" name="check_keywords" value="yes"/>
+            <input type="hidden" name="area" value="default"/>
+        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<ul class="quick-links">
+    <li><strong>Quick links</strong></li>
+    <li>
+        <a href="https://github.com/rootpy/rootpy/">GitHub</a>
+    </li>
+    <li>
+        <a href="https://github.com/rootpy/rootpy/issues?state=open">Issues</a>
+    </li>
+    <li class="divider">&middot;</li>
+    <li>
+        <iframe class="github-btn"
+                src="http://ghbtns.com/github-btn.html?user=rootpy&repo=rootpy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="110px" height="20px"></iframe>
+    </li>
+    <li>
+        <iframe class="github-btn"
+                src="http://ghbtns.com/github-btn.html?user=rootpy&repo=rootpy&type=fork&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="94px" height="20px"></iframe>
+    </li>
+
+    <!--<li class="divider">&middot;</li>
+    <li class="follow-btn">
+        <a href="https://twitter.com/"
+           class="twitter-follow-button" data-width="145px"
+           data-link-color="#0069D6" data-show-count="false">Follow
+            @</a>
+    </li>
+    <li class="tweet-btn">
+        <a href="https://twitter.com/share" class="twitter-share-button"
+           data-url="http://rootpy.org" data-count="horizontal"
+           data-via="twbootstrap"
+           data-related=":Creator of rootpy">Tweet</a>
+       </li>-->
+    <li class="plusone-container">
+        <g:plusone size="medium"></g:plusone>
+    </li>
+</ul>  
+    <div class="container">
+        <div class="content row">
+                <div class="span9">
+                    
+  <h1>Source code for rootpy.logger.magic</h1><div class="highlight"><pre>
+<span class="c"># Copyright 2012 the rootpy developers</span>
+<span class="c"># distributed under the terms of the GNU General Public License</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Here be dragons.</span>
+
+<span class="sd">This module contains hackery to bend the CPython interpreter to our will.</span>
+
+<span class="sd">It&#39;s necessary because it&#39;s not possible to throw an exception from within a</span>
+<span class="sd">ctypes callback. Instead, the exception is thrown from a line tracer which we</span>
+<span class="sd">forcably insert into the appropriate frame. Then we make that frame&#39;s next</span>
+<span class="sd">opcode a ``JUMP_ABSOLUTE`` to the last line of code. Yes.</span>
+
+<span class="sd">This is a bad idea and should never be used anywhere important where reliability</span>
+<span class="sd">is a concern. Also, if you like your sanity. This thing *will* break backtraces</span>
+<span class="sd">when you least expect it, leading to you looking at the wrong thing.</span>
+
+<span class="sd">What lies within is the product of a sick mind and should never be exposed to</span>
+<span class="sd">humanity.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c"># Set this to true if you&#39;re feeling lucky.</span>
+<span class="c"># (Otherwise the crash-debug-headache code is turned off)</span>
+<span class="k">class</span> <span class="nc">DANGER</span><span class="p">:</span>
+    <span class="n">enabled</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="kn">import</span> <span class="nn">ctypes</span>
+<span class="kn">import</span> <span class="nn">ctypes.util</span>
+<span class="kn">import</span> <span class="nn">dis</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">opcode</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">struct</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">from</span> <span class="nn">ctypes</span> <span class="kn">import</span> <span class="n">POINTER</span><span class="p">,</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">py_object</span><span class="p">,</span> <span class="n">c_byte</span><span class="p">,</span> <span class="n">c_int</span><span class="p">,</span> <span class="n">c_voidp</span>
+<span class="kn">from</span> <span class="nn">traceback</span> <span class="kn">import</span> <span class="n">print_stack</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">log</span><span class="p">;</span> <span class="n">log</span> <span class="o">=</span> <span class="n">log</span><span class="p">[</span><span class="n">__name__</span><span class="p">]</span>
+
+<span class="n">ctypes</span><span class="o">.</span><span class="n">pythonapi</span><span class="o">.</span><span class="n">Py_IncRef</span><span class="o">.</span><span class="n">argtypes</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">py_object</span><span class="p">,</span>
+<span class="n">ctypes</span><span class="o">.</span><span class="n">pythonapi</span><span class="o">.</span><span class="n">Py_DecRef</span><span class="o">.</span><span class="n">argtypes</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">py_object</span><span class="p">,</span>
+
+<span class="n">svp</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">sizeof</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_voidp</span><span class="p">)</span>
+<span class="n">_keep_alive</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">ON_RTD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;READTHEDOCS&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;True&#39;</span>
+
+<span class="k">def</span> <span class="nf">get_dll</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">cdll</span><span class="o">.</span><span class="n">LoadLibrary</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">&quot;.so&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s">&quot;darwin&quot;</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">cdll</span><span class="o">.</span><span class="n">LoadLibrary</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">&quot;.dylib&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+            <span class="k">pass</span>
+    <span class="k">elif</span> <span class="n">sys</span><span class="o">.</span><span class="n">platform</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&quot;win32&quot;</span><span class="p">,</span> <span class="s">&quot;cygwin&quot;</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">cdll</span><span class="o">.</span><span class="n">LoadLibrary</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">&quot;.dll&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s">&quot;Unable to find shared object {0}.{{so,dylib,dll}}. &quot;</span>
+                       <span class="s">&quot;Did you source thisroot.sh?&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+<div class="viewcode-block" id="get_seh"><a class="viewcode-back" href="../../../modules/rootpy.logging.html#rootpy.logger.magic.get_seh">[docs]</a><span class="k">def</span> <span class="nf">get_seh</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Makes a function which can be used to set the ROOT error handler with a</span>
+<span class="sd">    python function and returns the existing error handler.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">ON_RTD</span><span class="p">:</span>
+        <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span>
+
+    <span class="n">ErrorHandlerFunc_t</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">CFUNCTYPE</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_bool</span><span class="p">,</span>
+        <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_char_p</span><span class="p">)</span>
+
+    <span class="n">dll</span> <span class="o">=</span> <span class="n">get_dll</span><span class="p">(</span><span class="s">&quot;libCore&quot;</span><span class="p">)</span>
+
+    <span class="n">SetErrorHandler</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">dll</span><span class="p">:</span>
+            <span class="n">SetErrorHandler</span> <span class="o">=</span> <span class="n">dll</span><span class="o">.</span><span class="n">_Z15SetErrorHandlerPFvibPKcS0_E</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">SetErrorHandler</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s">&quot;Couldn&#39;t find SetErrorHandler, please submit a bug report &quot;</span>
+                    <span class="s">&quot;to rootpy.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="bp">None</span>
+
+    <span class="n">SetErrorHandler</span><span class="o">.</span><span class="n">restype</span> <span class="o">=</span> <span class="n">ErrorHandlerFunc_t</span>
+    <span class="n">SetErrorHandler</span><span class="o">.</span><span class="n">argtypes</span> <span class="o">=</span> <span class="n">ErrorHandlerFunc_t</span><span class="p">,</span>
+
+    <span class="k">def</span> <span class="nf">_SetErrorHandler</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set ROOT&#39;s warning/error handler. Returns the existing one.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">eh</span> <span class="o">=</span> <span class="n">ErrorHandlerFunc_t</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+        <span class="c"># ``eh`` can get garbage collected unless kept alive, leading to a segfault.</span>
+        <span class="n">_keep_alive</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">eh</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">SetErrorHandler</span><span class="p">(</span><span class="n">eh</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">_SetErrorHandler</span>
+</div>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;NO_ROOTPY_HANDLER&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">):</span>
+    <span class="n">set_error_handler</span> <span class="o">=</span> <span class="n">get_seh</span><span class="p">()</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">set_error_handler</span> <span class="o">=</span> <span class="bp">None</span>
+
+<div class="viewcode-block" id="get_f_code_idx"><a class="viewcode-back" href="../../../modules/rootpy.logging.html#rootpy.logger.magic.get_f_code_idx">[docs]</a><span class="k">def</span> <span class="nf">get_f_code_idx</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    How many pointers into PyFrame is the ``f_code`` variable?</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">frame</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">_getframe</span><span class="p">()</span>
+    <span class="n">frame_ptr</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+
+    <span class="n">LARGE_ENOUGH</span> <span class="o">=</span> <span class="mi">20</span>
+
+    <span class="c"># Look through the frame object until we find the f_tstate variable, whose</span>
+    <span class="c"># value we know from above.</span>
+    <span class="n">ptrs</span> <span class="o">=</span> <span class="p">[</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_voidp</span><span class="o">.</span><span class="n">from_address</span><span class="p">(</span><span class="n">frame_ptr</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="n">svp</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">LARGE_ENOUGH</span><span class="p">)]</span>
+
+    <span class="c"># Find its index into the structure</span>
+    <span class="n">ptrs</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ptrs</span><span class="p">]</span>
+
+    <span class="n">fcode_ptr</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">f_code</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">threadstate_idx</span> <span class="o">=</span> <span class="n">ptrs</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">fcode_ptr</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s">&quot;BUG! please report this.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span>
+    <span class="k">return</span> <span class="n">threadstate_idx</span>
+</div>
+<span class="n">F_CODE_IDX</span> <span class="o">=</span> <span class="n">get_f_code_idx</span><span class="p">()</span>
+
+<div class="viewcode-block" id="get_frame_pointers"><a class="viewcode-back" href="../../../modules/rootpy.logging.html#rootpy.logger.magic.get_frame_pointers">[docs]</a><span class="k">def</span> <span class="nf">get_frame_pointers</span><span class="p">(</span><span class="n">frame</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Obtain writable pointers to ``frame.f_trace`` and ``frame.f_lineno``.</span>
+
+<span class="sd">    Very dangerous. Unlikely to be portable between python implementations.</span>
+
+<span class="sd">    This is hard in general because the ``PyFrameObject`` can have a variable size</span>
+<span class="sd">    depending on the build configuration. We can get it reliably because we can</span>
+<span class="sd">    determine the offset to ``f_tstate`` by searching for the value of that pointer.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">frame</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">frame</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">_getframe</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">frame</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+
+    <span class="c"># http://hg.python.org/cpython/file/3aa530c2db06/Include/frameobject.h#l28</span>
+    <span class="n">F_TRACE_OFFSET</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="n">Ppy_object</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">POINTER</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">py_object</span><span class="p">)</span>
+    <span class="n">trace</span> <span class="o">=</span> <span class="n">Ppy_object</span><span class="o">.</span><span class="n">from_address</span><span class="p">(</span><span class="n">frame</span><span class="o">+</span><span class="p">(</span><span class="n">F_CODE_IDX</span><span class="o">+</span><span class="n">F_TRACE_OFFSET</span><span class="p">)</span><span class="o">*</span><span class="n">svp</span><span class="p">)</span>
+
+    <span class="n">LASTI_OFFSET</span> <span class="o">=</span> <span class="n">F_TRACE_OFFSET</span> <span class="o">+</span> <span class="mi">4</span>
+
+    <span class="n">lasti_addr</span>  <span class="o">=</span> <span class="n">LASTI_OFFSET</span>
+    <span class="n">lineno_addr</span> <span class="o">=</span> <span class="n">LASTI_OFFSET</span> <span class="o">+</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">sizeof</span><span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="p">)</span>
+
+    <span class="n">f_lineno</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="o">.</span><span class="n">from_address</span><span class="p">(</span><span class="n">lineno_addr</span><span class="p">)</span>
+    <span class="n">f_lasti</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="o">.</span><span class="n">from_address</span><span class="p">(</span><span class="n">lasti_addr</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">trace</span><span class="p">,</span> <span class="n">f_lineno</span><span class="p">,</span> <span class="n">f_lasti</span>
+</div>
+<div class="viewcode-block" id="set_linetrace_on_frame"><a class="viewcode-back" href="../../../modules/rootpy.logging.html#rootpy.logger.magic.set_linetrace_on_frame">[docs]</a><span class="k">def</span> <span class="nf">set_linetrace_on_frame</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">localtrace</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Non-portable function to modify linetracing.</span>
+
+<span class="sd">    Remember to enable global tracing with :py:func:`sys.settrace`, otherwise no</span>
+<span class="sd">    effect!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">traceptr</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">get_frame_pointers</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">localtrace</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="c"># Need to incref to avoid the frame causing a double-delete</span>
+        <span class="n">ctypes</span><span class="o">.</span><span class="n">pythonapi</span><span class="o">.</span><span class="n">Py_IncRef</span><span class="p">(</span><span class="n">localtrace</span><span class="p">)</span>
+        <span class="c"># Not sure if this is the best way to do this, but it works.</span>
+        <span class="n">addr</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">localtrace</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">addr</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">traceptr</span><span class="o">.</span><span class="n">contents</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">py_object</span><span class="o">.</span><span class="n">from_address</span><span class="p">(</span><span class="n">addr</span><span class="p">)</span>
+</div>
+<span class="k">def</span> <span class="nf">globaltrace</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">why</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<div class="viewcode-block" id="re_execute_with_exception"><a class="viewcode-back" href="../../../modules/rootpy.logging.html#rootpy.logger.magic.re_execute_with_exception">[docs]</a><span class="k">def</span> <span class="nf">re_execute_with_exception</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">exception</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Dark magic. Causes ``frame`` to raise an exception at the current location</span>
+<span class="sd">    with ``traceback`` appended to it.</span>
+
+<span class="sd">    Note that since the line tracer is raising an exception, the interpreter</span>
+<span class="sd">    disables the global trace, so it&#39;s not possible to restore the previous</span>
+<span class="sd">    tracing conditions.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">gettrace</span><span class="p">()</span> <span class="o">==</span> <span class="n">globaltrace</span><span class="p">:</span>
+        <span class="c"># If our trace handler is already installed, that means that this</span>
+        <span class="c"># function has been called twice before the line tracer had a chance to</span>
+        <span class="c"># run. That can happen if more than one exception was logged.</span>
+        <span class="k">return</span>
+
+    <span class="n">call_lineno</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_lineno</span>
+
+    <span class="k">def</span> <span class="nf">intercept_next_line</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">why</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">f</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">frame</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">set_linetrace_on_frame</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="c"># Undo modifications to the callers code (ick ick ick)</span>
+        <span class="n">back_like_nothing_happened</span><span class="p">()</span>
+        <span class="c"># Raise exception in (almost) the perfect place (except for duplication)</span>
+        <span class="k">raise</span> <span class="n">exception</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="n">exception</span><span class="p">,</span> <span class="n">traceback</span>
+
+    <span class="n">set_linetrace_on_frame</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">intercept_next_line</span><span class="p">)</span>
+
+    <span class="n">linestarts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dis</span><span class="o">.</span><span class="n">findlinestarts</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">f_code</span><span class="p">))</span>
+    <span class="n">linestarts</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span> <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">linestarts</span> <span class="k">if</span> <span class="n">l</span> <span class="o">&gt;=</span> <span class="n">call_lineno</span><span class="p">]</span>
+
+    <span class="c"># Jump target</span>
+    <span class="n">dest</span> <span class="o">=</span> <span class="n">linestarts</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">oc</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_code</span><span class="o">.</span><span class="n">co_code</span><span class="p">[</span><span class="n">frame</span><span class="o">.</span><span class="n">f_lasti</span><span class="p">]</span>
+    <span class="n">opcode_size</span> <span class="o">=</span> <span class="mi">2</span> <span class="k">if</span> <span class="nb">ord</span><span class="p">(</span><span class="n">oc</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">opcode</span><span class="o">.</span><span class="n">HAVE_ARGUMENT</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="c"># Opcode to overwrite</span>
+    <span class="n">where</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">f_lasti</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">opcode_size</span>
+
+    <span class="c"># dis.disco(frame.f_code)</span>
+    <span class="n">pc</span> <span class="o">=</span> <span class="n">PyCodeObject</span><span class="o">.</span><span class="n">from_address</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">f_code</span><span class="p">))</span>
+    <span class="n">back_like_nothing_happened</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">co_code</span><span class="o">.</span><span class="n">contents</span><span class="o">.</span><span class="n">inject_jump</span><span class="p">(</span><span class="n">where</span><span class="p">,</span> <span class="n">dest</span><span class="p">)</span>
+    <span class="c"># print &quot;#&quot;*100</span>
+    <span class="c"># dis.disco(frame.f_code)</span>
+
+    <span class="n">sys</span><span class="o">.</span><span class="n">settrace</span><span class="p">(</span><span class="n">globaltrace</span><span class="p">)</span>
+
+<span class="c"># The following code allows direct access to a python strings&#39; bytes.</span>
+<span class="c"># Expect bad things to happen if you use this.</span>
+<span class="c"># It&#39;s necessary because you can&#39;t ordinarily modify strings in place, and we</span>
+<span class="c"># need it to modify the callers&#39; code.</span></div>
+<span class="n">PyObject_HEAD</span> <span class="o">=</span> <span class="s">&quot;PyObject_HEAD&quot;</span><span class="p">,</span> <span class="n">c_byte</span> <span class="o">*</span> <span class="nb">object</span><span class="o">.</span><span class="n">__basicsize__</span>
+
+<span class="k">class</span> <span class="nc">PyStringObject</span><span class="p">(</span><span class="n">Structure</span><span class="p">):</span>
+    <span class="n">_fields_</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&quot;_&quot;</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_long</span><span class="p">),</span>
+                <span class="p">(</span><span class="s">&quot;_&quot;</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="p">),</span>
+                <span class="p">(</span><span class="s">&quot;_&quot;</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ubyte</span><span class="o">*</span><span class="mi">1</span><span class="p">)]</span>
+
+<span class="n">PyObject_VAR_HEAD</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;PyObject_VAR_HEAD&quot;</span><span class="p">,</span>
+    <span class="n">c_byte</span> <span class="o">*</span> <span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">__basicsize__</span> <span class="o">-</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">sizeof</span><span class="p">(</span><span class="n">PyStringObject</span><span class="p">)))</span>
+
+<span class="k">class</span> <span class="nc">PyStringObject</span><span class="p">(</span><span class="n">Structure</span><span class="p">):</span>
+    <span class="n">_fields_</span> <span class="o">=</span> <span class="p">[</span><span class="n">PyObject_VAR_HEAD</span><span class="p">,</span>
+                <span class="p">(</span><span class="s">&quot;ob_shash&quot;</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_long</span><span class="p">),</span>
+                <span class="p">(</span><span class="s">&quot;ob_sstate&quot;</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="p">),</span>
+                <span class="p">(</span><span class="s">&quot;ob_sval&quot;</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_ubyte</span><span class="o">*</span><span class="mi">1</span><span class="p">)]</span>
+
+    <span class="k">def</span> <span class="nf">inject_jump</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">where</span><span class="p">,</span> <span class="n">dest</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Monkeypatch bytecode at ``where`` to force it to jump to ``dest``.</span>
+
+<span class="sd">        Returns function which puts things back how they were.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c"># We&#39;re about to do dangerous things to a functions code content.</span>
+        <span class="c"># We can&#39;t make a lock to prevent the interpreter from using those</span>
+        <span class="c"># bytes, so the best we can do is to set the check interval to be high</span>
+        <span class="c"># and just pray that this keeps other threads at bay.</span>
+        <span class="n">old_check_interval</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">getcheckinterval</span><span class="p">()</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">setcheckinterval</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">20</span><span class="p">)</span>
+
+        <span class="n">pb</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">pointer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ob_sval</span><span class="p">)</span>
+        <span class="n">orig_bytes</span> <span class="o">=</span> <span class="p">[</span><span class="n">pb</span><span class="p">[</span><span class="n">where</span><span class="o">+</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">where</span><span class="p">)]</span>
+
+        <span class="n">v</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s">&quot;&lt;BH&quot;</span><span class="p">,</span> <span class="n">opcode</span><span class="o">.</span><span class="n">opmap</span><span class="p">[</span><span class="s">&quot;JUMP_ABSOLUTE&quot;</span><span class="p">],</span> <span class="n">dest</span><span class="p">)</span>
+
+        <span class="c"># Overwrite code to cause it to jump to the target</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+            <span class="n">pb</span><span class="p">[</span><span class="n">where</span><span class="o">+</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+        <span class="k">def</span> <span class="nf">tidy_up</span><span class="p">():</span>
+            <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Put the bytecode back how it was. Good as new.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">setcheckinterval</span><span class="p">(</span><span class="n">old_check_interval</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+                <span class="n">pb</span><span class="p">[</span><span class="n">where</span><span class="o">+</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">orig_bytes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">tidy_up</span>
+
+<span class="k">class</span> <span class="nc">PyCodeObject</span><span class="p">(</span><span class="n">Structure</span><span class="p">):</span>
+    <span class="n">_fields_</span> <span class="o">=</span> <span class="p">[</span><span class="n">PyObject_HEAD</span><span class="p">,</span>
+                <span class="p">(</span><span class="s">&quot;co_argcount&quot;</span><span class="p">,</span> <span class="n">c_int</span><span class="p">),</span>
+                <span class="p">(</span><span class="s">&quot;co_nlocals&quot;</span><span class="p">,</span> <span class="n">c_int</span><span class="p">),</span>
+                <span class="p">(</span><span class="s">&quot;co_stacksize&quot;</span><span class="p">,</span> <span class="n">c_int</span><span class="p">),</span>
+                <span class="p">(</span><span class="s">&quot;co_flags&quot;</span><span class="p">,</span> <span class="n">c_int</span><span class="p">),</span>
+                <span class="p">(</span><span class="s">&quot;co_code&quot;</span><span class="p">,</span> <span class="n">POINTER</span><span class="p">(</span><span class="n">PyStringObject</span><span class="p">))]</span>
+
+<div class="viewcode-block" id="fix_ipython_startup"><a class="viewcode-back" href="../../../modules/rootpy.logging.html#rootpy.logger.magic.fix_ipython_startup">[docs]</a><span class="k">def</span> <span class="nf">fix_ipython_startup</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Attempt to fix IPython startup to not print (Bool_t)1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">BADSTR</span> <span class="o">=</span> <span class="s">&#39;TPython::Exec( &quot;&quot; )&#39;</span>
+    <span class="n">GOODSTR</span> <span class="o">=</span> <span class="s">&#39;TPython::Exec( &quot;&quot; );&#39;</span>
+    <span class="n">consts</span> <span class="o">=</span> <span class="n">fn</span><span class="o">.</span><span class="n">im_func</span><span class="o">.</span><span class="n">func_code</span><span class="o">.</span><span class="n">co_consts</span>
+    <span class="k">if</span> <span class="n">BADSTR</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">consts</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">idx</span> <span class="o">=</span> <span class="n">consts</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">BADSTR</span><span class="p">)</span>
+    <span class="n">orig_refcount</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">getrefcount</span><span class="p">(</span><span class="n">consts</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">consts</span>
+
+    <span class="n">PyTuple_SetItem</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">pythonapi</span><span class="o">.</span><span class="n">PyTuple_SetItem</span>
+    <span class="n">PyTuple_SetItem</span><span class="o">.</span><span class="n">argtypes</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">py_object</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">c_size_t</span><span class="p">,</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">py_object</span>
+
+    <span class="n">consts</span> <span class="o">=</span> <span class="n">ctypes</span><span class="o">.</span><span class="n">py_object</span><span class="p">(</span><span class="n">fn</span><span class="o">.</span><span class="n">im_func</span><span class="o">.</span><span class="n">func_code</span><span class="o">.</span><span class="n">co_consts</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">orig_refcount</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">ctypes</span><span class="o">.</span><span class="n">pythonapi</span><span class="o">.</span><span class="n">Py_DecRef</span><span class="p">(</span><span class="n">consts</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">ctypes</span><span class="o">.</span><span class="n">pythonapi</span><span class="o">.</span><span class="n">Py_IncRef</span><span class="p">(</span><span class="n">GOODSTR</span><span class="p">)</span>
+        <span class="n">PyTuple_SetItem</span><span class="p">(</span><span class="n">consts</span><span class="p">,</span> <span class="n">idx</span><span class="p">,</span> <span class="n">GOODSTR</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">orig_refcount</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+            <span class="n">ctypes</span><span class="o">.</span><span class="n">pythonapi</span><span class="o">.</span><span class="n">Py_IncRef</span><span class="p">(</span><span class="n">consts</span><span class="p">)</span></div>
+</pre></div>
+
+                    
+                        <div id="disqus_thread"></div>
+                        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    
+                </div>
+                <div class="span3">
+                    
+        <div class="sphinxsidebar">
+            <div class="sphinxsidebarwrapper">
+            </div>
+        </div>
+                </div>
+            
+        </div>
+    </div>
+    <div class="footer">
+        
+        <div class="container">
+                    &copy;
+                        Copyright 2013, rootpy developers.
+                Created using <a
+                        href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3
+                    .
+                <!--Theme <a href="https://github.com/scotch/sphinx-bootstrap">Sphinx-Bootstrap</a>
+                adapted from
+                <a href="http://twitter.github.com/bootstrap/">Twitter's
+                    Bootstrap</a> by <a href="http://www.scotchmedia.com">Scotch
+                    Media</a> -->
+        </div>
+    </div>
+
+
+    <!-- disqus -->
+    <script type="text/javascript">
+        var disqus_title = 'rootpy.logger.magic &mdash; rootpy dev documentation';
+        var disqus_identifier ='code' + '.' + "rootpy" + window.location.pathname.replace('/', '.');
+    </script>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = "rootpy"; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+<script type="text/javascript">
+    $('.nav .active').on('click', function () {
+        e.preventDefault()
+        $(this).siblings().toggle()
+    });
+</script>
+
+<!-- plusone -->
+<script type="text/javascript">
+    (function () {
+        var po = document.createElement('script');
+        po.type = 'text/javascript';
+        po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+</script>
+
+<!-- twitter -->
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+
+</body>
+</html>

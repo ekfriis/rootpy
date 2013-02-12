@@ -1,0 +1,288 @@
+
+<!DOCTYPE html><html>
+<head>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8"/>
+    
+        <title>Working with ROOT histograms &mdash; rootpy dev documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../_static/sphinx-bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css"/>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        <script type="text/javascript">
+            var DOCUMENTATION_OPTIONS = {
+                URL_ROOT:'../../',
+                VERSION:'dev',
+                COLLAPSE_INDEX:false,
+                FILE_SUFFIX:'.html',
+                HAS_SOURCE:  true
+            };
+        </script>
+            <script type="text/javascript" src="../../_static/jquery.js"></script>
+            <script type="text/javascript" src="../../_static/underscore.js"></script>
+            <script type="text/javascript" src="../../_static/doctools.js"></script>
+            <script type="text/javascript" src="../../_static/bootstrap-dropdown.js"></script>
+        <link rel="top" title="rootpy dev documentation" href="../../index.html"/>
+            <link rel="up" title="NumPy Interface" href="../index.html"/>
+            <link rel="next" title="Plot a ROOT histogram with matplotlib" href="plot_matplotlib_hist.html"/>
+            <link rel="prev" title="ROOT.TFile made easy by rootpy" href="../io/file.html"/> 
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    
+</head>
+<body>
+
+    <div class="navbar navbar-static-top">
+        <div class="navbar-inner">
+            <div class="container">
+
+    <div class="related">
+        <ul class="nav">
+                <li class=""><a class="brand" href="../../index.html">rootpy</a></li>
+                <li>
+                    <a href="../../genindex.html"
+                       title="General Index" accesskey="I">index</a>
+                </li>
+                <li>
+                    <a href="../../py-modindex.html"
+                       title="Python Module Index" >modules</a>
+                </li>
+                <li>
+                    <a href="plot_matplotlib_hist.html"
+                       title="Plot a ROOT histogram with matplotlib" accesskey="N">next</a>
+                </li>
+                <li>
+                    <a href="../io/file.html"
+                       title="ROOT.TFile made easy by rootpy" accesskey="P">previous</a>
+                </li>
+                <li><a href="../index.html"
+                        accesskey="U">NumPy Interface</a>
+                </li> 
+        </ul>
+    </div>
+                <div class="pull-right">
+                    
+        <form class="navbar-search" action="../../search.html"
+              method="get">
+            <input type="text" name="q" placeholder="search"/>
+            <input type="hidden" name="check_keywords" value="yes"/>
+            <input type="hidden" name="area" value="default"/>
+        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<ul class="quick-links">
+    <li><strong>Quick links</strong></li>
+    <li>
+        <a href="https://github.com/rootpy/rootpy/">GitHub</a>
+    </li>
+    <li>
+        <a href="https://github.com/rootpy/rootpy/issues?state=open">Issues</a>
+    </li>
+    <li class="divider">&middot;</li>
+    <li>
+        <iframe class="github-btn"
+                src="http://ghbtns.com/github-btn.html?user=rootpy&repo=rootpy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="110px" height="20px"></iframe>
+    </li>
+    <li>
+        <iframe class="github-btn"
+                src="http://ghbtns.com/github-btn.html?user=rootpy&repo=rootpy&type=fork&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="94px" height="20px"></iframe>
+    </li>
+
+    <!--<li class="divider">&middot;</li>
+    <li class="follow-btn">
+        <a href="https://twitter.com/"
+           class="twitter-follow-button" data-width="145px"
+           data-link-color="#0069D6" data-show-count="false">Follow
+            @</a>
+    </li>
+    <li class="tweet-btn">
+        <a href="https://twitter.com/share" class="twitter-share-button"
+           data-url="http://rootpy.org" data-count="horizontal"
+           data-via="twbootstrap"
+           data-related=":Creator of rootpy">Tweet</a>
+       </li>-->
+    <li class="plusone-container">
+        <g:plusone size="medium"></g:plusone>
+    </li>
+</ul>  
+    <div class="container">
+        <div class="content row">
+                <div class="span9">
+                    
+  <div class="section" id="working-with-root-histograms">
+<span id="example-plotting-plot-hist-py"></span><h1>Working with ROOT histograms<a class="headerlink" href="#working-with-root-histograms" title="Permalink to this headline">¶</a></h1>
+<p>This example demonstrates how to create and work with ROOT histogram in rootpy.</p>
+<img alt="../../_images/root_plot_hist_1.png" class="align-center" src="../../_images/root_plot_hist_1.png" />
+<p><strong>Script output</strong>:</p>
+<div class="highlight-python"><pre>2b2b10a505424bc38fa7031ae93ac6f8
+my hist
+Some Data
+1.0</pre>
+</div>
+<p><strong>Python source code:</strong> <a class="reference download internal" href="../../_downloads/plot_hist.py"><tt class="xref download docutils literal"><span class="pre">plot_hist.py</span></tt></a></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">rootpy</span>
+<span class="n">rootpy</span><span class="o">.</span><span class="n">log</span><span class="o">.</span><span class="n">basic_config_colorized</span><span class="p">()</span>
+<span class="kn">from</span> <span class="nn">rootpy.plotting</span> <span class="kn">import</span> <span class="n">Hist</span><span class="p">,</span> <span class="n">Hist2D</span><span class="p">,</span> <span class="n">Hist3D</span><span class="p">,</span> <span class="n">HistStack</span><span class="p">,</span> <span class="n">Legend</span><span class="p">,</span> <span class="n">Canvas</span>
+<span class="kn">from</span> <span class="nn">rootpy.interactive</span> <span class="kn">import</span> <span class="n">wait</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="c"># create a simple 1D histogram with 10 constant-width bins between 0 and 1</span>
+<span class="n">h_simple</span> <span class="o">=</span> <span class="n">Hist</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">h_simple</span><span class="o">.</span><span class="n">name</span>
+<span class="c"># If the name is not specified, a UUID is used so that ROOT never complains</span>
+<span class="c"># about two histograms having the same name.</span>
+<span class="c"># Alternatively you can specify the name (and the title or any other style</span>
+<span class="c"># attributes) in the constructor:</span>
+<span class="n">h_simple</span> <span class="o">=</span> <span class="n">Hist</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;my hist&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&#39;Some Data&#39;</span><span class="p">,</span>
+        <span class="n">drawstyle</span><span class="o">=</span><span class="s">&#39;hist&#39;</span><span class="p">,</span>
+        <span class="n">fillstyle</span><span class="o">=</span><span class="s">&#39;/&#39;</span><span class="p">)</span>
+
+<span class="c"># fill the histogram</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="c"># all ROOT CamelCase methods are aliased by equivalent snake_case methods</span>
+    <span class="c"># so you can call fill() instead of Fill()</span>
+    <span class="n">h_simple</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">gauss</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c"># easily set visual attributes</span>
+<span class="n">h_simple</span><span class="o">.</span><span class="n">linecolor</span> <span class="o">=</span> <span class="s">&#39;blue&#39;</span>
+<span class="n">h_simple</span><span class="o">.</span><span class="n">fillcolor</span> <span class="o">=</span> <span class="s">&#39;green&#39;</span>
+<span class="n">h_simple</span><span class="o">.</span><span class="n">fillstyle</span> <span class="o">=</span> <span class="s">&#39;/&#39;</span>
+
+<span class="c"># attributes may be accessed in the same way</span>
+<span class="k">print</span> <span class="n">h_simple</span><span class="o">.</span><span class="n">name</span>
+<span class="k">print</span> <span class="n">h_simple</span><span class="o">.</span><span class="n">title</span>
+<span class="k">print</span> <span class="n">h_simple</span><span class="o">.</span><span class="n">markersize</span>
+
+<span class="c"># plot</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">SetLeftMargin</span><span class="p">(</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">SetBottomMargin</span><span class="p">(</span><span class="mf">0.15</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">SetTopMargin</span><span class="p">(</span><span class="mf">0.10</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">SetRightMargin</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+<span class="n">h_simple</span><span class="o">.</span><span class="n">Draw</span><span class="p">()</span>
+<span class="n">legend</span> <span class="o">=</span> <span class="n">Legend</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">legend</span><span class="o">.</span><span class="n">AddEntry</span><span class="p">(</span><span class="n">h_simple</span><span class="p">,</span> <span class="s">&#39;F&#39;</span><span class="p">)</span>
+<span class="n">legend</span><span class="o">.</span><span class="n">Draw</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">Modified</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+
+<span class="c"># 2D and 3D histograms are handled in the same way</span>
+<span class="c"># the constructor arguments are repetitions of #bins, left bound, right bound.</span>
+<span class="n">h2d</span> <span class="o">=</span> <span class="n">Hist2D</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="o">-</span><span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;2d hist&#39;</span><span class="p">)</span>
+<span class="n">h3d</span> <span class="o">=</span> <span class="n">Hist3D</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1000</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;3d hist&#39;</span><span class="p">)</span>
+
+<span class="c"># variable-width bins may be created by passing the bin edges directly:</span>
+<span class="n">h1d_variable</span> <span class="o">=</span> <span class="n">Hist</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+<span class="n">h2d_variable</span> <span class="o">=</span> <span class="n">Hist2D</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+<span class="n">h3d_variable</span> <span class="o">=</span> <span class="n">Hist3D</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span>
+
+<span class="c"># variable-width and constant-width bins can be mixed:</span>
+<span class="n">h2d_mixed</span> <span class="o">=</span> <span class="n">Hist2D</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="c"># wait for you to close all open canvases before exiting</span>
+<span class="c"># wait() will have no effect if ROOT is in batch mode:</span>
+<span class="c"># ROOT.gROOT.SetBatch(True)</span>
+<span class="n">wait</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Total running time of the example:</strong>  0.04 seconds</p>
+</div>
+
+
+                    
+                        <div id="disqus_thread"></div>
+                        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    
+                </div>
+                <div class="span3">
+                    
+        <div class="sphinxsidebar">
+            <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../io/file.html"
+                        title="previous chapter">ROOT.TFile made easy by rootpy</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="plot_matplotlib_hist.html"
+                        title="next chapter">Plot a ROOT histogram with matplotlib</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/auto_examples/plotting/plot_hist.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+            </div>
+        </div>
+                </div>
+            
+        </div>
+    </div>
+    <div class="footer">
+        
+        <div class="container">
+                    &copy;
+                        Copyright 2013, rootpy developers.
+                Created using <a
+                        href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3
+                    .
+                <!--Theme <a href="https://github.com/scotch/sphinx-bootstrap">Sphinx-Bootstrap</a>
+                adapted from
+                <a href="http://twitter.github.com/bootstrap/">Twitter's
+                    Bootstrap</a> by <a href="http://www.scotchmedia.com">Scotch
+                    Media</a> -->
+        </div>
+    </div>
+
+
+    <!-- disqus -->
+    <script type="text/javascript">
+        var disqus_title = 'Working with ROOT histograms &mdash; rootpy dev documentation';
+        var disqus_identifier ='code' + '.' + "rootpy" + window.location.pathname.replace('/', '.');
+    </script>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = "rootpy"; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+<script type="text/javascript">
+    $('.nav .active').on('click', function () {
+        e.preventDefault()
+        $(this).siblings().toggle()
+    });
+</script>
+
+<!-- plusone -->
+<script type="text/javascript">
+    (function () {
+        var po = document.createElement('script');
+        po.type = 'text/javascript';
+        po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+</script>
+
+<!-- twitter -->
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+
+</body>
+</html>

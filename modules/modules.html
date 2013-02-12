@@ -1,0 +1,1375 @@
+
+<!DOCTYPE html><html>
+<head>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8"/>
+    
+        <title>4. rootpy Package &mdash; rootpy dev documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        <script type="text/javascript">
+            var DOCUMENTATION_OPTIONS = {
+                URL_ROOT:'../',
+                VERSION:'dev',
+                COLLAPSE_INDEX:false,
+                FILE_SUFFIX:'.html',
+                HAS_SOURCE:  true
+            };
+        </script>
+            <script type="text/javascript" src="../_static/jquery.js"></script>
+            <script type="text/javascript" src="../_static/underscore.js"></script>
+            <script type="text/javascript" src="../_static/doctools.js"></script>
+            <script type="text/javascript" src="../_static/bootstrap-dropdown.js"></script>
+        <link rel="top" title="rootpy dev documentation" href="../index.html"/>
+            <link rel="up" title="&lt;no title&gt;" href="../user_guide.html"/>
+            <link rel="next" title="4.10.1. batch Package" href="rootpy.batch.html"/>
+            <link rel="prev" title="3. Capturing ROOT Errors with rootpy.logger" href="../logger.html"/> 
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    
+</head>
+<body>
+
+    <div class="navbar navbar-static-top">
+        <div class="navbar-inner">
+            <div class="container">
+
+    <div class="related">
+        <ul class="nav">
+                <li class=""><a class="brand" href="../index.html">rootpy</a></li>
+                <li>
+                    <a href="../genindex.html"
+                       title="General Index" accesskey="I">index</a>
+                </li>
+                <li>
+                    <a href="../py-modindex.html"
+                       title="Python Module Index" >modules</a>
+                </li>
+                <li>
+                    <a href="rootpy.batch.html"
+                       title="4.10.1. batch Package" accesskey="N">next</a>
+                </li>
+                <li>
+                    <a href="../logger.html"
+                       title="3. Capturing ROOT Errors with rootpy.logger" accesskey="P">previous</a>
+                </li>
+                <li><a href="../user_guide.html"
+                        accesskey="U">&lt;no title&gt;</a>
+                </li> 
+        </ul>
+    </div>
+                <div class="pull-right">
+                    
+        <form class="navbar-search" action="../search.html"
+              method="get">
+            <input type="text" name="q" placeholder="search"/>
+            <input type="hidden" name="check_keywords" value="yes"/>
+            <input type="hidden" name="area" value="default"/>
+        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<ul class="quick-links">
+    <li><strong>Quick links</strong></li>
+    <li>
+        <a href="https://github.com/rootpy/rootpy/">GitHub</a>
+    </li>
+    <li>
+        <a href="https://github.com/rootpy/rootpy/issues?state=open">Issues</a>
+    </li>
+    <li class="divider">&middot;</li>
+    <li>
+        <iframe class="github-btn"
+                src="http://ghbtns.com/github-btn.html?user=rootpy&repo=rootpy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="110px" height="20px"></iframe>
+    </li>
+    <li>
+        <iframe class="github-btn"
+                src="http://ghbtns.com/github-btn.html?user=rootpy&repo=rootpy&type=fork&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="94px" height="20px"></iframe>
+    </li>
+
+    <!--<li class="divider">&middot;</li>
+    <li class="follow-btn">
+        <a href="https://twitter.com/"
+           class="twitter-follow-button" data-width="145px"
+           data-link-color="#0069D6" data-show-count="false">Follow
+            @</a>
+    </li>
+    <li class="tweet-btn">
+        <a href="https://twitter.com/share" class="twitter-share-button"
+           data-url="http://rootpy.org" data-count="horizontal"
+           data-via="twbootstrap"
+           data-related=":Creator of rootpy">Tweet</a>
+       </li>-->
+    <li class="plusone-container">
+        <g:plusone size="medium"></g:plusone>
+    </li>
+</ul>  
+    <div class="container">
+        <div class="content row">
+                <div class="span9">
+                    
+  <div class="section" id="rootpy-package">
+<h1>4. rootpy Package<a class="headerlink" href="#rootpy-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>4.1. <tt class="xref py py-mod docutils literal"><span class="pre">rootpy</span></tt> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-rootpy.__init__"></span><dl class="exception">
+<dt id="rootpy.__init__.ROOTError">
+<em class="property">exception </em><tt class="descclassname">rootpy.__init__.</tt><tt class="descname">ROOTError</tt><big>(</big><em>level</em>, <em>location</em>, <em>msg</em><big>)</big><a class="reference internal" href="../_modules/rootpy/__init__.html#ROOTError"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.__init__.ROOTError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">exceptions.RuntimeError</span></tt></p>
+<p>Exception class representing a ROOT error/warning message.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rootpy.__init__.asrootpy">
+<tt class="descclassname">rootpy.__init__.</tt><tt class="descname">asrootpy</tt><big>(</big><em>thing</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/__init__.html#asrootpy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.__init__.asrootpy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rootpy.__init__.create">
+<tt class="descclassname">rootpy.__init__.</tt><tt class="descname">create</tt><big>(</big><em>cls_name</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/__init__.html#create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.__init__.create" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rootpy.__init__.lookup">
+<tt class="descclassname">rootpy.__init__.</tt><tt class="descname">lookup</tt><big>(</big><em>cls</em><big>)</big><a class="reference internal" href="../_modules/rootpy/__init__.html#lookup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.__init__.lookup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rootpy.__init__.lookup_by_name">
+<tt class="descclassname">rootpy.__init__.</tt><tt class="descname">lookup_by_name</tt><big>(</big><em>cls_name</em><big>)</big><a class="reference internal" href="../_modules/rootpy/__init__.html#lookup_by_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.__init__.lookup_by_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="class">
+<dt id="rootpy.__init__.register">
+<em class="property">class </em><tt class="descclassname">rootpy.__init__.</tt><tt class="descname">register</tt><big>(</big><em>names=None</em>, <em>builtin=False</em><big>)</big><a class="reference internal" href="../_modules/rootpy/__init__.html#register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.__init__.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-rootpy.stl">
+<span id="stl-module"></span><h2>4.2. <tt class="xref py py-mod docutils literal"><span class="pre">stl</span></tt> Module<a class="headerlink" href="#module-rootpy.stl" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rootpy-stl">
+<h3>4.2.1. <a class="reference internal" href="#module-rootpy.stl" title="rootpy.stl"><tt class="xref py py-mod docutils literal"><span class="pre">rootpy.stl</span></tt></a><a class="headerlink" href="#rootpy-stl" title="Permalink to this headline">¶</a></h3>
+<p>This module allows C++ template types to be generated on demand with ease,
+automatically building dictionaries with <tt class="xref py py-mod docutils literal"><span class="pre">rootpy.rootcint</span></tt> as necessary.</p>
+<p>It contains a C++ template typename parser written in
+<tt class="xref py py-mod docutils literal"><span class="pre">rootpy.extern.pyparsing</span></tt>.</p>
+<p>Example use:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">rootpy.stl</span> <span class="kn">as</span> <span class="nn">stl</span><span class="o">,</span> <span class="nn">ROOT</span>
+
+<span class="c"># Create a vector type</span>
+<span class="n">StrVector</span> <span class="o">=</span> <span class="n">stl</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="n">stl</span><span class="o">.</span><span class="n">string</span><span class="p">)</span>
+<span class="c"># Instantiate</span>
+<span class="n">strvector</span> <span class="o">=</span> <span class="n">StrVector</span><span class="p">()</span>
+<span class="n">strvector</span><span class="o">.</span><span class="n">push_back</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">)</span>
+<span class="c"># etc.</span>
+
+<span class="n">MapStrRoot</span> <span class="o">=</span> <span class="n">stl</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">stl</span><span class="o">.</span><span class="n">string</span><span class="p">,</span> <span class="n">ROOT</span><span class="o">.</span><span class="n">TH1D</span><span class="p">)</span>
+<span class="n">MapStrRootPtr</span> <span class="o">=</span> <span class="n">stl</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">stl</span><span class="o">.</span><span class="n">string</span><span class="p">,</span> <span class="s">&quot;TH1D*&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="class">
+<dt id="rootpy.stl.CPPType">
+<em class="property">class </em><tt class="descclassname">rootpy.stl.</tt><tt class="descname">CPPType</tt><big>(</big><em>parse_result</em><big>)</big><a class="reference internal" href="../_modules/rootpy/stl.html#CPPType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.stl.CPPType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">rootpy.util.cpp.CPPGrammar</span></tt></p>
+<p>Grammar and representation of a C++ template type. Can handle arbitrary
+nesting and namespaces.</p>
+<dl class="attribute">
+<dt id="rootpy.stl.CPPType.cls">
+<tt class="descname">cls</tt><a class="reference internal" href="../_modules/rootpy/stl.html#CPPType.cls"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.stl.CPPType.cls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the class definition for this type</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.stl.CPPType.ensure_built">
+<tt class="descname">ensure_built</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/stl.html#CPPType.ensure_built"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.stl.CPPType.ensure_built" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make sure that a dictionary exists for this type.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="rootpy.stl.CPPType.from_string">
+<em class="property">classmethod </em><tt class="descname">from_string</tt><big>(</big><em>string</em><big>)</big><a class="reference internal" href="../_modules/rootpy/stl.html#CPPType.from_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.stl.CPPType.from_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse <tt class="docutils literal"><span class="pre">string</span></tt> into a CPPType instance</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.stl.CPPType.guess_headers">
+<tt class="descname">guess_headers</tt><a class="reference internal" href="../_modules/rootpy/stl.html#CPPType.guess_headers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.stl.CPPType.guess_headers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Attempt to guess what headers may be required in order to use this type.
+Returns <cite>guess_headers</cite> of all children recursively.</p>
+<ul>
+<li><dl class="first docutils">
+<dt>If the typename is in the <tt class="xref py py-const docutils literal"><span class="pre">KNOWN_TYPES</span></tt> dictionary, use the</dt>
+<dd><p class="first last">header specified there</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">If it&#8217;s an STL type, include &lt;{type}&gt;</p>
+</li>
+<li><p class="first">If it exists in the ROOT namespace and begins with T, include &lt;{type}.h&gt;</p>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.stl.CPPType.is_template">
+<tt class="descname">is_template</tt><a class="reference internal" href="../_modules/rootpy/stl.html#CPPType.is_template"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.stl.CPPType.is_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this a template type? (Does it have template parameters?)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="rootpy.stl.CPPType.make">
+<em class="property">classmethod </em><tt class="descname">make</tt><big>(</big><em>string</em>, <em>location</em>, <em>tokens</em><big>)</big><a class="reference internal" href="../_modules/rootpy/stl.html#CPPType.make"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.stl.CPPType.make" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="rootpy.stl.CPPType.try_parse">
+<em class="property">classmethod </em><tt class="descname">try_parse</tt><big>(</big><em>string</em><big>)</big><a class="reference internal" href="../_modules/rootpy/stl.html#CPPType.try_parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.stl.CPPType.try_parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Try to parse <tt class="docutils literal"><span class="pre">string</span></tt> as a C++ type, returning <tt class="xref py py-const docutils literal"><span class="pre">None</span></tt> on
+failure.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="rootpy.stl.generate">
+<tt class="descclassname">rootpy.stl.</tt><tt class="descname">generate</tt><big>(</big><em>declaration</em>, <em>headers=None</em>, <em>has_iterators=False</em><big>)</big><a class="reference internal" href="../_modules/rootpy/stl.html#generate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.stl.generate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+<div class="section" id="rootcint-module">
+<h2>4.3. <tt class="xref py py-mod docutils literal"><span class="pre">rootcint</span></tt> Module<a class="headerlink" href="#rootcint-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-rootpy.core">
+<span id="core-module"></span><h2>4.4. <tt class="xref py py-mod docutils literal"><span class="pre">core</span></tt> Module<a class="headerlink" href="#module-rootpy.core" title="Permalink to this headline">¶</a></h2>
+<p>This module contains base classes defining core functionality</p>
+<dl class="class">
+<dt id="rootpy.core.NamelessConstructorObject">
+<em class="property">class </em><tt class="descclassname">rootpy.core.</tt><tt class="descname">NamelessConstructorObject</tt><big>(</big><em>name</em>, <em>title</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/core.html#NamelessConstructorObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.core.NamelessConstructorObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.core.Object" title="rootpy.core.Object"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.core.Object</span></tt></a></p>
+<p>Handle special cases like TGraph where the
+ROOT constructor does not take name/title</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.core.Object">
+<em class="property">class </em><tt class="descclassname">rootpy.core.</tt><tt class="descname">Object</tt><big>(</big><em>name</em>, <em>title</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/core.html#Object"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.core.Object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Overrides TObject methods. Name and title for TObject-derived classes
+are optional. If no name is specified, a UUID is used to ensure uniqueness.</p>
+<dl class="method">
+<dt id="rootpy.core.Object.Clone">
+<tt class="descname">Clone</tt><big>(</big><em>name=None</em>, <em>title=None</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/core.html#Object.Clone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.core.Object.Clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.core.Object.ROOT_base">
+<tt class="descname">ROOT_base</tt><a class="reference internal" href="../_modules/rootpy/core.html#Object.ROOT_base"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.core.Object.ROOT_base" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the ROOT base class. In rootpy all derived classes must list the
+ROOT base class as the last class in the inheritance list.</p>
+<p>This is not a &#64;classmethod due to how the Hist classes are wrapped</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.core.Object.name">
+<tt class="descname">name</tt><a class="reference internal" href="../_modules/rootpy/core.html#Object.name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.core.Object.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.core.Object.title">
+<tt class="descname">title</tt><a class="reference internal" href="../_modules/rootpy/core.html#Object.title"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.core.Object.title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.core.RequireFile">
+<em class="property">class </em><tt class="descclassname">rootpy.core.</tt><tt class="descname">RequireFile</tt><a class="reference internal" href="../_modules/rootpy/core.html#RequireFile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.core.RequireFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="staticmethod">
+<dt id="rootpy.core.RequireFile.cd">
+<em class="property">static </em><tt class="descname">cd</tt><big>(</big><em>f</em><big>)</big><a class="reference internal" href="../_modules/rootpy/core.html#RequireFile.cd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.core.RequireFile.cd" title="Permalink to this definition">¶</a></dt>
+<dd><p>A decorator
+Useful for TTree.Write...</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="rootpy.core.camel_to_snake">
+<tt class="descclassname">rootpy.core.</tt><tt class="descname">camel_to_snake</tt><big>(</big><em>name</em><big>)</big><a class="reference internal" href="../_modules/rootpy/core.html#camel_to_snake"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.core.camel_to_snake" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="http://stackoverflow.com/questions/1175208/">http://stackoverflow.com/questions/1175208/</a>
+elegant-python-function-to-convert-camelcase-to-camel-case</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rootpy.core.isbasictype">
+<tt class="descclassname">rootpy.core.</tt><tt class="descname">isbasictype</tt><big>(</big><em>thing</em><big>)</big><a class="reference internal" href="../_modules/rootpy/core.html#isbasictype"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.core.isbasictype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Is this thing a basic builtin numeric type?</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rootpy.core.snake_case_methods">
+<tt class="descclassname">rootpy.core.</tt><tt class="descname">snake_case_methods</tt><big>(</big><em>cls</em>, <em>debug=False</em><big>)</big><a class="reference internal" href="../_modules/rootpy/core.html#snake_case_methods"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.core.snake_case_methods" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class decorator adding snake_case methods
+that alias capitalized ROOT methods</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rootpy.core.wrap_call">
+<tt class="descclassname">rootpy.core.</tt><tt class="descname">wrap_call</tt><big>(</big><em>cls</em>, <em>method</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/core.html#wrap_call"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.core.wrap_call" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will provide more detailed info in the case that
+a method call on a ROOT object raises a TypeError</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-rootpy.objectproxy">
+<span id="objectproxy-module"></span><h2>4.5. <tt class="xref py py-mod docutils literal"><span class="pre">objectproxy</span></tt> Module<a class="headerlink" href="#module-rootpy.objectproxy" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rootpy.objectproxy.MethodProxy">
+<em class="property">class </em><tt class="descclassname">rootpy.objectproxy.</tt><tt class="descname">MethodProxy</tt><big>(</big><em>obj</em>, <em>func</em>, <em>name</em><big>)</big><a class="reference internal" href="../_modules/rootpy/objectproxy.html#MethodProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.objectproxy.MethodProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>Wrapper object for a method to be called.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.objectproxy.ObjectProxy">
+<em class="property">class </em><tt class="descclassname">rootpy.objectproxy.</tt><tt class="descname">ObjectProxy</tt><big>(</big><em>obj</em><big>)</big><a class="reference internal" href="../_modules/rootpy/objectproxy.html#ObjectProxy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.objectproxy.ObjectProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-rootpy.path">
+<span id="path-module"></span><h2>4.6. <tt class="xref py py-mod docutils literal"><span class="pre">path</span></tt> Module<a class="headerlink" href="#module-rootpy.path" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="rootpy.path.expand">
+<tt class="descclassname">rootpy.path.</tt><tt class="descname">expand</tt><big>(</big><em>s</em><big>)</big><a class="reference internal" href="../_modules/rootpy/path.html#expand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.path.expand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rootpy.path.expand_and_glob">
+<tt class="descclassname">rootpy.path.</tt><tt class="descname">expand_and_glob</tt><big>(</big><em>s</em><big>)</big><a class="reference internal" href="../_modules/rootpy/path.html#expand_and_glob"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.path.expand_and_glob" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rootpy.path.expand_and_glob_all">
+<tt class="descclassname">rootpy.path.</tt><tt class="descname">expand_and_glob_all</tt><big>(</big><em>s</em><big>)</big><a class="reference internal" href="../_modules/rootpy/path.html#expand_and_glob_all"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.path.expand_and_glob_all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="root2tables-module">
+<h2>4.7. <tt class="xref py py-mod docutils literal"><span class="pre">root2tables</span></tt> Module<a class="headerlink" href="#root2tables-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-rootpy.types">
+<span id="types-module"></span><h2>4.8. <a class="reference external" href="http://docs.python.org/2/library/types.html#types" title="(in Python v2.7)"><tt class="xref py py-mod docutils literal"><span class="pre">types</span></tt></a> Module<a class="headerlink" href="#module-rootpy.types" title="Permalink to this headline">¶</a></h2>
+<p>Wrappers for basic types that are compatible with ROOT TTrees</p>
+<dl class="class">
+<dt id="rootpy.types.Bool">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">Bool</tt><big>(</big><em>default=False</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Bool"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Bool" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Variable" title="rootpy.types.Variable"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Variable</span></tt></a></p>
+<p>This is a variable containing a Boolean type</p>
+<dl class="classmethod">
+<dt id="rootpy.types.Bool.convert">
+<em class="property">classmethod </em><tt class="descname">convert</tt><big>(</big><em>value</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Bool.convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Bool.convert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.Bool.type">
+<tt class="descname">type</tt><em class="property"> = 'O'</em><a class="headerlink" href="#rootpy.types.Bool.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.Bool.typename">
+<tt class="descname">typename</tt><em class="property"> = 'Bool_t'</em><a class="headerlink" href="#rootpy.types.Bool.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.BoolArray">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">BoolArray</tt><big>(</big><em>length</em>, <em>default=False</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#BoolArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.BoolArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.VariableArray" title="rootpy.types.VariableArray"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.VariableArray</span></tt></a></p>
+<p>This is an array of Booleans</p>
+<dl class="attribute">
+<dt id="rootpy.types.BoolArray.type">
+<tt class="descname">type</tt><em class="property"> = 'O'</em><a class="headerlink" href="#rootpy.types.BoolArray.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.BoolArray.typename">
+<tt class="descname">typename</tt><em class="property"> = 'Bool_t'</em><a class="headerlink" href="#rootpy.types.BoolArray.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.BoolArrayCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">BoolArrayCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#BoolArrayCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.BoolArrayCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.BoolArrayCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.BoolArrayCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.BoolArray" title="rootpy.types.BoolArray"><tt class="xref py py-class docutils literal"><span class="pre">BoolArray</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.BoolCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">BoolCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#BoolCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.BoolCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.BoolCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.BoolCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.Bool" title="rootpy.types.Bool"><tt class="xref py py-class docutils literal"><span class="pre">Bool</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.Char">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">Char</tt><big>(</big><em>default=False</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Char"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Char" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Variable" title="rootpy.types.Variable"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Variable</span></tt></a></p>
+<p>This is a variable containing a character type</p>
+<dl class="classmethod">
+<dt id="rootpy.types.Char.convert">
+<em class="property">classmethod </em><tt class="descname">convert</tt><big>(</big><em>value</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Char.convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Char.convert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.Char.type">
+<tt class="descname">type</tt><em class="property"> = 'C'</em><a class="headerlink" href="#rootpy.types.Char.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.Char.typename">
+<tt class="descname">typename</tt><em class="property"> = 'Char_t'</em><a class="headerlink" href="#rootpy.types.Char.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.CharArray">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">CharArray</tt><big>(</big><em>length</em>, <em>default=False</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#CharArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.CharArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.VariableArray" title="rootpy.types.VariableArray"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.VariableArray</span></tt></a></p>
+<p>This is an array of characters</p>
+<dl class="attribute">
+<dt id="rootpy.types.CharArray.type">
+<tt class="descname">type</tt><em class="property"> = 'C'</em><a class="headerlink" href="#rootpy.types.CharArray.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.CharArray.typename">
+<tt class="descname">typename</tt><em class="property"> = 'Char_t'</em><a class="headerlink" href="#rootpy.types.CharArray.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.CharArrayCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">CharArrayCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#CharArrayCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.CharArrayCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.CharArrayCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.CharArrayCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.CharArray" title="rootpy.types.CharArray"><tt class="xref py py-class docutils literal"><span class="pre">CharArray</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.CharCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">CharCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#CharCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.CharCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.CharCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.CharCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.Char" title="rootpy.types.Char"><tt class="xref py py-class docutils literal"><span class="pre">Char</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.Column">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">Column</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Column"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Column" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.Double">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">Double</tt><big>(</big><em>default=0.0</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Double"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Double" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Variable" title="rootpy.types.Variable"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Variable</span></tt></a></p>
+<p>This is a variable containing a double</p>
+<dl class="classmethod">
+<dt id="rootpy.types.Double.convert">
+<em class="property">classmethod </em><tt class="descname">convert</tt><big>(</big><em>value</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Double.convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Double.convert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.Double.type">
+<tt class="descname">type</tt><em class="property"> = 'D'</em><a class="headerlink" href="#rootpy.types.Double.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.Double.typename">
+<tt class="descname">typename</tt><em class="property"> = 'Double_t'</em><a class="headerlink" href="#rootpy.types.Double.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.DoubleArray">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">DoubleArray</tt><big>(</big><em>length</em>, <em>default=0.0</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#DoubleArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.DoubleArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.VariableArray" title="rootpy.types.VariableArray"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.VariableArray</span></tt></a></p>
+<p>This is an array of doubles</p>
+<dl class="attribute">
+<dt id="rootpy.types.DoubleArray.type">
+<tt class="descname">type</tt><em class="property"> = 'D'</em><a class="headerlink" href="#rootpy.types.DoubleArray.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.DoubleArray.typename">
+<tt class="descname">typename</tt><em class="property"> = 'Double_t'</em><a class="headerlink" href="#rootpy.types.DoubleArray.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.DoubleArrayCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">DoubleArrayCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#DoubleArrayCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.DoubleArrayCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.DoubleArrayCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.DoubleArrayCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.DoubleArray" title="rootpy.types.DoubleArray"><tt class="xref py py-class docutils literal"><span class="pre">DoubleArray</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.DoubleCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">DoubleCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#DoubleCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.DoubleCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.DoubleCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.DoubleCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.Double" title="rootpy.types.Double"><tt class="xref py py-class docutils literal"><span class="pre">Double</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.Float">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">Float</tt><big>(</big><em>default=0.0</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Float"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Float" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Variable" title="rootpy.types.Variable"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Variable</span></tt></a></p>
+<p>This is a variable containing a float</p>
+<dl class="classmethod">
+<dt id="rootpy.types.Float.convert">
+<em class="property">classmethod </em><tt class="descname">convert</tt><big>(</big><em>value</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Float.convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Float.convert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.Float.type">
+<tt class="descname">type</tt><em class="property"> = 'F'</em><a class="headerlink" href="#rootpy.types.Float.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.Float.typename">
+<tt class="descname">typename</tt><em class="property"> = 'Float_t'</em><a class="headerlink" href="#rootpy.types.Float.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.FloatArray">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">FloatArray</tt><big>(</big><em>length</em>, <em>default=0.0</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#FloatArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.FloatArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.VariableArray" title="rootpy.types.VariableArray"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.VariableArray</span></tt></a></p>
+<p>This is an array of floats</p>
+<dl class="attribute">
+<dt id="rootpy.types.FloatArray.type">
+<tt class="descname">type</tt><em class="property"> = 'F'</em><a class="headerlink" href="#rootpy.types.FloatArray.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.FloatArray.typename">
+<tt class="descname">typename</tt><em class="property"> = 'Float_t'</em><a class="headerlink" href="#rootpy.types.FloatArray.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.FloatArrayCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">FloatArrayCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#FloatArrayCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.FloatArrayCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.FloatArrayCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.FloatArrayCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.FloatArray" title="rootpy.types.FloatArray"><tt class="xref py py-class docutils literal"><span class="pre">FloatArray</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.FloatCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">FloatCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#FloatCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.FloatCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.FloatCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.FloatCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.Float" title="rootpy.types.Float"><tt class="xref py py-class docutils literal"><span class="pre">Float</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.Int">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">Int</tt><big>(</big><em>default=0</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Int"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Variable" title="rootpy.types.Variable"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Variable</span></tt></a></p>
+<p>This is a variable containing an integer</p>
+<dl class="classmethod">
+<dt id="rootpy.types.Int.convert">
+<em class="property">classmethod </em><tt class="descname">convert</tt><big>(</big><em>value</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Int.convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Int.convert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.Int.type">
+<tt class="descname">type</tt><em class="property"> = 'I'</em><a class="headerlink" href="#rootpy.types.Int.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.Int.typename">
+<tt class="descname">typename</tt><em class="property"> = 'Int_t'</em><a class="headerlink" href="#rootpy.types.Int.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.IntArray">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">IntArray</tt><big>(</big><em>length</em>, <em>default=0</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#IntArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.IntArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.VariableArray" title="rootpy.types.VariableArray"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.VariableArray</span></tt></a></p>
+<p>This is an array of integers</p>
+<dl class="attribute">
+<dt id="rootpy.types.IntArray.type">
+<tt class="descname">type</tt><em class="property"> = 'I'</em><a class="headerlink" href="#rootpy.types.IntArray.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.IntArray.typename">
+<tt class="descname">typename</tt><em class="property"> = 'Int_t'</em><a class="headerlink" href="#rootpy.types.IntArray.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.IntArrayCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">IntArrayCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#IntArrayCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.IntArrayCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.IntArrayCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.IntArrayCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.IntArray" title="rootpy.types.IntArray"><tt class="xref py py-class docutils literal"><span class="pre">IntArray</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.IntCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">IntCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#IntCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.IntCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.IntCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.IntCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.Int" title="rootpy.types.Int"><tt class="xref py py-class docutils literal"><span class="pre">Int</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.Long">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">Long</tt><big>(</big><em>default=0</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Long"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Long" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Variable" title="rootpy.types.Variable"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Variable</span></tt></a></p>
+<p>This is a variable containing a long</p>
+<dl class="classmethod">
+<dt id="rootpy.types.Long.convert">
+<em class="property">classmethod </em><tt class="descname">convert</tt><big>(</big><em>value</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Long.convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Long.convert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.Long.type">
+<tt class="descname">type</tt><em class="property"> = 'L'</em><a class="headerlink" href="#rootpy.types.Long.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.Long.typename">
+<tt class="descname">typename</tt><em class="property"> = 'Long64_t'</em><a class="headerlink" href="#rootpy.types.Long.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.LongArray">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">LongArray</tt><big>(</big><em>length</em>, <em>default=0</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#LongArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.LongArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.VariableArray" title="rootpy.types.VariableArray"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.VariableArray</span></tt></a></p>
+<p>This is an array of longs</p>
+<dl class="attribute">
+<dt id="rootpy.types.LongArray.type">
+<tt class="descname">type</tt><em class="property"> = 'L'</em><a class="headerlink" href="#rootpy.types.LongArray.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.LongArray.typename">
+<tt class="descname">typename</tt><em class="property"> = 'Long64_t'</em><a class="headerlink" href="#rootpy.types.LongArray.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.LongArrayCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">LongArrayCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#LongArrayCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.LongArrayCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.LongArrayCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.LongArrayCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.LongArray" title="rootpy.types.LongArray"><tt class="xref py py-class docutils literal"><span class="pre">LongArray</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.LongCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">LongCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#LongCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.LongCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.LongCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.LongCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.Long" title="rootpy.types.Long"><tt class="xref py py-class docutils literal"><span class="pre">Long</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.ObjectCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">ObjectCol</tt><big>(</big><em>cls</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#ObjectCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.ObjectCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.Short">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">Short</tt><big>(</big><em>default=0</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Short"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Short" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Variable" title="rootpy.types.Variable"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Variable</span></tt></a></p>
+<p>This is a variable containing an integer</p>
+<dl class="classmethod">
+<dt id="rootpy.types.Short.convert">
+<em class="property">classmethod </em><tt class="descname">convert</tt><big>(</big><em>value</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Short.convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Short.convert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.Short.type">
+<tt class="descname">type</tt><em class="property"> = 'S'</em><a class="headerlink" href="#rootpy.types.Short.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.Short.typename">
+<tt class="descname">typename</tt><em class="property"> = 'Short_t'</em><a class="headerlink" href="#rootpy.types.Short.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.ShortArray">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">ShortArray</tt><big>(</big><em>length</em>, <em>default=0</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#ShortArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.ShortArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.VariableArray" title="rootpy.types.VariableArray"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.VariableArray</span></tt></a></p>
+<p>This is an array of integers</p>
+<dl class="attribute">
+<dt id="rootpy.types.ShortArray.type">
+<tt class="descname">type</tt><em class="property"> = 'S'</em><a class="headerlink" href="#rootpy.types.ShortArray.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.ShortArray.typename">
+<tt class="descname">typename</tt><em class="property"> = 'Short_t'</em><a class="headerlink" href="#rootpy.types.ShortArray.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.ShortArrayCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">ShortArrayCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#ShortArrayCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.ShortArrayCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.ShortArrayCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.ShortArrayCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.ShortArray" title="rootpy.types.ShortArray"><tt class="xref py py-class docutils literal"><span class="pre">ShortArray</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.ShortCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">ShortCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#ShortCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.ShortCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.ShortCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.ShortCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.Short" title="rootpy.types.Short"><tt class="xref py py-class docutils literal"><span class="pre">Short</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.UChar">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">UChar</tt><big>(</big><em>default=False</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#UChar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.UChar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Variable" title="rootpy.types.Variable"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Variable</span></tt></a></p>
+<p>This is a variable containing an unsigned character type</p>
+<dl class="classmethod">
+<dt id="rootpy.types.UChar.convert">
+<em class="property">classmethod </em><tt class="descname">convert</tt><big>(</big><em>value</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#UChar.convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.UChar.convert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.UChar.type">
+<tt class="descname">type</tt><em class="property"> = 'c'</em><a class="headerlink" href="#rootpy.types.UChar.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.UChar.typename">
+<tt class="descname">typename</tt><em class="property"> = 'UChar_t'</em><a class="headerlink" href="#rootpy.types.UChar.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.UCharArray">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">UCharArray</tt><big>(</big><em>length</em>, <em>default=False</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#UCharArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.UCharArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.VariableArray" title="rootpy.types.VariableArray"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.VariableArray</span></tt></a></p>
+<p>This is an array of unsigned characters</p>
+<dl class="attribute">
+<dt id="rootpy.types.UCharArray.type">
+<tt class="descname">type</tt><em class="property"> = 'c'</em><a class="headerlink" href="#rootpy.types.UCharArray.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.UCharArray.typename">
+<tt class="descname">typename</tt><em class="property"> = 'UChar_t'</em><a class="headerlink" href="#rootpy.types.UCharArray.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.UCharArrayCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">UCharArrayCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#UCharArrayCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.UCharArrayCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.UCharArrayCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.UCharArrayCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.UCharArray" title="rootpy.types.UCharArray"><tt class="xref py py-class docutils literal"><span class="pre">UCharArray</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.UCharCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">UCharCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#UCharCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.UCharCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.UCharCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.UCharCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.UChar" title="rootpy.types.UChar"><tt class="xref py py-class docutils literal"><span class="pre">UChar</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.UInt">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">UInt</tt><big>(</big><em>default=0</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#UInt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.UInt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Variable" title="rootpy.types.Variable"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Variable</span></tt></a></p>
+<p>This is a variable containing an unsigned integer</p>
+<dl class="classmethod">
+<dt id="rootpy.types.UInt.convert">
+<em class="property">classmethod </em><tt class="descname">convert</tt><big>(</big><em>value</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#UInt.convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.UInt.convert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.UInt.type">
+<tt class="descname">type</tt><em class="property"> = 'i'</em><a class="headerlink" href="#rootpy.types.UInt.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.UInt.typename">
+<tt class="descname">typename</tt><em class="property"> = 'UInt_t'</em><a class="headerlink" href="#rootpy.types.UInt.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.UIntArray">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">UIntArray</tt><big>(</big><em>length</em>, <em>default=0</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#UIntArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.UIntArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.VariableArray" title="rootpy.types.VariableArray"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.VariableArray</span></tt></a></p>
+<p>This is an array of unsigned integers</p>
+<dl class="attribute">
+<dt id="rootpy.types.UIntArray.type">
+<tt class="descname">type</tt><em class="property"> = 'i'</em><a class="headerlink" href="#rootpy.types.UIntArray.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.UIntArray.typename">
+<tt class="descname">typename</tt><em class="property"> = 'UInt_t'</em><a class="headerlink" href="#rootpy.types.UIntArray.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.UIntArrayCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">UIntArrayCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#UIntArrayCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.UIntArrayCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.UIntArrayCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.UIntArrayCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.UIntArray" title="rootpy.types.UIntArray"><tt class="xref py py-class docutils literal"><span class="pre">UIntArray</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.UIntCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">UIntCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#UIntCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.UIntCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.UIntCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.UIntCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.UInt" title="rootpy.types.UInt"><tt class="xref py py-class docutils literal"><span class="pre">UInt</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.ULong">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">ULong</tt><big>(</big><em>default=0</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#ULong"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.ULong" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Variable" title="rootpy.types.Variable"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Variable</span></tt></a></p>
+<p>This is a variable containing an unsigned long</p>
+<dl class="classmethod">
+<dt id="rootpy.types.ULong.convert">
+<em class="property">classmethod </em><tt class="descname">convert</tt><big>(</big><em>value</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#ULong.convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.ULong.convert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.ULong.type">
+<tt class="descname">type</tt><em class="property"> = 'l'</em><a class="headerlink" href="#rootpy.types.ULong.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.ULong.typename">
+<tt class="descname">typename</tt><em class="property"> = 'ULong64_t'</em><a class="headerlink" href="#rootpy.types.ULong.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.ULongArray">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">ULongArray</tt><big>(</big><em>length</em>, <em>default=0</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#ULongArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.ULongArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.VariableArray" title="rootpy.types.VariableArray"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.VariableArray</span></tt></a></p>
+<p>This is of unsigned longs</p>
+<dl class="attribute">
+<dt id="rootpy.types.ULongArray.type">
+<tt class="descname">type</tt><em class="property"> = 'l'</em><a class="headerlink" href="#rootpy.types.ULongArray.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.ULongArray.typename">
+<tt class="descname">typename</tt><em class="property"> = 'ULong64_t'</em><a class="headerlink" href="#rootpy.types.ULongArray.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.ULongArrayCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">ULongArrayCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#ULongArrayCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.ULongArrayCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.ULongArrayCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.ULongArrayCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.ULongArray" title="rootpy.types.ULongArray"><tt class="xref py py-class docutils literal"><span class="pre">ULongArray</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.ULongCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">ULongCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#ULongCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.ULongCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.ULongCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.ULongCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.ULong" title="rootpy.types.ULong"><tt class="xref py py-class docutils literal"><span class="pre">ULong</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.UShort">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">UShort</tt><big>(</big><em>default=0</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#UShort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.UShort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Variable" title="rootpy.types.Variable"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Variable</span></tt></a></p>
+<p>This is a variable containing a short</p>
+<dl class="classmethod">
+<dt id="rootpy.types.UShort.convert">
+<em class="property">classmethod </em><tt class="descname">convert</tt><big>(</big><em>value</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#UShort.convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.UShort.convert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.UShort.type">
+<tt class="descname">type</tt><em class="property"> = 's'</em><a class="headerlink" href="#rootpy.types.UShort.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.UShort.typename">
+<tt class="descname">typename</tt><em class="property"> = 'UShort_t'</em><a class="headerlink" href="#rootpy.types.UShort.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.UShortArray">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">UShortArray</tt><big>(</big><em>length</em>, <em>default=0</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#UShortArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.UShortArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.VariableArray" title="rootpy.types.VariableArray"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.VariableArray</span></tt></a></p>
+<p>This is an array of unsigned shorts</p>
+<dl class="attribute">
+<dt id="rootpy.types.UShortArray.type">
+<tt class="descname">type</tt><em class="property"> = 's'</em><a class="headerlink" href="#rootpy.types.UShortArray.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.UShortArray.typename">
+<tt class="descname">typename</tt><em class="property"> = 'UShort_t'</em><a class="headerlink" href="#rootpy.types.UShortArray.typename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.UShortArrayCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">UShortArrayCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#UShortArrayCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.UShortArrayCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.UShortArrayCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.UShortArrayCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.UShortArray" title="rootpy.types.UShortArray"><tt class="xref py py-class docutils literal"><span class="pre">UShortArray</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.UShortCol">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">UShortCol</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#UShortCol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.UShortCol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.types.Column" title="rootpy.types.Column"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.types.Column</span></tt></a></p>
+<dl class="attribute">
+<dt id="rootpy.types.UShortCol.type">
+<tt class="descname">type</tt><a class="headerlink" href="#rootpy.types.UShortCol.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#rootpy.types.UShort" title="rootpy.types.UShort"><tt class="xref py py-class docutils literal"><span class="pre">UShort</span></tt></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.Variable">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">Variable</tt><big>(</big><em>resetable=True</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Variable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Variable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/2/library/array.html#array.array" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">array.array</span></tt></a></p>
+<p>This is the base class for all variables</p>
+<dl class="method">
+<dt id="rootpy.types.Variable.clear">
+<tt class="descname">clear</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Variable.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Variable.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Supplied to match the interface of ROOT.vector</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.types.Variable.reset">
+<tt class="descname">reset</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Variable.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Variable.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the value to the default</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.types.Variable.set">
+<tt class="descname">set</tt><big>(</big><em>value</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#Variable.set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Variable.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the value</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.types.Variable.value">
+<tt class="descname">value</tt><a class="reference internal" href="../_modules/rootpy/types.html#Variable.value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.Variable.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>The current value</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.types.VariableArray">
+<em class="property">class </em><tt class="descclassname">rootpy.types.</tt><tt class="descname">VariableArray</tt><big>(</big><em>resetable=True</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#VariableArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.VariableArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="http://docs.python.org/2/library/array.html#array.array" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">array.array</span></tt></a></p>
+<p>This is the base class for all array variables</p>
+<dl class="method">
+<dt id="rootpy.types.VariableArray.clear">
+<tt class="descname">clear</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#VariableArray.clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.VariableArray.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Supplied to match the interface of ROOT.vector</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.types.VariableArray.reset">
+<tt class="descname">reset</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#VariableArray.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.VariableArray.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the value to the default</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.types.VariableArray.set">
+<tt class="descname">set</tt><big>(</big><em>other</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#VariableArray.set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.VariableArray.set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="rootpy.types.convert">
+<tt class="descclassname">rootpy.types.</tt><tt class="descname">convert</tt><big>(</big><em>origin</em>, <em>target</em>, <em>type</em><big>)</big><a class="reference internal" href="../_modules/rootpy/types.html#convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.types.convert" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert type from origin to target
+origin/target must be ROOTCODE, ROOTNAME, ARRAY, or NUMPY</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-rootpy.userdata">
+<span id="userdata-module"></span><h2>4.9. <tt class="xref py py-mod docutils literal"><span class="pre">userdata</span></tt> Module<a class="headerlink" href="#module-rootpy.userdata" title="Permalink to this headline">¶</a></h2>
+<p>This module handles creation of the user-data area</p>
+<dl class="function">
+<dt id="rootpy.userdata.ensure_directory">
+<tt class="descclassname">rootpy.userdata.</tt><tt class="descname">ensure_directory</tt><big>(</big><em>variable</em>, <em>default</em><big>)</big><a class="reference internal" href="../_modules/rootpy/userdata.html#ensure_directory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.userdata.ensure_directory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rootpy.userdata.show_binary_path">
+<tt class="descclassname">rootpy.userdata.</tt><tt class="descname">show_binary_path</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/userdata.html#show_binary_path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.userdata.show_binary_path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="subpackages">
+<h2>4.10. Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rootpy.batch.html">4.10.1. batch Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.batch.html#id1">4.10.1.1. <tt class="docutils literal"><span class="pre">batch</span></tt> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.batch.html#module-rootpy.batch.student">4.10.1.2. <tt class="docutils literal"><span class="pre">student</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.batch.html#module-rootpy.batch.supervisor">4.10.1.3. <tt class="docutils literal"><span class="pre">supervisor</span></tt> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rootpy.data.html">4.10.2. data Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.data.html#module-rootpy.data.dataset">4.10.2.1. <tt class="docutils literal"><span class="pre">dataset</span></tt> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rootpy.io.html">4.10.3. io Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.io.html#id1">4.10.3.1. <tt class="docutils literal"><span class="pre">io</span></tt> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.io.html#module-rootpy.io.file">4.10.3.2. <tt class="docutils literal"><span class="pre">file</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.io.html#module-rootpy.io.utils">4.10.3.3. <tt class="docutils literal"><span class="pre">utils</span></tt> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rootpy.logging.html">4.10.4. <tt class="docutils literal"><span class="pre">rootpy.logger</span></tt> Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.logging.html#rootpy-logger">4.10.4.1. <tt class="docutils literal"><span class="pre">rootpy.logger</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.logging.html#module-rootpy.logger.color">4.10.4.2. <tt class="docutils literal"><span class="pre">rootpy.logger.color</span></tt> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.logging.html#module-rootpy.logger.extended_logger">4.10.4.3. <tt class="docutils literal"><span class="pre">rootpy.logger.extended_logger</span></tt> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.logging.html#module-rootpy.logger.multilogging">4.10.4.4. <tt class="docutils literal"><span class="pre">rootpy.logger.multilogging</span></tt> Package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rootpy.logging.html#how-to-use-logging-with-multiprocessing">4.10.4.4.1. How to use logging with multiprocessing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.logging.html#module-rootpy.logger.magic">4.10.4.5. Scary magic in <tt class="docutils literal"><span class="pre">rootpy.logger.magic</span></tt></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rootpy.math.html">4.10.5. math Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.math.html#subpackages">4.10.5.1. Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rootpy.math.linalg.html">4.10.5.1.1. linalg Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rootpy.math.linalg.html#module-rootpy.math.linalg.matrix">4.10.5.1.1.1. <tt class="docutils literal"><span class="pre">matrix</span></tt> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rootpy.math.physics.html">4.10.5.1.2. physics Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rootpy.math.physics.html#module-rootpy.math.physics.measure">4.10.5.1.2.1. <tt class="docutils literal"><span class="pre">measure</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rootpy.math.physics.html#module-rootpy.math.physics.vector">4.10.5.1.2.2. <tt class="docutils literal"><span class="pre">vector</span></tt> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rootpy.math.stats.html">4.10.5.1.3. stats Package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rootpy.math.stats.html#module-rootpy.math.stats.correlation">4.10.5.1.3.1. <tt class="docutils literal"><span class="pre">correlation</span></tt> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rootpy.math.stats.html#module-rootpy.math.stats.qqplot">4.10.5.1.3.2. <tt class="docutils literal"><span class="pre">qqplot</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rootpy.plotting.html">4.10.6. plotting Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.plotting.html#id1">4.10.6.1. <tt class="docutils literal"><span class="pre">plotting</span></tt> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.plotting.html#module-rootpy.plotting.canvas">4.10.6.2. <tt class="docutils literal"><span class="pre">canvas</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.plotting.html#module-rootpy.plotting.core">4.10.6.3. <tt class="docutils literal"><span class="pre">core</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.plotting.html#module-rootpy.plotting.graph">4.10.6.4. <tt class="docutils literal"><span class="pre">graph</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.plotting.html#module-rootpy.plotting.hist">4.10.6.5. <tt class="docutils literal"><span class="pre">hist</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.plotting.html#module-rootpy.plotting.legend">4.10.6.6. <tt class="docutils literal"><span class="pre">legend</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.plotting.html#pyplot-module">4.10.6.7. <tt class="docutils literal"><span class="pre">pyplot</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.plotting.html#module-rootpy.plotting.root2matplotlib">4.10.6.8. <tt class="docutils literal"><span class="pre">root2matplotlib</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.plotting.html#module-rootpy.plotting.shapes">4.10.6.9. <tt class="docutils literal"><span class="pre">shapes</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.plotting.html#module-rootpy.plotting.style">4.10.6.10. <tt class="docutils literal"><span class="pre">style</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.plotting.html#module-rootpy.plotting.views">4.10.6.11. <tt class="docutils literal"><span class="pre">views</span></tt> Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rootpy.plotting.html#folder-view-classes">4.10.6.11.1. Folder &#8220;View&#8221; Classes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rootpy.plotting.html#example-use-case">4.10.6.11.1.1. Example use case</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="rootpy.plotting.html#sumview">4.10.6.11.1.1.1. SumView</a></li>
+<li class="toctree-l5"><a class="reference internal" href="rootpy.plotting.html#scaleview">4.10.6.11.1.1.2. ScaleView</a></li>
+<li class="toctree-l5"><a class="reference internal" href="rootpy.plotting.html#combining-views">4.10.6.11.1.1.3. Combining views</a></li>
+<li class="toctree-l5"><a class="reference internal" href="rootpy.plotting.html#styleview">4.10.6.11.1.1.4. StyleView</a></li>
+<li class="toctree-l5"><a class="reference internal" href="rootpy.plotting.html#stackview">4.10.6.11.1.1.5. StackView</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="rootpy.plotting.html#other-examples">4.10.6.11.1.2. Other Examples</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="rootpy.plotting.html#normalizeview">4.10.6.11.1.2.1. NormalizeView</a></li>
+<li class="toctree-l5"><a class="reference internal" href="rootpy.plotting.html#functorview">4.10.6.11.1.2.2. FunctorView</a></li>
+<li class="toctree-l5"><a class="reference internal" href="rootpy.plotting.html#multifunctorview">4.10.6.11.1.2.3. MultiFunctorView</a></li>
+<li class="toctree-l5"><a class="reference internal" href="rootpy.plotting.html#subdirectoryview">4.10.6.11.1.2.4. SubdirectoryView</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rootpy.root2array.html">4.10.7. root2array Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.root2array.html#id1">4.10.7.1. <tt class="docutils literal"><span class="pre">root2array</span></tt> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.root2array.html#root2array-module">4.10.7.2. <tt class="docutils literal"><span class="pre">root2array</span></tt> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rootpy.tree.html">4.10.8. tree Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.tree.html#id1">4.10.8.1. <tt class="docutils literal"><span class="pre">tree</span></tt> Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.tree.html#module-rootpy.tree.categories">4.10.8.2. <tt class="docutils literal"><span class="pre">categories</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.tree.html#module-rootpy.tree.chain">4.10.8.3. <tt class="docutils literal"><span class="pre">chain</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.tree.html#module-rootpy.tree.cut">4.10.8.4. <tt class="docutils literal"><span class="pre">cut</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.tree.html#module-rootpy.tree.cutflow">4.10.8.5. <tt class="docutils literal"><span class="pre">cutflow</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.tree.html#module-rootpy.tree.filtering">4.10.8.6. <tt class="docutils literal"><span class="pre">filtering</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.tree.html#module-rootpy.tree.tree">4.10.8.7. <tt class="docutils literal"><span class="pre">tree</span></tt> Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rootpy.tree.html#module-rootpy.tree.treeobject">4.10.8.8. <tt class="docutils literal"><span class="pre">treeobject</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+                    
+                        <div id="disqus_thread"></div>
+                        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    
+                </div>
+                <div class="span3">
+                    
+        <div class="sphinxsidebar">
+            <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4. rootpy Package</a><ul>
+<li><a class="reference internal" href="#id1">4.1. <tt class="docutils literal"><span class="pre">rootpy</span></tt> Package</a></li>
+<li><a class="reference internal" href="#module-rootpy.stl">4.2. <tt class="docutils literal"><span class="pre">stl</span></tt> Module</a><ul>
+<li><a class="reference internal" href="#rootpy-stl">4.2.1. <tt class="docutils literal"><span class="pre">rootpy.stl</span></tt></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rootcint-module">4.3. <tt class="docutils literal"><span class="pre">rootcint</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-rootpy.core">4.4. <tt class="docutils literal"><span class="pre">core</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-rootpy.objectproxy">4.5. <tt class="docutils literal"><span class="pre">objectproxy</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-rootpy.path">4.6. <tt class="docutils literal"><span class="pre">path</span></tt> Module</a></li>
+<li><a class="reference internal" href="#root2tables-module">4.7. <tt class="docutils literal"><span class="pre">root2tables</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-rootpy.types">4.8. <tt class="docutils literal"><span class="pre">types</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-rootpy.userdata">4.9. <tt class="docutils literal"><span class="pre">userdata</span></tt> Module</a></li>
+<li><a class="reference internal" href="#subpackages">4.10. Subpackages</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../logger.html"
+                        title="previous chapter">3. Capturing ROOT Errors with <tt class="docutils literal docutils literal"><span class="pre">rootpy.logger</span></tt></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="rootpy.batch.html"
+                        title="next chapter">4.10.1. batch Package</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/modules/modules.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+            </div>
+        </div>
+                </div>
+            
+        </div>
+    </div>
+    <div class="footer">
+        
+        <div class="container">
+                    &copy;
+                        Copyright 2013, rootpy developers.
+                Created using <a
+                        href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3
+                    .
+                <!--Theme <a href="https://github.com/scotch/sphinx-bootstrap">Sphinx-Bootstrap</a>
+                adapted from
+                <a href="http://twitter.github.com/bootstrap/">Twitter's
+                    Bootstrap</a> by <a href="http://www.scotchmedia.com">Scotch
+                    Media</a> -->
+        </div>
+    </div>
+
+
+    <!-- disqus -->
+    <script type="text/javascript">
+        var disqus_title = '4. rootpy Package &mdash; rootpy dev documentation';
+        var disqus_identifier ='code' + '.' + "rootpy" + window.location.pathname.replace('/', '.');
+    </script>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = "rootpy"; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+<script type="text/javascript">
+    $('.nav .active').on('click', function () {
+        e.preventDefault()
+        $(this).siblings().toggle()
+    });
+</script>
+
+<!-- plusone -->
+<script type="text/javascript">
+    (function () {
+        var po = document.createElement('script');
+        po.type = 'text/javascript';
+        po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+</script>
+
+<!-- twitter -->
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,382 @@
+
+<!DOCTYPE html><html>
+<head>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8"/>
+    
+        <title>rootpy.__init__ &mdash; rootpy dev documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../_static/sphinx-bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css"/>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        <script type="text/javascript">
+            var DOCUMENTATION_OPTIONS = {
+                URL_ROOT:'../../',
+                VERSION:'dev',
+                COLLAPSE_INDEX:false,
+                FILE_SUFFIX:'.html',
+                HAS_SOURCE:  true
+            };
+        </script>
+            <script type="text/javascript" src="../../_static/jquery.js"></script>
+            <script type="text/javascript" src="../../_static/underscore.js"></script>
+            <script type="text/javascript" src="../../_static/doctools.js"></script>
+            <script type="text/javascript" src="../../_static/bootstrap-dropdown.js"></script>
+        <link rel="top" title="rootpy dev documentation" href="../../index.html"/>
+            <link rel="up" title="Module code" href="../index.html"/> 
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    
+</head>
+<body>
+
+    <div class="navbar navbar-static-top">
+        <div class="navbar-inner">
+            <div class="container">
+
+    <div class="related">
+        <ul class="nav">
+                <li class=""><a class="brand" href="../../index.html">rootpy</a></li>
+                <li>
+                    <a href="../../genindex.html"
+                       title="General Index" accesskey="I">index</a>
+                </li>
+                <li>
+                    <a href="../../py-modindex.html"
+                       title="Python Module Index" >modules</a>
+                </li>
+                <li><a href="../index.html"
+                        accesskey="U">Module code</a>
+                </li> 
+        </ul>
+    </div>
+                <div class="pull-right">
+                    
+        <form class="navbar-search" action="../../search.html"
+              method="get">
+            <input type="text" name="q" placeholder="search"/>
+            <input type="hidden" name="check_keywords" value="yes"/>
+            <input type="hidden" name="area" value="default"/>
+        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<ul class="quick-links">
+    <li><strong>Quick links</strong></li>
+    <li>
+        <a href="https://github.com/rootpy/rootpy/">GitHub</a>
+    </li>
+    <li>
+        <a href="https://github.com/rootpy/rootpy/issues?state=open">Issues</a>
+    </li>
+    <li class="divider">&middot;</li>
+    <li>
+        <iframe class="github-btn"
+                src="http://ghbtns.com/github-btn.html?user=rootpy&repo=rootpy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="110px" height="20px"></iframe>
+    </li>
+    <li>
+        <iframe class="github-btn"
+                src="http://ghbtns.com/github-btn.html?user=rootpy&repo=rootpy&type=fork&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="94px" height="20px"></iframe>
+    </li>
+
+    <!--<li class="divider">&middot;</li>
+    <li class="follow-btn">
+        <a href="https://twitter.com/"
+           class="twitter-follow-button" data-width="145px"
+           data-link-color="#0069D6" data-show-count="false">Follow
+            @</a>
+    </li>
+    <li class="tweet-btn">
+        <a href="https://twitter.com/share" class="twitter-share-button"
+           data-url="http://rootpy.org" data-count="horizontal"
+           data-via="twbootstrap"
+           data-related=":Creator of rootpy">Tweet</a>
+       </li>-->
+    <li class="plusone-container">
+        <g:plusone size="medium"></g:plusone>
+    </li>
+</ul>  
+    <div class="container">
+        <div class="content row">
+                <div class="span9">
+                    
+  <h1>Source code for rootpy.__init__</h1><div class="highlight"><pre>
+<span class="c"># Copyright 2012 the rootpy developers</span>
+<span class="c"># distributed under the terms of the GNU General Public License</span>
+<span class="c"># First import</span>
+<span class="kn">from</span> <span class="nn">.logger</span> <span class="kn">import</span> <span class="n">log</span>
+
+<span class="c"># Needed for &quot;from rootpy import QROOT&quot; by other modules</span>
+<span class="kn">from</span> <span class="nn">.util</span> <span class="kn">import</span> <span class="n">quickroot</span> <span class="k">as</span> <span class="n">QROOT</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">defaults</span>
+<span class="kn">from</span> <span class="nn">.core</span> <span class="kn">import</span> <span class="n">Object</span>
+<span class="kn">from</span> <span class="nn">.info</span> <span class="kn">import</span> <span class="n">__version_info__</span><span class="p">,</span> <span class="n">__version__</span>
+
+<span class="kn">import</span> <span class="nn">ROOT</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="c"># show deprecation warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s">&#39;always&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="ROOTError"><a class="viewcode-back" href="../../modules/modules.html#rootpy.__init__.ROOTError">[docs]</a><span class="k">class</span> <span class="nc">ROOTError</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exception class representing a ROOT error/warning message.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">msg</span> <span class="o">=</span> <span class="n">level</span><span class="p">,</span> <span class="n">location</span><span class="p">,</span> <span class="n">msg</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;level={0}, loc=&#39;{1}&#39;, msg=&#39;{2}&#39;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">msg</span><span class="p">)</span>
+</div>
+<span class="k">def</span> <span class="nf">rootpy_source_dir</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">rootpy</span>
+    <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">abspath</span><span class="p">,</span> <span class="n">dirname</span>
+    <span class="kn">from</span> <span class="nn">inspect</span> <span class="kn">import</span> <span class="n">getfile</span>
+    <span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">modules</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">dirname</span><span class="p">(</span><span class="n">getfile</span><span class="p">(</span><span class="n">modules</span><span class="p">[</span><span class="n">__name__</span><span class="p">]))</span>
+    <span class="n">absp</span> <span class="o">=</span> <span class="n">abspath</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">path</span><span class="p">,</span> <span class="n">absp</span>
+
+<span class="n">_ROOTPY_SOURCE_PATH</span><span class="p">,</span> <span class="n">_ROOTPY_SOURCE_ABSPATH</span> <span class="o">=</span> <span class="n">rootpy_source_dir</span><span class="p">()</span>
+<span class="k">del</span> <span class="n">rootpy_source_dir</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">All rootpy wrappers are registered below. This dict maps the ROOT class name to</span>
+<span class="sd">the path to the rootpy class or a tuple of both the path and keyword arguments</span>
+<span class="sd">used in the dynamic_cls classmethod (see the ``Hist``, ``Hist2D`` and</span>
+<span class="sd">``Hist3D`` classes in ``plotting.hist``).</span>
+
+<span class="sd">This way rootpy is aware of all classes that inherit from ROOT classes without</span>
+<span class="sd">needing to import everything when rootpy is first imported. This registry is</span>
+<span class="sd">required to cast ROOT objects into the rootpy form when extracted from a ROOT</span>
+<span class="sd">TFile, for example.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="n">INIT_REGISTRY</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;TTree&#39;</span><span class="p">:</span> <span class="s">&#39;tree.tree.Tree&#39;</span><span class="p">,</span>
+
+    <span class="s">&#39;TDirectoryFile&#39;</span><span class="p">:</span> <span class="s">&#39;io.file.Directory&#39;</span><span class="p">,</span>
+
+    <span class="s">&#39;TStyle&#39;</span><span class="p">:</span> <span class="s">&#39;plotting.style.Style&#39;</span><span class="p">,</span>
+    <span class="s">&#39;TCanvas&#39;</span><span class="p">:</span> <span class="s">&#39;plotting.canvas.Canvas&#39;</span><span class="p">,</span>
+    <span class="s">&#39;TPad&#39;</span><span class="p">:</span> <span class="s">&#39;plotting.canvas.Pad&#39;</span><span class="p">,</span>
+    <span class="s">&#39;TLegend&#39;</span><span class="p">:</span> <span class="s">&#39;plotting.legend.Legend&#39;</span><span class="p">,</span>
+
+    <span class="s">&#39;TGraphAsymmErrors&#39;</span><span class="p">:</span> <span class="s">&#39;plotting.graph.Graph&#39;</span><span class="p">,</span>
+    <span class="s">&#39;TGraph2D&#39;</span><span class="p">:</span> <span class="s">&#39;plotting.graph.Graph2D&#39;</span><span class="p">,</span>
+
+    <span class="s">&#39;TH1C&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;plotting.hist.Hist&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;C&#39;</span><span class="p">)),</span>
+    <span class="s">&#39;TH1S&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;plotting.hist.Hist&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;S&#39;</span><span class="p">)),</span>
+    <span class="s">&#39;TH1I&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;plotting.hist.Hist&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;I&#39;</span><span class="p">)),</span>
+    <span class="s">&#39;TH1F&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;plotting.hist.Hist&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;F&#39;</span><span class="p">)),</span>
+    <span class="s">&#39;TH1D&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;plotting.hist.Hist&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;D&#39;</span><span class="p">)),</span>
+
+    <span class="s">&#39;TH2C&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;plotting.hist.Hist2D&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;C&#39;</span><span class="p">)),</span>
+    <span class="s">&#39;TH2S&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;plotting.hist.Hist2D&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;S&#39;</span><span class="p">)),</span>
+    <span class="s">&#39;TH2I&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;plotting.hist.Hist2D&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;I&#39;</span><span class="p">)),</span>
+    <span class="s">&#39;TH2F&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;plotting.hist.Hist2D&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;F&#39;</span><span class="p">)),</span>
+    <span class="s">&#39;TH2D&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;plotting.hist.Hist2D&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;D&#39;</span><span class="p">)),</span>
+
+    <span class="s">&#39;TH3C&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;plotting.hist.Hist3D&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;C&#39;</span><span class="p">)),</span>
+    <span class="s">&#39;TH3S&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;plotting.hist.Hist3D&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;S&#39;</span><span class="p">)),</span>
+    <span class="s">&#39;TH3I&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;plotting.hist.Hist3D&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;I&#39;</span><span class="p">)),</span>
+    <span class="s">&#39;TH3F&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;plotting.hist.Hist3D&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;F&#39;</span><span class="p">)),</span>
+    <span class="s">&#39;TH3D&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;plotting.hist.Hist3D&#39;</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&#39;D&#39;</span><span class="p">)),</span>
+
+    <span class="s">&#39;THStack&#39;</span><span class="p">:</span> <span class="s">&#39;plotting.hist.HistStack&#39;</span><span class="p">,</span>
+
+    <span class="s">&#39;TVector2&#39;</span><span class="p">:</span> <span class="s">&#39;math.physics.vector.Vector2&#39;</span><span class="p">,</span>
+    <span class="s">&#39;TVector3&#39;</span><span class="p">:</span> <span class="s">&#39;math.physics.vector.Vector3&#39;</span><span class="p">,</span>
+    <span class="s">&#39;TLorentzVector&#39;</span><span class="p">:</span> <span class="s">&#39;math.physics.vector.LorentzVector&#39;</span><span class="p">,</span>
+    <span class="s">&#39;TRotation&#39;</span><span class="p">:</span> <span class="s">&#39;math.physics.vector.Rotation&#39;</span><span class="p">,</span>
+    <span class="s">&#39;TLorentzRotation&#39;</span><span class="p">:</span> <span class="s">&#39;math.physics.vector.LorentzRotation&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c"># Note: requires defaults import</span>
+<span class="n">ROOT_VERSION</span> <span class="o">=</span> <span class="n">QROOT</span><span class="o">.</span><span class="n">gROOT</span><span class="o">.</span><span class="n">GetVersionInt</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">ROOT_VERSION</span> <span class="o">&gt;=</span> <span class="mi">52800</span><span class="p">:</span>
+    <span class="n">INIT_REGISTRY</span><span class="p">[</span><span class="s">&#39;TEfficiency&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;plotting.hist.Efficiency&#39;</span>
+
+
+<span class="c"># this dict is populated as classes are registered at runtime</span>
+<span class="n">REGISTRY</span> <span class="o">=</span> <span class="p">{}</span>
+
+
+<div class="viewcode-block" id="asrootpy"><a class="viewcode-back" href="../../modules/modules.html#rootpy.__init__.asrootpy">[docs]</a><span class="k">def</span> <span class="nf">asrootpy</span><span class="p">(</span><span class="n">thing</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+    <span class="c"># is this thing already converted?</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">thing</span><span class="p">,</span> <span class="n">Object</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">thing</span>
+
+    <span class="n">thing_cls</span> <span class="o">=</span> <span class="n">thing</span><span class="o">.</span><span class="n">__class__</span>
+    <span class="n">rootpy_cls</span> <span class="o">=</span> <span class="n">lookup</span><span class="p">(</span><span class="n">thing_cls</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">rootpy_cls</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;a subclass of </span><span class="si">%s</span><span class="s"> is not implemented in rootpy&quot;</span> <span class="o">%</span>
+                <span class="n">thing_cls</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">thing</span>
+
+    <span class="c"># cast</span>
+    <span class="n">thing</span><span class="o">.</span><span class="n">__class__</span> <span class="o">=</span> <span class="n">rootpy_cls</span>
+    <span class="c"># call the _post_init if one exists</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">thing</span><span class="p">,</span> <span class="s">&#39;_post_init&#39;</span><span class="p">):</span>
+        <span class="n">thing</span><span class="o">.</span><span class="n">_post_init</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">thing</span>
+
+</div>
+<div class="viewcode-block" id="lookup"><a class="viewcode-back" href="../../modules/modules.html#rootpy.__init__.lookup">[docs]</a><span class="k">def</span> <span class="nf">lookup</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+
+    <span class="n">cls_name</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">__name__</span>
+    <span class="k">return</span> <span class="n">lookup_by_name</span><span class="p">(</span><span class="n">cls_name</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="lookup_by_name"><a class="viewcode-back" href="../../modules/modules.html#rootpy.__init__.lookup_by_name">[docs]</a><span class="k">def</span> <span class="nf">lookup_by_name</span><span class="p">(</span><span class="n">cls_name</span><span class="p">):</span>
+
+    <span class="k">if</span> <span class="n">cls_name</span> <span class="ow">in</span> <span class="n">REGISTRY</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">REGISTRY</span><span class="p">[</span><span class="n">cls_name</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">cls_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">INIT_REGISTRY</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">None</span>
+    <span class="n">entry</span> <span class="o">=</span> <span class="n">INIT_REGISTRY</span><span class="p">[</span><span class="n">cls_name</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+        <span class="n">path</span><span class="p">,</span> <span class="n">dynamic_kwargs</span> <span class="o">=</span> <span class="n">entry</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">entry</span><span class="p">,</span> <span class="nb">basestring</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">entry</span>
+        <span class="n">dynamic_kwargs</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">path_tokens</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+    <span class="n">path</span><span class="p">,</span> <span class="n">rootpy_cls_name</span> <span class="o">=</span> <span class="s">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path_tokens</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">path_tokens</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">rootpy_module</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span>
+            <span class="n">path</span><span class="p">,</span> <span class="nb">globals</span><span class="p">(),</span> <span class="nb">locals</span><span class="p">(),</span> <span class="p">[</span><span class="n">rootpy_cls_name</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">rootpy_cls</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">rootpy_module</span><span class="p">,</span> <span class="n">rootpy_cls_name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">dynamic_kwargs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">rootpy_cls</span> <span class="o">=</span> <span class="n">rootpy_cls</span><span class="o">.</span><span class="n">dynamic_cls</span><span class="p">(</span><span class="o">**</span><span class="n">dynamic_kwargs</span><span class="p">)</span>
+    <span class="n">REGISTRY</span><span class="p">[</span><span class="n">cls_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">rootpy_cls</span>
+    <span class="k">return</span> <span class="n">rootpy_cls</span>
+
+</div>
+<div class="viewcode-block" id="register"><a class="viewcode-back" href="../../modules/modules.html#rootpy.__init__.register">[docs]</a><span class="k">class</span> <span class="nc">register</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">builtin</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">names</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="n">names</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">builtin</span> <span class="o">=</span> <span class="n">builtin</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cls</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">Object</span><span class="p">):</span>
+            <span class="c"># all rootpy classes which inherit from ROOT classes</span>
+            <span class="c"># must place the ROOT base class as the last class</span>
+            <span class="c"># in the inheritance list and inherit from Object</span>
+            <span class="n">rootbase</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">__bases__</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">cls_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">rootbase</span><span class="o">.</span><span class="n">__name__</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cls_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">cls</span><span class="o">.</span><span class="n">__name__</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">cls_names</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">names</span>
+
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">cls_names</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">REGISTRY</span><span class="p">:</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&quot;duplicate registration of class </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+            <span class="n">REGISTRY</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">cls</span>
+        <span class="k">return</span> <span class="n">cls</span>
+
+</div>
+<div class="viewcode-block" id="create"><a class="viewcode-back" href="../../modules/modules.html#rootpy.__init__.create">[docs]</a><span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">cls_name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+    <span class="n">cls</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">ROOT</span><span class="p">,</span> <span class="n">cls_name</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">cls</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">None</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">asrootpy</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div>
+</pre></div>
+
+                    
+                        <div id="disqus_thread"></div>
+                        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    
+                </div>
+                <div class="span3">
+                    
+        <div class="sphinxsidebar">
+            <div class="sphinxsidebarwrapper">
+            </div>
+        </div>
+                </div>
+            
+        </div>
+    </div>
+    <div class="footer">
+        
+        <div class="container">
+                    &copy;
+                        Copyright 2013, rootpy developers.
+                Created using <a
+                        href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3
+                    .
+                <!--Theme <a href="https://github.com/scotch/sphinx-bootstrap">Sphinx-Bootstrap</a>
+                adapted from
+                <a href="http://twitter.github.com/bootstrap/">Twitter's
+                    Bootstrap</a> by <a href="http://www.scotchmedia.com">Scotch
+                    Media</a> -->
+        </div>
+    </div>
+
+
+    <!-- disqus -->
+    <script type="text/javascript">
+        var disqus_title = 'rootpy.__init__ &mdash; rootpy dev documentation';
+        var disqus_identifier ='code' + '.' + "rootpy" + window.location.pathname.replace('/', '.');
+    </script>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = "rootpy"; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+<script type="text/javascript">
+    $('.nav .active').on('click', function () {
+        e.preventDefault()
+        $(this).siblings().toggle()
+    });
+</script>
+
+<!-- plusone -->
+<script type="text/javascript">
+    (function () {
+        var po = document.createElement('script');
+        po.type = 'text/javascript';
+        po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+</script>
+
+<!-- twitter -->
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+
+</body>
+</html>

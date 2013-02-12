@@ -1,0 +1,2748 @@
+
+<!DOCTYPE html><html>
+<head>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=utf-8"/>
+    
+        <title>4.10.8. tree Package &mdash; rootpy dev documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css"/>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        <script type="text/javascript">
+            var DOCUMENTATION_OPTIONS = {
+                URL_ROOT:'../',
+                VERSION:'dev',
+                COLLAPSE_INDEX:false,
+                FILE_SUFFIX:'.html',
+                HAS_SOURCE:  true
+            };
+        </script>
+            <script type="text/javascript" src="../_static/jquery.js"></script>
+            <script type="text/javascript" src="../_static/underscore.js"></script>
+            <script type="text/javascript" src="../_static/doctools.js"></script>
+            <script type="text/javascript" src="../_static/bootstrap-dropdown.js"></script>
+        <link rel="top" title="rootpy dev documentation" href="../index.html"/>
+            <link rel="up" title="4. rootpy Package" href="modules.html"/>
+            <link rel="next" title="NumPy Interface" href="../auto_examples/index.html"/>
+            <link rel="prev" title="4.10.7. root2array Package" href="rootpy.root2array.html"/> 
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    
+</head>
+<body>
+
+    <div class="navbar navbar-static-top">
+        <div class="navbar-inner">
+            <div class="container">
+
+    <div class="related">
+        <ul class="nav">
+                <li class=""><a class="brand" href="../index.html">rootpy</a></li>
+                <li>
+                    <a href="../genindex.html"
+                       title="General Index" accesskey="I">index</a>
+                </li>
+                <li>
+                    <a href="../py-modindex.html"
+                       title="Python Module Index" >modules</a>
+                </li>
+                <li>
+                    <a href="../auto_examples/index.html"
+                       title="NumPy Interface" accesskey="N">next</a>
+                </li>
+                <li>
+                    <a href="rootpy.root2array.html"
+                       title="4.10.7. root2array Package" accesskey="P">previous</a>
+                </li>
+                <li><a href="../user_guide.html"
+                        >&lt;no title&gt;</a>
+                </li>
+                <li><a href="modules.html"
+                        accesskey="U">4. rootpy Package</a>
+                </li> 
+        </ul>
+    </div>
+                <div class="pull-right">
+                    
+        <form class="navbar-search" action="../search.html"
+              method="get">
+            <input type="text" name="q" placeholder="search"/>
+            <input type="hidden" name="check_keywords" value="yes"/>
+            <input type="hidden" name="area" value="default"/>
+        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<ul class="quick-links">
+    <li><strong>Quick links</strong></li>
+    <li>
+        <a href="https://github.com/rootpy/rootpy/">GitHub</a>
+    </li>
+    <li>
+        <a href="https://github.com/rootpy/rootpy/issues?state=open">Issues</a>
+    </li>
+    <li class="divider">&middot;</li>
+    <li>
+        <iframe class="github-btn"
+                src="http://ghbtns.com/github-btn.html?user=rootpy&repo=rootpy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="110px" height="20px"></iframe>
+    </li>
+    <li>
+        <iframe class="github-btn"
+                src="http://ghbtns.com/github-btn.html?user=rootpy&repo=rootpy&type=fork&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0"
+                width="94px" height="20px"></iframe>
+    </li>
+
+    <!--<li class="divider">&middot;</li>
+    <li class="follow-btn">
+        <a href="https://twitter.com/"
+           class="twitter-follow-button" data-width="145px"
+           data-link-color="#0069D6" data-show-count="false">Follow
+            @</a>
+    </li>
+    <li class="tweet-btn">
+        <a href="https://twitter.com/share" class="twitter-share-button"
+           data-url="http://rootpy.org" data-count="horizontal"
+           data-via="twbootstrap"
+           data-related=":Creator of rootpy">Tweet</a>
+       </li>-->
+    <li class="plusone-container">
+        <g:plusone size="medium"></g:plusone>
+    </li>
+</ul>  
+    <div class="container">
+        <div class="content row">
+                <div class="span9">
+                    
+  <div class="section" id="tree-package">
+<h1>4.10.8. tree Package<a class="headerlink" href="#tree-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>4.10.8.1. <tt class="xref py py-mod docutils literal"><span class="pre">tree</span></tt> Package<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-rootpy.tree"></span></div>
+<div class="section" id="module-rootpy.tree.categories">
+<span id="categories-module"></span><h2>4.10.8.2. <tt class="xref py py-mod docutils literal"><span class="pre">categories</span></tt> Module<a class="headerlink" href="#module-rootpy.tree.categories" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rootpy.tree.categories.Categories">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.categories.</tt><tt class="descname">Categories</tt><big>(</big><em>feature</em>, <em>data</em>, <em>variables</em>, <em>leftchild=None</em>, <em>rightchild=None</em>, <em>parent=None</em>, <em>forbidleft=False</em>, <em>forbidright=False</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/categories.html#Categories"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.categories.Categories" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="attribute">
+<dt id="rootpy.tree.categories.Categories.CATEGORY_NODE_PATTERN">
+<tt class="descname">CATEGORY_NODE_PATTERN</tt><em class="property"> = &lt;_sre.SRE_Pattern object at 0x56d0c70&gt;</em><a class="headerlink" href="#rootpy.tree.categories.Categories.CATEGORY_NODE_PATTERN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.categories.Categories.CATEGORY_PATTERN">
+<tt class="descname">CATEGORY_PATTERN</tt><em class="property"> = &lt;_sre.SRE_Pattern object at 0x3e60a60&gt;</em><a class="headerlink" href="#rootpy.tree.categories.Categories.CATEGORY_PATTERN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.categories.Categories.CUT_REGEX">
+<tt class="descname">CUT_REGEX</tt><em class="property"> = '[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?'</em><a class="headerlink" href="#rootpy.tree.categories.Categories.CUT_REGEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.categories.Categories.NODE_PATTERN">
+<tt class="descname">NODE_PATTERN</tt><em class="property"> = &lt;_sre.SRE_Pattern object at 0x56d2a10&gt;</em><a class="headerlink" href="#rootpy.tree.categories.Categories.NODE_PATTERN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.categories.Categories.balance">
+<tt class="descname">balance</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/categories.html#Categories.balance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.categories.Categories.balance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.categories.Categories.clone">
+<tt class="descname">clone</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/categories.html#Categories.clone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.categories.Categories.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.categories.Categories.depth">
+<tt class="descname">depth</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/categories.html#Categories.depth"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.categories.Categories.depth" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="rootpy.tree.categories.Categories.from_string">
+<em class="property">classmethod </em><tt class="descname">from_string</tt><big>(</big><em>string</em>, <em>variables=None</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/categories.html#Categories.from_string"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.categories.Categories.from_string" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.categories.Categories.get_incomplete_children">
+<tt class="descname">get_incomplete_children</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/categories.html#Categories.get_incomplete_children"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.categories.Categories.get_incomplete_children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.categories.Categories.get_leaves">
+<tt class="descname">get_leaves</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/categories.html#Categories.get_leaves"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.categories.Categories.get_leaves" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.categories.Categories.is_complete">
+<tt class="descname">is_complete</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/categories.html#Categories.is_complete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.categories.Categories.is_complete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.categories.Categories.is_leaf">
+<tt class="descname">is_leaf</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/categories.html#Categories.is_leaf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.categories.Categories.is_leaf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="rootpy.tree.categories.Categories.make_balanced_tree">
+<em class="property">classmethod </em><tt class="descname">make_balanced_tree</tt><big>(</big><em>nodes</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/categories.html#Categories.make_balanced_tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.categories.Categories.make_balanced_tree" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.categories.Categories.set_left">
+<tt class="descname">set_left</tt><big>(</big><em>child</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/categories.html#Categories.set_left"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.categories.Categories.set_left" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.categories.Categories.set_right">
+<tt class="descname">set_right</tt><big>(</big><em>child</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/categories.html#Categories.set_right"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.categories.Categories.set_right" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.categories.Categories.walk">
+<tt class="descname">walk</tt><big>(</big><em>expression=None</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/categories.html#Categories.walk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.categories.Categories.walk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-rootpy.tree.chain">
+<span id="chain-module"></span><h2>4.10.8.3. <tt class="xref py py-mod docutils literal"><span class="pre">chain</span></tt> Module<a class="headerlink" href="#module-rootpy.tree.chain" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rootpy.tree.chain.TreeChain">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.chain.</tt><tt class="descname">TreeChain</tt><big>(</big><em>name</em>, <em>files</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/chain.html#TreeChain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.chain.TreeChain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">rootpy.tree.chain._BaseTreeChain</span></tt></p>
+<p>A ROOT.TChain replacement</p>
+<dl class="method">
+<dt id="rootpy.tree.chain.TreeChain.reset">
+<tt class="descname">reset</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/chain.html#TreeChain.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.chain.TreeChain.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the chain to the first file
+Note: not valid when in queue mode</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.tree.chain.TreeQueue">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.chain.</tt><tt class="descname">TreeQueue</tt><big>(</big><em>name</em>, <em>files</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/chain.html#TreeQueue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.chain.TreeQueue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">rootpy.tree.chain._BaseTreeChain</span></tt></p>
+<dl class="attribute">
+<dt id="rootpy.tree.chain.TreeQueue.SENTINEL">
+<tt class="descname">SENTINEL</tt><em class="property"> = None</em><a class="headerlink" href="#rootpy.tree.chain.TreeQueue.SENTINEL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-rootpy.tree.cut">
+<span id="cut-module"></span><h2>4.10.8.4. <tt class="xref py py-mod docutils literal"><span class="pre">cut</span></tt> Module<a class="headerlink" href="#module-rootpy.tree.cut" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rootpy.tree.cut.Cut">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.cut.</tt><tt class="descname">Cut</tt><big>(</big><em>cut=''</em>, <em>from_file=False</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/cut.html#Cut"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.cut.Cut" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">ROOT.TCut</span></tt></p>
+<p>Inherits from ROOT.TCut and implements logical operators</p>
+<dl class="staticmethod">
+<dt id="rootpy.tree.cut.Cut.convert">
+<em class="property">static </em><tt class="descname">convert</tt><big>(</big><em>thing</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/cut.html#Cut.convert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.cut.Cut.convert" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.cut.Cut.latex">
+<tt class="descname">latex</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/cut.html#Cut.latex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.cut.Cut.latex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string representation for use in LaTeX</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.cut.Cut.replace">
+<tt class="descname">replace</tt><big>(</big><em>name</em>, <em>newname</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/cut.html#Cut.replace"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.cut.Cut.replace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace all occurrences of name with newname</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.cut.Cut.safe">
+<tt class="descname">safe</tt><big>(</big><em>parentheses=True</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/cut.html#Cut.safe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.cut.Cut.safe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string representation with special characters
+replaced by safer characters for use in filenames for example.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.cut.Cut.str">
+<tt class="descname">str</tt><a class="reference internal" href="../_modules/rootpy/tree/cut.html#Cut.str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.cut.Cut.str" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.cut.Cut.where">
+<tt class="descname">where</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/cut.html#Cut.where"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.cut.Cut.where" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return string compatible with PyTable&#8217;s Table.where syntax:
+<a class="reference external" href="http://pytables.github.com/usersguide/libref.html#tables.Table.where">http://pytables.github.com/usersguide/libref.html#tables.Table.where</a></p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-rootpy.tree.cutflow">
+<span id="cutflow-module"></span><h2>4.10.8.5. <tt class="xref py py-mod docutils literal"><span class="pre">cutflow</span></tt> Module<a class="headerlink" href="#module-rootpy.tree.cutflow" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rootpy.tree.cutflow.Cutflow">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.cutflow.</tt><tt class="descname">Cutflow</tt><big>(</big><em>names=None</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/cutflow.html#Cutflow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.cutflow.Cutflow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="method">
+<dt id="rootpy.tree.cutflow.Cutflow.bitstring">
+<tt class="descname">bitstring</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/cutflow.html#Cutflow.bitstring"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.cutflow.Cutflow.bitstring" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.cutflow.Cutflow.int">
+<tt class="descname">int</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/cutflow.html#Cutflow.int"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.cutflow.Cutflow.int" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.cutflow.Cutflow.passed">
+<tt class="descname">passed</tt><big>(</big><em>name</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/cutflow.html#Cutflow.passed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.cutflow.Cutflow.passed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.cutflow.Cutflow.reset">
+<tt class="descname">reset</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/cutflow.html#Cutflow.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.cutflow.Cutflow.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.cutflow.Cutflow.stages">
+<tt class="descname">stages</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/cutflow.html#Cutflow.stages"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.cutflow.Cutflow.stages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.tree.cutflow.CutflowTable">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.cutflow.</tt><tt class="descname">CutflowTable</tt><big>(</big><em>lumi=1.0</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/cutflow.html#CutflowTable"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.cutflow.CutflowTable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="method">
+<dt id="rootpy.tree.cutflow.CutflowTable.add_sample">
+<tt class="descname">add_sample</tt><big>(</big><em>sample</em>, <em>name</em>, <em>weight=1.0</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/cutflow.html#CutflowTable.add_sample"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.cutflow.CutflowTable.add_sample" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-rootpy.tree.filtering">
+<span id="filtering-module"></span><h2>4.10.8.6. <tt class="xref py py-mod docutils literal"><span class="pre">filtering</span></tt> Module<a class="headerlink" href="#module-rootpy.tree.filtering" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rootpy.tree.filtering.EventFilter">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.filtering.</tt><tt class="descname">EventFilter</tt><big>(</big><em>hooks=None</em>, <em>passthrough=False</em>, <em>name=None</em>, <em>count_funcs=None</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#EventFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.EventFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.tree.filtering.Filter" title="rootpy.tree.filtering.Filter"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.tree.filtering.Filter</span></tt></a></p>
+<dl class="method">
+<dt id="rootpy.tree.filtering.EventFilter.finalize">
+<tt class="descname">finalize</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#EventFilter.finalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.EventFilter.finalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>You should override this method in your derived class</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.filtering.EventFilter.passes">
+<tt class="descname">passes</tt><big>(</big><em>event</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#EventFilter.passes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.EventFilter.passes" title="Permalink to this definition">¶</a></dt>
+<dd><p>You should override this method in your derived class</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.tree.filtering.EventFilterList">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.filtering.</tt><tt class="descname">EventFilterList</tt><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#EventFilterList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.EventFilterList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.tree.filtering.FilterList" title="rootpy.tree.filtering.FilterList"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.tree.filtering.FilterList</span></tt></a></p>
+<dl class="method">
+<dt id="rootpy.tree.filtering.EventFilterList.append">
+<tt class="descname">append</tt><big>(</big><em>filter</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#EventFilterList.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.EventFilterList.append" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.filtering.EventFilterList.finalize">
+<tt class="descname">finalize</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#EventFilterList.finalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.EventFilterList.finalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.tree.filtering.Filter">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.filtering.</tt><tt class="descname">Filter</tt><big>(</big><em>hooks=None</em>, <em>passthrough=False</em>, <em>name=None</em>, <em>count_funcs=None</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#Filter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.Filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<p>The base class from which all filter classes must inherit from.
+The derived class must override the passes method which returns True
+if ths event passes and returns False if not.
+The number of passing and failing events are recorded and may be used
+later to create a cut-flow.</p>
+<dl class="classmethod">
+<dt id="rootpy.tree.filtering.Filter.add">
+<em class="property">classmethod </em><tt class="descname">add</tt><big>(</big><em>left</em>, <em>right</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#Filter.add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.Filter.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.filtering.Filter.failed">
+<tt class="descname">failed</tt><big>(</big><em>event</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#Filter.failed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.Filter.failed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.filtering.Filter.passed">
+<tt class="descname">passed</tt><big>(</big><em>event</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#Filter.passed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.Filter.passed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.tree.filtering.FilterHook">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.filtering.</tt><tt class="descname">FilterHook</tt><big>(</big><em>target</em>, <em>args</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#FilterHook"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.FilterHook" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.tree.filtering.FilterList">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.filtering.</tt><tt class="descname">FilterList</tt><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#FilterList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.FilterList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">list</span></tt></p>
+<p>Creates a list of Filters for convenient evaluation of a sequence of Filters.</p>
+<dl class="method">
+<dt id="rootpy.tree.filtering.FilterList.append">
+<tt class="descname">append</tt><big>(</big><em>filter</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#FilterList.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.FilterList.append" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.filtering.FilterList.basic">
+<tt class="descname">basic</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#FilterList.basic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.FilterList.basic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all filters as simple dicts for pickling.
+Removes all dependence on this module.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="rootpy.tree.filtering.FilterList.merge">
+<em class="property">classmethod </em><tt class="descname">merge</tt><big>(</big><em>list1</em>, <em>list2</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#FilterList.merge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.FilterList.merge" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.filtering.FilterList.passing">
+<tt class="descname">passing</tt><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#FilterList.passing"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.FilterList.passing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.filtering.FilterList.total">
+<tt class="descname">total</tt><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#FilterList.total"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.FilterList.total" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.tree.filtering.ObjectFilter">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.filtering.</tt><tt class="descname">ObjectFilter</tt><big>(</big><em>count_events=False</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#ObjectFilter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.ObjectFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.tree.filtering.Filter" title="rootpy.tree.filtering.Filter"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.tree.filtering.Filter</span></tt></a></p>
+<dl class="method">
+<dt id="rootpy.tree.filtering.ObjectFilter.filtered">
+<tt class="descname">filtered</tt><big>(</big><em>event</em>, <em>collection</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#ObjectFilter.filtered"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.ObjectFilter.filtered" title="Permalink to this definition">¶</a></dt>
+<dd><p>You should override this method in your derived class</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.tree.filtering.ObjectFilterList">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.filtering.</tt><tt class="descname">ObjectFilterList</tt><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#ObjectFilterList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.ObjectFilterList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.tree.filtering.FilterList" title="rootpy.tree.filtering.FilterList"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.tree.filtering.FilterList</span></tt></a></p>
+<dl class="method">
+<dt id="rootpy.tree.filtering.ObjectFilterList.append">
+<tt class="descname">append</tt><big>(</big><em>filter</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/filtering.html#ObjectFilterList.append"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.filtering.ObjectFilterList.append" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-rootpy.tree.tree">
+<span id="tree-module"></span><h2>4.10.8.7. <tt class="xref py py-mod docutils literal"><span class="pre">tree</span></tt> Module<a class="headerlink" href="#module-rootpy.tree.tree" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rootpy.tree.tree.Tree">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.tree.</tt><tt class="descname">Tree</tt><big>(</big><em>name=None</em>, <em>title=None</em>, <em>model=None</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="modules.html#rootpy.core.Object" title="rootpy.core.Object"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.core.Object</span></tt></a>, <a class="reference internal" href="rootpy.plotting.html#rootpy.plotting.core.Plottable" title="rootpy.plotting.core.Plottable"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.plotting.core.Plottable</span></tt></a>, <a class="reference internal" href="modules.html#rootpy.core.RequireFile" title="rootpy.core.RequireFile"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.core.RequireFile</span></tt></a>, <tt class="xref py py-class docutils literal"><span class="pre">ROOT.TTree</span></tt></p>
+<p>Inherits from TTree so all regular TTree methods are available
+but certain methods (i.e. Draw) have been overridden
+to improve usage in Python.</p>
+<dl class="docutils">
+<dt>name <span class="classifier-delimiter">:</span> <span class="classifier">str, optional (default=None)</span></dt>
+<dd>The Tree name (a UUID if None)</dd>
+<dt>title <span class="classifier-delimiter">:</span> <span class="classifier">str, optional (default=None)</span></dt>
+<dd>The Tree title (empty string if None)</dd>
+<dt>model <span class="classifier-delimiter">:</span> <span class="classifier">TreeModel, optional (default=None)</span></dt>
+<dd>If specified then this TreeModel will be used to create the branches</dd>
+<dt>ignore_unsupported <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=False)</span></dt>
+<dd>If True then branches of unsupported types will be ignored instead of
+raising a TypeError</dd>
+</dl>
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.CopyTree">
+<tt class="descname">CopyTree</tt><big>(</big><em>selection</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.CopyTree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.CopyTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the tree while supporting a rootpy.tree.cut.Cut selection in
+addition to a simple string.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.DRAW_PATTERN">
+<tt class="descname">DRAW_PATTERN</tt><em class="property"> = &lt;_sre.SRE_Pattern object at 0x5640db0&gt;</em><a class="headerlink" href="#rootpy.tree.tree.Tree.DRAW_PATTERN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.Draw">
+<tt class="descname">Draw</tt><big>(</big><em>expression</em>, <em>selection=''</em>, <em>options=''</em>, <em>hist=None</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.Draw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.Draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a TTree with a selection as usual, but return the created
+histogram.</p>
+<dl class="docutils">
+<dt>expression <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>The expression or list of expression to draw. Multidimensional
+expressions are separated by &#8221;:&#8221;. rootpy reverses the expressions
+along each dimension so the order matches the order of the elements
+identifying a location in the resulting histogram. By default ROOT
+takes the expression &#8220;Y:X&#8221; to mean Y versus X but we argue that
+this is counterintuitive and that the order should be &#8220;X:Y&#8221; so that
+the expression along the first dimension identifies the location
+along the first axis, etc.</dd>
+<dt>selection <span class="classifier-delimiter">:</span> <span class="classifier">str or rootpy.tree.Cut, optional (default=&#8221;&#8221;)</span></dt>
+<dd>The cut expression. Only entries satisfying this selection are
+included in the filled histogram.</dd>
+<dt>options <span class="classifier-delimiter">:</span> <span class="classifier">str, optional (default=&#8221;&#8221;)</span></dt>
+<dd>Draw options passed to ROOT.TTree.Draw</dd>
+<dt>hist <span class="classifier-delimiter">:</span> <span class="classifier">ROOT.TH1, optional (default=None)</span></dt>
+<dd>The histogram to be filled. If not specified ROOT will create one
+for you and rootpy will return it.</dd>
+<dt>kwargs <span class="classifier-delimiter">:</span> <span class="classifier">dict, optional</span></dt>
+<dd>Remaining keword arguments are used to set the style attributes of
+the histogram.</dd>
+</dl>
+<p>If <tt class="docutils literal"><span class="pre">hist</span></tt> is specified, None is returned. If <tt class="docutils literal"><span class="pre">hist</span></tt> is left
+unspecified, an attempt is made to retrieve the generated histogram
+which is then returned.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.Fill">
+<tt class="descname">Fill</tt><big>(</big><em>reset=False</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.Fill"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.Fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill the Tree with the current values in the buffer</p>
+<dl class="docutils">
+<dt>reset <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=False)</span></dt>
+<dd>Reset the values in the buffer to their default values after
+filling.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.GetEntries">
+<tt class="descname">GetEntries</tt><big>(</big><em>cut=None</em>, <em>weighted_cut=None</em>, <em>weighted=False</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.GetEntries"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.GetEntries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of (weighted) entries in the Tree</p>
+<dl class="docutils">
+<dt>cut <span class="classifier-delimiter">:</span> <span class="classifier">str or rootpy.tree.cut.Cut, optional (default=None)</span></dt>
+<dd>Only entries passing this cut will be included in the count</dd>
+<dt>weighted_cut <span class="classifier-delimiter">:</span> <span class="classifier">str or rootpy.tree.cut.Cut, optional (default=None)</span></dt>
+<dd>Apply a weighted selection and determine the weighted number of
+entries.</dd>
+<dt>weighted <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=False)</span></dt>
+<dd>Multiply the number of (weighted) entries by the Tree weight.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.GetEntry">
+<tt class="descname">GetEntry</tt><big>(</big><em>entry</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.GetEntry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.GetEntry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an entry. Tree collections are reset
+(see <tt class="docutils literal"><span class="pre">rootpy.tree.treeobject</span></tt>)</p>
+<dl class="docutils">
+<dt>entry <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>entry index</dd>
+</dl>
+<dl class="docutils">
+<dt>ROOT.TTree.GetEntry <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>The number of bytes read</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.GetMaximum">
+<tt class="descname">GetMaximum</tt><big>(</big><em>expression</em>, <em>cut=None</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.GetMaximum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.GetMaximum" title="Permalink to this definition">¶</a></dt>
+<dd><p>TODO: we need a better way of determining the maximum value of an
+expression.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.GetMinimum">
+<tt class="descname">GetMinimum</tt><big>(</big><em>expression</em>, <em>cut=None</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.GetMinimum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.GetMinimum" title="Permalink to this definition">¶</a></dt>
+<dd><p>TODO: we need a better way of determining the minimum value of an
+expression.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.Scale">
+<tt class="descname">Scale</tt><big>(</big><em>value</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.Scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.Scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scale the weight of the Tree by <tt class="docutils literal"><span class="pre">value</span></tt></p>
+<dl class="docutils">
+<dt>value <span class="classifier-delimiter">:</span> <span class="classifier">int, float</span></dt>
+<dd>Scale the Tree weight by this value</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.Write">
+<tt class="descname">Write</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.Write"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.Write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.abstract_method">
+<tt class="descname">abstract_method</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.abstract_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::AbstractMethod(const char* method)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.activate">
+<tt class="descname">activate</tt><big>(</big><em>branches</em>, <em>exclusive=False</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.activate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.activate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Activate branches</p>
+<dl class="docutils">
+<dt>branches <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd>branch or list of branches to activate</dd>
+<dt>exclusive <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=False)</span></dt>
+<dd>if True deactivate the remaining branches</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.add_branch_to_cache">
+<tt class="descname">add_branch_to_cache</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.add_branch_to_cache" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::AddBranchToCache(const char* bname, Bool_t subbranches = kFALSE)
+void TTree::AddBranchToCache(TBranch* branch, Bool_t subbranches = kFALSE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.add_friend">
+<tt class="descname">add_friend</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.add_friend" title="Permalink to this definition">¶</a></dt>
+<dd><p>TFriendElement* TTree::AddFriend(const char* treename, const char* filename = &#8220;&#8221;)
+TFriendElement* TTree::AddFriend(const char* treename, TFile* file)
+TFriendElement* TTree::AddFriend(TTree* tree, const char* alias = &#8220;&#8221;, Bool_t warn = kFALSE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.add_tot_bytes">
+<tt class="descname">add_tot_bytes</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.add_tot_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::AddTotBytes(Int_t tot)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.add_zip_bytes">
+<tt class="descname">add_zip_bytes</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.add_zip_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::AddZipBytes(Int_t zip)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.always_read">
+<tt class="descname">always_read</tt><big>(</big><em>branches</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.always_read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.always_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Always read these branches, even when in caching mode. Maybe you have
+caching enabled and there are branches you want to be updated for each
+entry even though you never access them directly. This is useful if you
+are iterating over an input tree and writing to an output tree sharing
+the same TreeBuffer and you want a direct copy of certain branches. If
+you have caching enabled but these branches are not specified here and
+never accessed then they will never be read from disk, so the values of
+branches in memory will remain unchanged.</p>
+<dl class="docutils">
+<dt>branches <span class="classifier-delimiter">:</span> <span class="classifier">list, tuple</span></dt>
+<dd>these branches will always be read from disk for every GetEntry</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.append_pad">
+<tt class="descname">append_pad</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.append_pad" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::AppendPad(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.auto_save">
+<tt class="descname">auto_save</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.auto_save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::AutoSave(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.branch">
+<tt class="descname">branch</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.branch" title="Permalink to this definition">¶</a></dt>
+<dd><p>TBranch* TTree::Branch(const char* name, const char* classname, void** obj, Int_t bufsize = 32000, Int_t splitlevel = 99)
+TBranch* TTree::Branch(const char* name, void** obj, Int_t bufsize = 32000, Int_t splitlevel = 99)
+Int_t TTree::Branch(TCollection* list, Int_t bufsize = 32000, Int_t splitlevel = 99, const char* name = &#8220;&#8221;)
+Int_t TTree::Branch(TList* list, Int_t bufsize = 32000, Int_t splitlevel = 99)
+Int_t TTree::Branch(const char* folder, Int_t bufsize = 32000, Int_t splitlevel = 99)
+TBranch* TTree::Branch(const char* name, void* address, const char* leaflist, Int_t bufsize = 32000)
+TBranch* TTree::Branch(const char* name, char* address, const char* leaflist, Int_t bufsize = 32000)
+TBranch* TTree::Branch(const char* name, Long_t address, const char* leaflist, Int_t bufsize = 32000)
+TBranch* TTree::Branch(const char* name, int address, const char* leaflist, Int_t bufsize = 32000)</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="rootpy.tree.tree.Tree.branch_is_supported">
+<em class="property">classmethod </em><tt class="descname">branch_is_supported</tt><big>(</big><em>branch</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.branch_is_supported"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.branch_is_supported" title="Permalink to this definition">¶</a></dt>
+<dd><p>Currently the branch must only have one leaf but the leaf may have one
+or multiple elements</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.branch_old">
+<tt class="descname">branch_old</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.branch_old" title="Permalink to this definition">¶</a></dt>
+<dd><p>TBranch* TTree::BranchOld(const char* name, const char* classname, void* addobj, Int_t bufsize = 32000, Int_t splitlevel = 1)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.branch_ref">
+<tt class="descname">branch_ref</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.branch_ref" title="Permalink to this definition">¶</a></dt>
+<dd><p>TBranch* TTree::BranchRef()</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="rootpy.tree.tree.Tree.branch_type">
+<em class="property">classmethod </em><tt class="descname">branch_type</tt><big>(</big><em>branch</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.branch_type"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.branch_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the string representation for the type of a branch</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.branches">
+<tt class="descname">branches</tt><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.branches"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.branches" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of the branches</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.branchnames">
+<tt class="descname">branchnames</tt><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.branchnames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.branchnames" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of branch names</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.bronch">
+<tt class="descname">bronch</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.bronch" title="Permalink to this definition">¶</a></dt>
+<dd><p>TBranch* TTree::Bronch(const char* name, const char* classname, void* addobj, Int_t bufsize = 32000, Int_t splitlevel = 99)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.browse">
+<tt class="descname">browse</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.browse" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::Browse(TBrowser*)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.build_index">
+<tt class="descname">build_index</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.build_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::BuildIndex(const char* majorname, const char* minorname = &#8220;0&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.build_streamer_info">
+<tt class="descname">build_streamer_info</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.build_streamer_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>TStreamerInfo* TTree::BuildStreamerInfo(TClass* cl, void* pointer = 0, Bool_t canOptimize = kTRUE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.change_file">
+<tt class="descname">change_file</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.change_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>TFile* TTree::ChangeFile(TFile* file)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.class">
+<tt class="descname">class</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.class" title="Permalink to this definition">¶</a></dt>
+<dd><p>static TClass* TTree::Class()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.class__name">
+<tt class="descname">class__name</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.class__name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TTree::Class_Name()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.class__version">
+<tt class="descname">class__version</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.class__version" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Version_t TTree::Class_Version()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.class_name">
+<tt class="descname">class_name</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.class_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::ClassName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.clear">
+<tt class="descname">clear</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TNamed::Clear(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.clone">
+<tt class="descname">clone</tt><big>(</big><em>name=None</em>, <em>title=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.clone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.clone_tree">
+<tt class="descname">clone_tree</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.clone_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>TTree* TTree::CloneTree(Long64_t nentries = -1, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.compare">
+<tt class="descname">compare</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.compare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TNamed::Compare(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.copy">
+<tt class="descname">copy</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TNamed::Copy(TObject&amp; named)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.copy_addresses">
+<tt class="descname">copy_addresses</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.copy_addresses" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::CopyAddresses(TTree*, Bool_t undo = kFALSE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.copy_entries">
+<tt class="descname">copy_entries</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.copy_entries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::CopyEntries(TTree* tree, Long64_t nentries = -1, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.copy_tree">
+<tt class="descname">copy_tree</tt><big>(</big><em>selection</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.copy_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the tree while supporting a rootpy.tree.cut.Cut selection in
+addition to a simple string.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.create_basket">
+<tt class="descname">create_basket</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.create_basket" title="Permalink to this definition">¶</a></dt>
+<dd><p>TBasket* TTree::CreateBasket(TBranch*)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.create_branches">
+<tt class="descname">create_branches</tt><big>(</big><em>branches</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.create_branches"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.create_branches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create branches from a TreeBuffer or dict mapping names to type names</p>
+<p>branches : TreeBuffer or dict</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.create_buffer">
+<tt class="descname">create_buffer</tt><big>(</big><em>ignore_unsupported=False</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.create_buffer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.create_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create this tree&#8217;s TreeBuffer</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.csv">
+<tt class="descname">csv</tt><big>(</big><em>sep='</em>, <em>'</em>, <em>branches=None</em>, <em>include_labels=True</em>, <em>limit=None</em>, <em>stream=None</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.csv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print csv representation of tree only including branches
+of basic types (no objects, vectors, etc..)</p>
+<dl class="docutils">
+<dt>sep <span class="classifier-delimiter">:</span> <span class="classifier">str, optional (default=&#8217;,&#8217;)</span></dt>
+<dd>The delimiter used to separate columns</dd>
+<dt>branches <span class="classifier-delimiter">:</span> <span class="classifier">list, optional (default=None)</span></dt>
+<dd>Only include these branches in the CSV output. If None, then all
+basic types will be included.</dd>
+<dt>include_labels <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=True)</span></dt>
+<dd>Include a first row of branch names labelling each column.</dd>
+<dt>limit <span class="classifier-delimiter">:</span> <span class="classifier">int, optional (default=None)</span></dt>
+<dd>Only include up to a maximum of <tt class="docutils literal"><span class="pre">limit</span></tt> rows in the CSV.</dd>
+<dt>stream <span class="classifier-delimiter">:</span> <span class="classifier">file, (default=None)</span></dt>
+<dd>Stream to write the CSV output on. By default the CSV will be
+written to <tt class="docutils literal"><span class="pre">sys.stdout</span></tt>.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.deactivate">
+<tt class="descname">deactivate</tt><big>(</big><em>branches</em>, <em>exclusive=False</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.deactivate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.deactivate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deactivate branches</p>
+<dl class="docutils">
+<dt>branches <span class="classifier-delimiter">:</span> <span class="classifier">str or list</span></dt>
+<dd>branch or list of branches to deactivate</dd>
+<dt>exclusive <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=False)</span></dt>
+<dd>if True activate the remaining branches</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.debug">
+<tt class="descname">debug</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::Debug()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.decl_file_line">
+<tt class="descname">decl_file_line</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.decl_file_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>static int TTree::DeclFileLine()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.decl_file_name">
+<tt class="descname">decl_file_name</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.decl_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TTree::DeclFileName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.delete">
+<tt class="descname">delete</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::Delete(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.dictionary">
+<tt class="descname">dictionary</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.dictionary" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TTree::Dictionary()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.directory_auto_add">
+<tt class="descname">directory_auto_add</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.directory_auto_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::DirectoryAutoAdd(TDirectory*)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.distanceto_line">
+<tt class="descname">distanceto_line</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.distanceto_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TAttLine::DistancetoLine(Int_t px, Int_t py, Double_t xp1, Double_t yp1, Double_t xp2, Double_t yp2)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.distanceto_primitive">
+<tt class="descname">distanceto_primitive</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.distanceto_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::DistancetoPrimitive(Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.draw">
+<tt class="descname">draw</tt><big>(</big><em>expression</em>, <em>selection=''</em>, <em>options=''</em>, <em>hist=None</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a TTree with a selection as usual, but return the created
+histogram.</p>
+<dl class="docutils">
+<dt>expression <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>The expression or list of expression to draw. Multidimensional
+expressions are separated by &#8221;:&#8221;. rootpy reverses the expressions
+along each dimension so the order matches the order of the elements
+identifying a location in the resulting histogram. By default ROOT
+takes the expression &#8220;Y:X&#8221; to mean Y versus X but we argue that
+this is counterintuitive and that the order should be &#8220;X:Y&#8221; so that
+the expression along the first dimension identifies the location
+along the first axis, etc.</dd>
+<dt>selection <span class="classifier-delimiter">:</span> <span class="classifier">str or rootpy.tree.Cut, optional (default=&#8221;&#8221;)</span></dt>
+<dd>The cut expression. Only entries satisfying this selection are
+included in the filled histogram.</dd>
+<dt>options <span class="classifier-delimiter">:</span> <span class="classifier">str, optional (default=&#8221;&#8221;)</span></dt>
+<dd>Draw options passed to ROOT.TTree.Draw</dd>
+<dt>hist <span class="classifier-delimiter">:</span> <span class="classifier">ROOT.TH1, optional (default=None)</span></dt>
+<dd>The histogram to be filled. If not specified ROOT will create one
+for you and rootpy will return it.</dd>
+<dt>kwargs <span class="classifier-delimiter">:</span> <span class="classifier">dict, optional</span></dt>
+<dd>Remaining keword arguments are used to set the style attributes of
+the histogram.</dd>
+</dl>
+<p>If <tt class="docutils literal"><span class="pre">hist</span></tt> is specified, None is returned. If <tt class="docutils literal"><span class="pre">hist</span></tt> is left
+unspecified, an attempt is made to retrieve the generated histogram
+which is then returned.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.draw_class">
+<tt class="descname">draw_class</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.draw_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::DrawClass()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.draw_clone">
+<tt class="descname">draw_clone</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.draw_clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::DrawClone(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.drop_baskets">
+<tt class="descname">drop_baskets</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.drop_baskets" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::DropBaskets()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.drop_branch_from_cache">
+<tt class="descname">drop_branch_from_cache</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.drop_branch_from_cache" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::DropBranchFromCache(const char* bname, Bool_t subbranches = kFALSE)
+void TTree::DropBranchFromCache(TBranch* branch, Bool_t subbranches = kFALSE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.drop_buffers">
+<tt class="descname">drop_buffers</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.drop_buffers" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::DropBuffers(Int_t nbytes)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.dump">
+<tt class="descname">dump</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Dump()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.error">
+<tt class="descname">error</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Error(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.execute">
+<tt class="descname">execute</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Execute(const char* method, const char* params, Int_t* error = 0)
+void TObject::Execute(TMethod* method, TObjArray* params, Int_t* error = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.execute_event">
+<tt class="descname">execute_event</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.execute_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::ExecuteEvent(Int_t event, Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.fatal">
+<tt class="descname">fatal</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.fatal" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Fatal(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.fill">
+<tt class="descname">fill</tt><big>(</big><em>reset=False</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill the Tree with the current values in the buffer</p>
+<dl class="docutils">
+<dt>reset <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=False)</span></dt>
+<dd>Reset the values in the buffer to their default values after
+filling.</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.fill_buffer">
+<tt class="descname">fill_buffer</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.fill_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TNamed::FillBuffer(char*&amp; buffer)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.find_branch">
+<tt class="descname">find_branch</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.find_branch" title="Permalink to this definition">¶</a></dt>
+<dd><p>TBranch* TTree::FindBranch(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.find_leaf">
+<tt class="descname">find_leaf</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.find_leaf" title="Permalink to this definition">¶</a></dt>
+<dd><p>TLeaf* TTree::FindLeaf(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.find_object">
+<tt class="descname">find_object</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.find_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TObject::FindObject(const char* name)
+TObject* TObject::FindObject(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.fit">
+<tt class="descname">fit</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::Fit(const char* funcname, const char* varexp, const char* selection = &#8220;&#8221;, Option_t* option = &#8220;&#8221;, Option_t* goption = &#8220;&#8221;, Long64_t nentries = 1000000000, Long64_t firstentry = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.flush_baskets">
+<tt class="descname">flush_baskets</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.flush_baskets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::FlushBaskets()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_alias">
+<tt class="descname">get_alias</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TTree::GetAlias(const char* aliasName)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_auto_flush">
+<tt class="descname">get_auto_flush</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_auto_flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetAutoFlush()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_auto_save">
+<tt class="descname">get_auto_save</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_auto_save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetAutoSave()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_branch">
+<tt class="descname">get_branch</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_branch" title="Permalink to this definition">¶</a></dt>
+<dd><p>TBranch* TTree::GetBranch(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_branch_ref">
+<tt class="descname">get_branch_ref</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_branch_ref" title="Permalink to this definition">¶</a></dt>
+<dd><p>TBranchRef* TTree::GetBranchRef()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_branch_status">
+<tt class="descname">get_branch_status</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_branch_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TTree::GetBranchStatus(const char* branchname)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_branch_style">
+<tt class="descname">get_branch_style</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_branch_style" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Int_t TTree::GetBranchStyle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_cache_size">
+<tt class="descname">get_cache_size</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_cache_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetCacheSize()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_chain_entry_number">
+<tt class="descname">get_chain_entry_number</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_chain_entry_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetChainEntryNumber(Long64_t entry)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_chain_offset">
+<tt class="descname">get_chain_offset</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_chain_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetChainOffset()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_cluster_iterator">
+<tt class="descname">get_cluster_iterator</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_cluster_iterator" title="Permalink to this definition">¶</a></dt>
+<dd><p>TTree::TClusterIterator TTree::GetClusterIterator(Long64_t firstentry)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_current_file">
+<tt class="descname">get_current_file</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_current_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>TFile* TTree::GetCurrentFile()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_debug_max">
+<tt class="descname">get_debug_max</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_debug_max" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetDebugMax()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_debug_min">
+<tt class="descname">get_debug_min</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_debug_min" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetDebugMin()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_default_entry_offset_len">
+<tt class="descname">get_default_entry_offset_len</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_default_entry_offset_len" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::GetDefaultEntryOffsetLen()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_directory">
+<tt class="descname">get_directory</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>TDirectory* TTree::GetDirectory()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_draw_option">
+<tt class="descname">get_draw_option</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_draw_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option_t* TObject::GetDrawOption()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_dtor_only">
+<tt class="descname">get_dtor_only</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_dtor_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Long_t TObject::GetDtorOnly()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.get_entries">
+<tt class="descname">get_entries</tt><big>(</big><em>cut=None</em>, <em>weighted_cut=None</em>, <em>weighted=False</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.get_entries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of (weighted) entries in the Tree</p>
+<dl class="docutils">
+<dt>cut <span class="classifier-delimiter">:</span> <span class="classifier">str or rootpy.tree.cut.Cut, optional (default=None)</span></dt>
+<dd>Only entries passing this cut will be included in the count</dd>
+<dt>weighted_cut <span class="classifier-delimiter">:</span> <span class="classifier">str or rootpy.tree.cut.Cut, optional (default=None)</span></dt>
+<dd>Apply a weighted selection and determine the weighted number of
+entries.</dd>
+<dt>weighted <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=False)</span></dt>
+<dd>Multiply the number of (weighted) entries by the Tree weight.</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_entries_fast">
+<tt class="descname">get_entries_fast</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_entries_fast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetEntriesFast()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_entries_friend">
+<tt class="descname">get_entries_friend</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_entries_friend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetEntriesFriend()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.get_entry">
+<tt class="descname">get_entry</tt><big>(</big><em>entry</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.get_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get an entry. Tree collections are reset
+(see <tt class="docutils literal"><span class="pre">rootpy.tree.treeobject</span></tt>)</p>
+<dl class="docutils">
+<dt>entry <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>entry index</dd>
+</dl>
+<dl class="docutils">
+<dt>ROOT.TTree.GetEntry <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd>The number of bytes read</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_entry_list">
+<tt class="descname">get_entry_list</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_entry_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>TEntryList* TTree::GetEntryList()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_entry_number">
+<tt class="descname">get_entry_number</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_entry_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetEntryNumber(Long64_t entry)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_entry_number_with_best_index">
+<tt class="descname">get_entry_number_with_best_index</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_entry_number_with_best_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetEntryNumberWithBestIndex(Int_t major, Int_t minor = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_entry_number_with_index">
+<tt class="descname">get_entry_number_with_index</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_entry_number_with_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetEntryNumberWithIndex(Int_t major, Int_t minor = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_entry_with_index">
+<tt class="descname">get_entry_with_index</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_entry_with_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::GetEntryWithIndex(Int_t major, Int_t minor = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_estimate">
+<tt class="descname">get_estimate</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_estimate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetEstimate()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_event">
+<tt class="descname">get_event</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::GetEvent(Long64_t entry = 0, Int_t getall = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_event_list">
+<tt class="descname">get_event_list</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_event_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>TEventList* TTree::GetEventList()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_file_number">
+<tt class="descname">get_file_number</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_file_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::GetFileNumber()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.get_fill_color">
+<tt class="descname">get_fill_color</tt><big>(</big><em>mode=None</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.get_fill_color" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>mode</em> may be &#8216;root&#8217;, &#8216;mpl&#8217;, or None to return the ROOT, matplotlib,
+or input value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.get_fill_style">
+<tt class="descname">get_fill_style</tt><big>(</big><em>mode=None</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.get_fill_style" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>mode</em> may be &#8216;root&#8217;, &#8216;mpl&#8217;, or None to return the ROOT, matplotlib,
+or input value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_friend">
+<tt class="descname">get_friend</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_friend" title="Permalink to this definition">¶</a></dt>
+<dd><p>TTree* TTree::GetFriend(const char*)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_friend_alias">
+<tt class="descname">get_friend_alias</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_friend_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TTree::GetFriendAlias(TTree*)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_histogram">
+<tt class="descname">get_histogram</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_histogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>TH1* TTree::GetHistogram()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_icon_name">
+<tt class="descname">get_icon_name</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_icon_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TObject::GetIconName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_index">
+<tt class="descname">get_index</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t* TTree::GetIndex()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_index_values">
+<tt class="descname">get_index_values</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_index_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t* TTree::GetIndexValues()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_iterator_on_all_leaves">
+<tt class="descname">get_iterator_on_all_leaves</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_iterator_on_all_leaves" title="Permalink to this definition">¶</a></dt>
+<dd><p>TIterator* TTree::GetIteratorOnAllLeaves(Bool_t dir = kIterForward)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_leaf">
+<tt class="descname">get_leaf</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_leaf" title="Permalink to this definition">¶</a></dt>
+<dd><p>TLeaf* TTree::GetLeaf(const char* branchname, const char* leafname)
+TLeaf* TTree::GetLeaf(const char* name)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.get_line_color">
+<tt class="descname">get_line_color</tt><big>(</big><em>mode=None</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.get_line_color" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>mode</em> may be &#8216;root&#8217;, &#8216;mpl&#8217;, or None to return the ROOT, matplotlib,
+or input value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.get_line_style">
+<tt class="descname">get_line_style</tt><big>(</big><em>mode=None</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.get_line_style" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>mode</em> may be &#8216;root&#8217;, &#8216;mpl&#8217;, or None to return the ROOT, matplotlib,
+or input value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.get_line_width">
+<tt class="descname">get_line_width</tt><big>(</big><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.get_line_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_list_of_aliases">
+<tt class="descname">get_list_of_aliases</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_list_of_aliases" title="Permalink to this definition">¶</a></dt>
+<dd><p>TList* TTree::GetListOfAliases()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_list_of_branches">
+<tt class="descname">get_list_of_branches</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_list_of_branches" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObjArray* TTree::GetListOfBranches()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_list_of_clones">
+<tt class="descname">get_list_of_clones</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_list_of_clones" title="Permalink to this definition">¶</a></dt>
+<dd><p>TList* TTree::GetListOfClones()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_list_of_friends">
+<tt class="descname">get_list_of_friends</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_list_of_friends" title="Permalink to this definition">¶</a></dt>
+<dd><p>TList* TTree::GetListOfFriends()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_list_of_leaves">
+<tt class="descname">get_list_of_leaves</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_list_of_leaves" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObjArray* TTree::GetListOfLeaves()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_make_class">
+<tt class="descname">get_make_class</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_make_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::GetMakeClass()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.get_marker_color">
+<tt class="descname">get_marker_color</tt><big>(</big><em>mode=None</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.get_marker_color" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>mode</em> may be &#8216;root&#8217;, &#8216;mpl&#8217;, or None to return the ROOT, matplotlib,
+or input value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.get_marker_size">
+<tt class="descname">get_marker_size</tt><big>(</big><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.get_marker_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.get_marker_style">
+<tt class="descname">get_marker_style</tt><big>(</big><em>mode=None</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.get_marker_style" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>mode</em> may be &#8216;root&#8217;, &#8216;mpl&#8217;, or None to return the ROOT, matplotlib,
+or input value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_max_entry_loop">
+<tt class="descname">get_max_entry_loop</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_max_entry_loop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetMaxEntryLoop()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_max_tree_size">
+<tt class="descname">get_max_tree_size</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_max_tree_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Long64_t TTree::GetMaxTreeSize()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_max_virtual_size">
+<tt class="descname">get_max_virtual_size</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_max_virtual_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetMaxVirtualSize()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.get_maximum">
+<tt class="descname">get_maximum</tt><big>(</big><em>expression</em>, <em>cut=None</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.get_maximum" title="Permalink to this definition">¶</a></dt>
+<dd><p>TODO: we need a better way of determining the maximum value of an
+expression.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.get_minimum">
+<tt class="descname">get_minimum</tt><big>(</big><em>expression</em>, <em>cut=None</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.get_minimum" title="Permalink to this definition">¶</a></dt>
+<dd><p>TODO: we need a better way of determining the minimum value of an
+expression.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_name">
+<tt class="descname">get_name</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TNamed::GetName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_nbranches">
+<tt class="descname">get_nbranches</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_nbranches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::GetNbranches()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_notify">
+<tt class="descname">get_notify</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_notify" title="Permalink to this definition">¶</a></dt>
+<dd><p>TObject* TTree::GetNotify()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_object_info">
+<tt class="descname">get_object_info</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_object_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>char* TObject::GetObjectInfo(Int_t px, Int_t py)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_object_stat">
+<tt class="descname">get_object_stat</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_object_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>static Bool_t TObject::GetObjectStat()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_option">
+<tt class="descname">get_option</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>Option_t* TObject::GetOption()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_packet_size">
+<tt class="descname">get_packet_size</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_packet_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::GetPacketSize()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_player">
+<tt class="descname">get_player</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_player" title="Permalink to this definition">¶</a></dt>
+<dd><p>TVirtualTreePlayer* TTree::GetPlayer()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_read_entry">
+<tt class="descname">get_read_entry</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_read_entry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetReadEntry()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_read_event">
+<tt class="descname">get_read_event</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_read_event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetReadEvent()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_scan_field">
+<tt class="descname">get_scan_field</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_scan_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::GetScanField()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_select">
+<tt class="descname">get_select</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_select" title="Permalink to this definition">¶</a></dt>
+<dd><p>TTreeFormula* TTree::GetSelect()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_selected_rows">
+<tt class="descname">get_selected_rows</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_selected_rows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetSelectedRows()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_timer_interval">
+<tt class="descname">get_timer_interval</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_timer_interval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::GetTimerInterval()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_title">
+<tt class="descname">get_title</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>const char* TNamed::GetTitle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_tot_bytes">
+<tt class="descname">get_tot_bytes</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_tot_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetTotBytes()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_transient_buffer">
+<tt class="descname">get_transient_buffer</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_transient_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>TBuffer* TTree::GetTransientBuffer(Int_t size)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_tree">
+<tt class="descname">get_tree</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>TTree* TTree::GetTree()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_tree_index">
+<tt class="descname">get_tree_index</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_tree_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>TVirtualIndex* TTree::GetTreeIndex()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_tree_number">
+<tt class="descname">get_tree_number</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_tree_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::GetTreeNumber()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_unique_id">
+<tt class="descname">get_unique_id</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>UInt_t TObject::GetUniqueID()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_update">
+<tt class="descname">get_update</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::GetUpdate()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_user_info">
+<tt class="descname">get_user_info</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_user_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>TList* TTree::GetUserInfo()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_v1">
+<tt class="descname">get_v1</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_v1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t* TTree::GetV1()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_v2">
+<tt class="descname">get_v2</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_v2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t* TTree::GetV2()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_v3">
+<tt class="descname">get_v3</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_v3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t* TTree::GetV3()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_v4">
+<tt class="descname">get_v4</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_v4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t* TTree::GetV4()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_val">
+<tt class="descname">get_val</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_val" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t* TTree::GetVal(Int_t i)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_var">
+<tt class="descname">get_var</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_var" title="Permalink to this definition">¶</a></dt>
+<dd><p>TTreeFormula* TTree::GetVar(Int_t i)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_var1">
+<tt class="descname">get_var1</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_var1" title="Permalink to this definition">¶</a></dt>
+<dd><p>TTreeFormula* TTree::GetVar1()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_var2">
+<tt class="descname">get_var2</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_var2" title="Permalink to this definition">¶</a></dt>
+<dd><p>TTreeFormula* TTree::GetVar2()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_var3">
+<tt class="descname">get_var3</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_var3" title="Permalink to this definition">¶</a></dt>
+<dd><p>TTreeFormula* TTree::GetVar3()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_var4">
+<tt class="descname">get_var4</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_var4" title="Permalink to this definition">¶</a></dt>
+<dd><p>TTreeFormula* TTree::GetVar4()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_w">
+<tt class="descname">get_w</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_w" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t* TTree::GetW()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_weight">
+<tt class="descname">get_weight</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Double_t TTree::GetWeight()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.get_zip_bytes">
+<tt class="descname">get_zip_bytes</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.get_zip_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::GetZipBytes()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.glob">
+<tt class="descname">glob</tt><big>(</big><em>patterns</em>, <em>exclude=None</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.glob"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.glob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of branch names that match <tt class="docutils literal"><span class="pre">pattern</span></tt>.
+Exclude all matched branch names which also match a pattern in
+<tt class="docutils literal"><span class="pre">exclude</span></tt>. <tt class="docutils literal"><span class="pre">exclude</span></tt> may be a string or list of strings.</p>
+<dl class="docutils">
+<dt>patterns: str or list</dt>
+<dd>branches are matched against this pattern or list of patterns where
+globbing is performed with &#8216;*&#8217;.</dd>
+<dt>exclude <span class="classifier-delimiter">:</span> <span class="classifier">str or list, optional (default=None)</span></dt>
+<dd>branches matching this pattern or list of patterns are excluded even
+if they match a pattern in <tt class="docutils literal"><span class="pre">patterns</span></tt>.</dd>
+</dl>
+<dl class="docutils">
+<dt>matches <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd>List of matching branch names</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.handle_timer">
+<tt class="descname">handle_timer</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.handle_timer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::HandleTimer(TTimer* timer)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.has_branch">
+<tt class="descname">has_branch</tt><big>(</big><em>branch</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.has_branch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.has_branch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if this Tree contains a branch with the name <tt class="docutils literal"><span class="pre">branch</span></tt></p>
+<dl class="docutils">
+<dt>branch <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>branch name</dd>
+</dl>
+<dl class="docutils">
+<dt>has_branch <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd>True if this Tree contains a branch with the name <tt class="docutils literal"><span class="pre">branch</span></tt> or
+False otherwise.</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.hash">
+<tt class="descname">hash</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.hash" title="Permalink to this definition">¶</a></dt>
+<dd><p>ULong_t TNamed::Hash()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.impl_file_line">
+<tt class="descname">impl_file_line</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.impl_file_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>static int TTree::ImplFileLine()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.impl_file_name">
+<tt class="descname">impl_file_name</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.impl_file_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>static const char* TTree::ImplFileName()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.increment_total_buffers">
+<tt class="descname">increment_total_buffers</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.increment_total_buffers" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::IncrementTotalBuffers(Int_t nbytes)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.info">
+<tt class="descname">info</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Info(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.inherits_from">
+<tt class="descname">inherits_from</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.inherits_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::InheritsFrom(const char* classname)
+Bool_t TObject::InheritsFrom(const TClass* cl)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.inspect">
+<tt class="descname">inspect</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.inspect" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Inspect()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.invert_bit">
+<tt class="descname">invert_bit</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.invert_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::InvertBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.is_a">
+<tt class="descname">is_a</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.is_a" title="Permalink to this definition">¶</a></dt>
+<dd><p>TClass* TTree::IsA()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.is_equal">
+<tt class="descname">is_equal</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.is_equal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsEqual(const TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.is_folder">
+<tt class="descname">is_folder</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.is_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TTree::IsFolder()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.is_on_heap">
+<tt class="descname">is_on_heap</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.is_on_heap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsOnHeap()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.is_sortable">
+<tt class="descname">is_sortable</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.is_sortable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TNamed::IsSortable()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.is_transparent">
+<tt class="descname">is_transparent</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.is_transparent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TAttFill::IsTransparent()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.is_zombie">
+<tt class="descname">is_zombie</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.is_zombie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::IsZombie()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.iterbranches">
+<tt class="descname">iterbranches</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.iterbranches"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.iterbranches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterator over the branches</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.iterbranchnames">
+<tt class="descname">iterbranchnames</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.iterbranchnames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.iterbranchnames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterator over the branch names</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.load_baskets">
+<tt class="descname">load_baskets</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.load_baskets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::LoadBaskets(Long64_t maxmemory = 2000000000)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.load_tree">
+<tt class="descname">load_tree</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.load_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::LoadTree(Long64_t entry)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.load_tree_friend">
+<tt class="descname">load_tree_friend</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.load_tree_friend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::LoadTreeFriend(Long64_t entry, TTree* T)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.make_class">
+<tt class="descname">make_class</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.make_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::MakeClass(const char* classname = 0, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.make_code">
+<tt class="descname">make_code</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.make_code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::MakeCode(const char* filename = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.make_proxy">
+<tt class="descname">make_proxy</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.make_proxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::MakeProxy(const char* classname, const char* macrofilename = 0, const char* cutfilename = 0, const char* option = 0, Int_t maxUnrolling = 3)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.make_selector">
+<tt class="descname">make_selector</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.make_selector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::MakeSelector(const char* selector = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.may_not_use">
+<tt class="descname">may_not_use</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.may_not_use" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::MayNotUse(const char* method)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.memory_full">
+<tt class="descname">memory_full</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.memory_full" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TTree::MemoryFull(Int_t nbytes)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.merge">
+<tt class="descname">merge</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::Merge(TCollection* list, Option_t* option = &#8220;&#8221;)
+Long64_t TTree::Merge(TCollection* list, TFileMergeInfo* info)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.merge_trees">
+<tt class="descname">merge_trees</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.merge_trees" title="Permalink to this definition">¶</a></dt>
+<dd><p>static TTree* TTree::MergeTrees(TList* list, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.modify">
+<tt class="descname">modify</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.modify" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TAttLine::Modify()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.notify">
+<tt class="descname">notify</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.notify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TTree::Notify()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.obsolete">
+<tt class="descname">obsolete</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.obsolete" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Obsolete(const char* method, const char* asOfVers, const char* removedFromVers)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.optimize_baskets">
+<tt class="descname">optimize_baskets</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.optimize_baskets" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::OptimizeBaskets(ULong64_t maxMemory = 10000000, Float_t minComp = 1.1, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.paint">
+<tt class="descname">paint</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.paint" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Paint(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.pop">
+<tt class="descname">pop</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Pop()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.principal">
+<tt class="descname">principal</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.principal" title="Permalink to this definition">¶</a></dt>
+<dd><p>TPrincipal* TTree::Principal(const char* varexp = &#8220;&#8221;, const char* selection = &#8220;&#8221;, Option_t* option = &#8220;np&#8221;, Long64_t nentries = 1000000000, Long64_t firstentry = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.print">
+<tt class="descname">print</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.print" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::Print(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.print_cache_stats">
+<tt class="descname">print_cache_stats</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.print_cache_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::PrintCacheStats(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.process">
+<tt class="descname">process</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::Process(void* selector, Option_t* option = &#8220;&#8221;, Long64_t nentries = 1000000000, Long64_t firstentry = 0)
+Long64_t TTree::Process(const char* filename, Option_t* option = &#8220;&#8221;, Long64_t nentries = 1000000000, Long64_t firstentry = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.project">
+<tt class="descname">project</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::Project(const char* hname, const char* varexp, const char* selection = &#8220;&#8221;, Option_t* option = &#8220;&#8221;, Long64_t nentries = 1000000000, Long64_t firstentry = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.query">
+<tt class="descname">query</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>TSQLResult* TTree::Query(const char* varexp = &#8220;&#8221;, const char* selection = &#8220;&#8221;, Option_t* option = &#8220;&#8221;, Long64_t nentries = 1000000000, Long64_t firstentry = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.read">
+<tt class="descname">read</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::Read(const char* name)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.read_branches_on_demand">
+<tt class="descname">read_branches_on_demand</tt><big>(</big><em>read=True</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.read_branches_on_demand"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.read_branches_on_demand" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or disable the reading of individual branches on demand.</p>
+<dl class="docutils">
+<dt>read <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=True)</span></dt>
+<dd>Enable or disable the reading of individual branches on demand.</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.read_file">
+<tt class="descname">read_file</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.read_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::ReadFile(const char* filename, const char* branchDescriptor = &#8220;&#8221;, char delimiter = &#8216; &#8216;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.read_stream">
+<tt class="descname">read_stream</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.read_stream" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::ReadStream(basic_istream&lt;char,char_traits&lt;char&gt; &gt;&amp; inputStream, const char* branchDescriptor = &#8220;&#8221;, char delimiter = &#8216; &#8216;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.recursive_remove">
+<tt class="descname">recursive_remove</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.recursive_remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::RecursiveRemove(TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.refresh">
+<tt class="descname">refresh</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::Refresh()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.remove_friend">
+<tt class="descname">remove_friend</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.remove_friend" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::RemoveFriend(TTree*)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.reset">
+<tt class="descname">reset</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::Reset(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.reset_after_merge">
+<tt class="descname">reset_after_merge</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.reset_after_merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::ResetAfterMerge(TFileMergeInfo*)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.reset_att_fill">
+<tt class="descname">reset_att_fill</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.reset_att_fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TAttFill::ResetAttFill(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.reset_att_line">
+<tt class="descname">reset_att_line</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.reset_att_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TAttLine::ResetAttLine(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.reset_att_marker">
+<tt class="descname">reset_att_marker</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.reset_att_marker" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TAttMarker::ResetAttMarker(Option_t* toption = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.reset_bit">
+<tt class="descname">reset_bit</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.reset_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::ResetBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.reset_branch_address">
+<tt class="descname">reset_branch_address</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.reset_branch_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::ResetBranchAddress(TBranch*)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.reset_branch_addresses">
+<tt class="descname">reset_branch_addresses</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.reset_branch_addresses" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::ResetBranchAddresses()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.reset_branch_values">
+<tt class="descname">reset_branch_values</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.reset_branch_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.reset_branch_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset all values in the buffer to their default values</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.save_as">
+<tt class="descname">save_as</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.save_as" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SaveAs(const char* filename = &#8220;&#8221;, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.save_fill_attributes">
+<tt class="descname">save_fill_attributes</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.save_fill_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TAttFill::SaveFillAttributes(basic_ostream&lt;char,char_traits&lt;char&gt; &gt;&amp; out, const char* name, Int_t coldef = 1, Int_t stydef = 1001)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.save_line_attributes">
+<tt class="descname">save_line_attributes</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.save_line_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TAttLine::SaveLineAttributes(basic_ostream&lt;char,char_traits&lt;char&gt; &gt;&amp; out, const char* name, Int_t coldef = 1, Int_t stydef = 1, Int_t widdef = 1)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.save_marker_attributes">
+<tt class="descname">save_marker_attributes</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.save_marker_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TAttMarker::SaveMarkerAttributes(basic_ostream&lt;char,char_traits&lt;char&gt; &gt;&amp; out, const char* name, Int_t coldef = 1, Int_t stydef = 1, Int_t sizdef = 1)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.save_primitive">
+<tt class="descname">save_primitive</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.save_primitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SavePrimitive(basic_ostream&lt;char,char_traits&lt;char&gt; &gt;&amp; out, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.scan">
+<tt class="descname">scan</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.scan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::Scan(const char* varexp = &#8220;&#8221;, const char* selection = &#8220;&#8221;, Option_t* option = &#8220;&#8221;, Long64_t nentries = 1000000000, Long64_t firstentry = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_alias">
+<tt class="descname">set_alias</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_alias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TTree::SetAlias(const char* aliasName, const char* aliasFormula)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_auto_flush">
+<tt class="descname">set_auto_flush</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_auto_flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetAutoFlush(Long64_t autof = -30000000)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_auto_save">
+<tt class="descname">set_auto_save</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_auto_save" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetAutoSave(Long64_t autos = 300000000)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_basket_size">
+<tt class="descname">set_basket_size</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_basket_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetBasketSize(const char* bname, Int_t buffsize = 16000)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_bit">
+<tt class="descname">set_bit</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetBit(UInt_t f, Bool_t set)
+void TObject::SetBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_branch_address">
+<tt class="descname">set_branch_address</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_branch_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>TBranch* TTree::SetBranchAddress( ... )</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_branch_status">
+<tt class="descname">set_branch_status</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_branch_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetBranchStatus(const char* bname, Bool_t status = 1, UInt_t* found = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_branch_style">
+<tt class="descname">set_branch_style</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_branch_style" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TTree::SetBranchStyle(Int_t style = 1)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.set_buffer">
+<tt class="descname">set_buffer</tt><big>(</big><em>treebuffer</em>, <em>branches=None</em>, <em>ignore_branches=None</em>, <em>create_branches=False</em>, <em>visible=True</em>, <em>ignore_missing=False</em>, <em>transfer_objects=False</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.set_buffer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.set_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the Tree buffer</p>
+<dl class="docutils">
+<dt>treebuffer <span class="classifier-delimiter">:</span> <span class="classifier">rootpy.tree.buffer.TreeBuffer</span></dt>
+<dd>a TreeBuffer</dd>
+<dt>branches <span class="classifier-delimiter">:</span> <span class="classifier">list, optional (default=None)</span></dt>
+<dd>only include these branches from the TreeBuffer</dd>
+<dt>ignore_branches <span class="classifier-delimiter">:</span> <span class="classifier">list, optional (default=None)</span></dt>
+<dd>ignore these branches from the TreeBuffer</dd>
+<dt>create_branches <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=False)</span></dt>
+<dd>If True then the branches in the TreeBuffer should be created.
+Use this option if initializing the Tree. A ValueError is raised
+if an attempt is made to create a branch with the same name as one
+that already exists in the Tree. If False the addresses of existing
+branches will be set to point at the addresses in this buffer.</dd>
+<dt>visible <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=True)</span></dt>
+<dd>If True then the branches will be added to the buffer and will be
+accessible as attributes of the Tree.</dd>
+<dt>ignore_missing <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=False)</span></dt>
+<dd>If True and if create_branches is False then any branches in this
+buffer that do not exist in the Tree will be ignored, otherwise a
+ValueError will be raised.</dd>
+<dt>transfer_objects <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=False)</span></dt>
+<dd>If True, all tree objects and collections will be transferred from
+the buffer into this Tree&#8217;s buffer.</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_cache_entry_range">
+<tt class="descname">set_cache_entry_range</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_cache_entry_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetCacheEntryRange(Long64_t first, Long64_t last)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_cache_learn_entries">
+<tt class="descname">set_cache_learn_entries</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_cache_learn_entries" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetCacheLearnEntries(Int_t n = 10)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_cache_size">
+<tt class="descname">set_cache_size</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_cache_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetCacheSize(Long64_t cachesize = -1)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_chain_offset">
+<tt class="descname">set_chain_offset</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_chain_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetChainOffset(Long64_t offset = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_circular">
+<tt class="descname">set_circular</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_circular" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetCircular(Long64_t maxEntries)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_debug">
+<tt class="descname">set_debug</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetDebug(Int_t level = 1, Long64_t min = 0, Long64_t max = 9999999)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_default_entry_offset_len">
+<tt class="descname">set_default_entry_offset_len</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_default_entry_offset_len" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetDefaultEntryOffsetLen(Int_t newdefault, Bool_t updateExisting = kFALSE)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_directory">
+<tt class="descname">set_directory</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetDirectory(TDirectory* dir)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_draw_option">
+<tt class="descname">set_draw_option</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_draw_option" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetDrawOption(Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_dtor_only">
+<tt class="descname">set_dtor_only</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_dtor_only" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TObject::SetDtorOnly(void* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_entries">
+<tt class="descname">set_entries</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_entries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Long64_t TTree::SetEntries(Long64_t n = -1)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_entry_list">
+<tt class="descname">set_entry_list</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_entry_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetEntryList(TEntryList* list, Option_t* opt = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_estimate">
+<tt class="descname">set_estimate</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_estimate" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetEstimate(Long64_t nentries = 1000000)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_event_list">
+<tt class="descname">set_event_list</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_event_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetEventList(TEventList* list)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_file_number">
+<tt class="descname">set_file_number</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_file_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetFileNumber(Int_t number = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_fill_attributes">
+<tt class="descname">set_fill_attributes</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_fill_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TAttFill::SetFillAttributes()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.set_fill_color">
+<tt class="descname">set_fill_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.set_fill_color" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>color</em> may be any color understood by ROOT or matplotlib.</p>
+<p>For full documentation of accepted <em>color</em> arguments, see
+<tt class="xref py py-class docutils literal"><span class="pre">rootpy.plotting.style.Color</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.set_fill_style">
+<tt class="descname">set_fill_style</tt><big>(</big><em>style</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.set_fill_style" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>style</em> may be any fill style understood by ROOT or matplotlib.</p>
+<p>For full documentation of accepted <em>style</em> arguments, see
+<tt class="xref py py-class docutils literal"><span class="pre">rootpy.plotting.style.FillStyle</span></tt>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_line_attributes">
+<tt class="descname">set_line_attributes</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_line_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TAttLine::SetLineAttributes()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.set_line_color">
+<tt class="descname">set_line_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.set_line_color" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>color</em> may be any color understood by ROOT or matplotlib.</p>
+<p>For full documentation of accepted <em>color</em> arguments, see
+<tt class="xref py py-class docutils literal"><span class="pre">rootpy.plotting.style.Color</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.set_line_style">
+<tt class="descname">set_line_style</tt><big>(</big><em>style</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.set_line_style" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>style</em> may be any line style understood by ROOT or matplotlib.</p>
+<p>For full documentation of accepted <em>style</em> arguments, see
+<tt class="xref py py-class docutils literal"><span class="pre">rootpy.plotting.style.LineStyle</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.set_line_width">
+<tt class="descname">set_line_width</tt><big>(</big><em>width</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.set_line_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_make_class">
+<tt class="descname">set_make_class</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_make_class" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetMakeClass(Int_t make)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_marker_attributes">
+<tt class="descname">set_marker_attributes</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_marker_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TAttMarker::SetMarkerAttributes()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.set_marker_color">
+<tt class="descname">set_marker_color</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.set_marker_color" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>color</em> may be any color understood by ROOT or matplotlib.</p>
+<p>For full documentation of accepted <em>color</em> arguments, see
+<tt class="xref py py-class docutils literal"><span class="pre">rootpy.plotting.style.Color</span></tt>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.set_marker_size">
+<tt class="descname">set_marker_size</tt><big>(</big><em>size</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.set_marker_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.set_marker_style">
+<tt class="descname">set_marker_style</tt><big>(</big><em>style</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.set_marker_style" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>style</em> may be any marker style understood by ROOT or matplotlib.</p>
+<p>For full documentation of accepted <em>style</em> arguments, see
+<tt class="xref py py-class docutils literal"><span class="pre">rootpy.plotting.style.MarkerStyle</span></tt>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_max_entry_loop">
+<tt class="descname">set_max_entry_loop</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_max_entry_loop" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetMaxEntryLoop(Long64_t maxev = 1000000000)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_max_tree_size">
+<tt class="descname">set_max_tree_size</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_max_tree_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TTree::SetMaxTreeSize(Long64_t maxsize = 1900000000)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_max_virtual_size">
+<tt class="descname">set_max_virtual_size</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_max_virtual_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetMaxVirtualSize(Long64_t size = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_name">
+<tt class="descname">set_name</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetName(const char* name)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_name_title">
+<tt class="descname">set_name_title</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_name_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TNamed::SetNameTitle(const char* name, const char* title)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_notify">
+<tt class="descname">set_notify</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_notify" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetNotify(TObject* obj)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_object">
+<tt class="descname">set_object</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetObject(const char* name, const char* title)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_object_stat">
+<tt class="descname">set_object_stat</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_object_stat" title="Permalink to this definition">¶</a></dt>
+<dd><p>static void TObject::SetObjectStat(Bool_t stat)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_parallel_unzip">
+<tt class="descname">set_parallel_unzip</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_parallel_unzip" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetParallelUnzip(Bool_t opt = kTRUE, Float_t RelSize = -1)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_scan_field">
+<tt class="descname">set_scan_field</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_scan_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetScanField(Int_t n = 50)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_timer_interval">
+<tt class="descname">set_timer_interval</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_timer_interval" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetTimerInterval(Int_t msec = 333)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_title">
+<tt class="descname">set_title</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TNamed::SetTitle(const char* title = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_tree_index">
+<tt class="descname">set_tree_index</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_tree_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetTreeIndex(TVirtualIndex* index)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_unique_id">
+<tt class="descname">set_unique_id</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_unique_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SetUniqueID(UInt_t uid)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_update">
+<tt class="descname">set_update</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetUpdate(Int_t freq = 0)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.set_weight">
+<tt class="descname">set_weight</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.set_weight" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::SetWeight(Double_t w = 1, Option_t* option = &#8220;&#8221;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.show">
+<tt class="descname">show</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::Show(Long64_t entry = -1, Int_t lenmax = 20)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.show_members">
+<tt class="descname">show_members</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.show_members" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::ShowMembers(TMemberInspector&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.sizeof">
+<tt class="descname">sizeof</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.sizeof" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TNamed::Sizeof()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.start_viewer">
+<tt class="descname">start_viewer</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.start_viewer" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::StartViewer()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.stop_cache_learning_phase">
+<tt class="descname">stop_cache_learning_phase</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.stop_cache_learning_phase" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::StopCacheLearningPhase()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.streamer">
+<tt class="descname">streamer</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.streamer" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::Streamer(TBuffer&amp;)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.streamer_n_virtual">
+<tt class="descname">streamer_n_virtual</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.streamer_n_virtual" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::StreamerNVirtual(TBuffer&amp; ClassDef_StreamerNVirtual_b)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.sys_error">
+<tt class="descname">sys_error</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.sys_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::SysError(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.test_bit">
+<tt class="descname">test_bit</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.test_bit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bool_t TObject::TestBit(UInt_t f)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.test_bits">
+<tt class="descname">test_bits</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.test_bits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TObject::TestBits(UInt_t f)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.to_array">
+<tt class="descname">to_array</tt><big>(</big><em>branches=None</em>, <em>include_weight=False</em>, <em>weight_name='weight'</em>, <em>weight_dtype='f4'</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.to_array"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.to_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert this tree into a NumPy structured array</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.unbinned_fit">
+<tt class="descname">unbinned_fit</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.unbinned_fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Int_t TTree::UnbinnedFit(const char* funcname, const char* varexp, const char* selection = &#8220;&#8221;, Option_t* option = &#8220;&#8221;, Long64_t nentries = 1000000000, Long64_t firstentry = 0)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.update_buffer">
+<tt class="descname">update_buffer</tt><big>(</big><em>treebuffer</em>, <em>transfer_objects=False</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/tree.html#Tree.update_buffer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.Tree.update_buffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge items from a TreeBuffer into this Tree&#8217;s TreeBuffer</p>
+<dl class="docutils">
+<dt>buffer <span class="classifier-delimiter">:</span> <span class="classifier">rootpy.tree.buffer.TreeBuffer</span></dt>
+<dd>The TreeBuffer to merge into this Tree&#8217;s buffer</dd>
+<dt>transfer_objects <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional (default=False)</span></dt>
+<dd>If True then all objects and collections on the input buffer will be
+transferred to this Tree&#8217;s buffer.</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.use_current_style">
+<tt class="descname">use_current_style</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.use_current_style" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TTree::UseCurrentStyle()</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="rootpy.tree.tree.Tree.warning">
+<tt class="descname">warning</tt><a class="headerlink" href="#rootpy.tree.tree.Tree.warning" title="Permalink to this definition">¶</a></dt>
+<dd><p>void TObject::Warning(const char* method, const char* msgfmt)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.tree.Tree.write">
+<tt class="descname">write</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#rootpy.tree.tree.Tree.write" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.tree.tree.UserData">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.tree.</tt><tt class="descname">UserData</tt><a class="reference internal" href="../_modules/rootpy/tree/tree.html#UserData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.tree.UserData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-rootpy.tree.treeobject">
+<span id="treeobject-module"></span><h2>4.10.8.8. <tt class="xref py py-mod docutils literal"><span class="pre">treeobject</span></tt> Module<a class="headerlink" href="#module-rootpy.tree.treeobject" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rootpy.tree.treeobject.TreeCollection">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.treeobject.</tt><tt class="descname">TreeCollection</tt><big>(</big><em>tree</em>, <em>name</em>, <em>prefix</em>, <em>size</em>, <em>mix=None</em>, <em>cache=True</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeCollection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeCollection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+<dl class="method">
+<dt id="rootpy.tree.treeobject.TreeCollection.getitem">
+<tt class="descname">getitem</tt><big>(</big><em>index</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeCollection.getitem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeCollection.getitem" title="Permalink to this definition">¶</a></dt>
+<dd><p>direct access without going through self.selection</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.treeobject.TreeCollection.len">
+<tt class="descname">len</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeCollection.len"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeCollection.len" title="Permalink to this definition">¶</a></dt>
+<dd><p>length of original collection</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.treeobject.TreeCollection.make_persistent">
+<tt class="descname">make_persistent</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeCollection.make_persistent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeCollection.make_persistent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform actual selection and sorting on underlying
+attribute vectors</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.treeobject.TreeCollection.mask">
+<tt class="descname">mask</tt><big>(</big><em>func</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeCollection.mask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeCollection.mask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.treeobject.TreeCollection.mask_indices">
+<tt class="descname">mask_indices</tt><big>(</big><em>indices</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeCollection.mask_indices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeCollection.mask_indices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.treeobject.TreeCollection.pop">
+<tt class="descname">pop</tt><big>(</big><em>index</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeCollection.pop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeCollection.pop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.treeobject.TreeCollection.remove">
+<tt class="descname">remove</tt><big>(</big><em>thing</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeCollection.remove"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeCollection.remove" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.treeobject.TreeCollection.reset">
+<tt class="descname">reset</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeCollection.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeCollection.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.treeobject.TreeCollection.reset_cache">
+<tt class="descname">reset_cache</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeCollection.reset_cache"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeCollection.reset_cache" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.treeobject.TreeCollection.reset_selection">
+<tt class="descname">reset_selection</tt><big>(</big><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeCollection.reset_selection"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeCollection.reset_selection" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.treeobject.TreeCollection.select">
+<tt class="descname">select</tt><big>(</big><em>func</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeCollection.select"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeCollection.select" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.treeobject.TreeCollection.select_indices">
+<tt class="descname">select_indices</tt><big>(</big><em>indices</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeCollection.select_indices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeCollection.select_indices" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.treeobject.TreeCollection.slice">
+<tt class="descname">slice</tt><big>(</big><em>start=0</em>, <em>stop=None</em>, <em>step=1</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeCollection.slice"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeCollection.slice" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="rootpy.tree.treeobject.TreeCollection.sort">
+<tt class="descname">sort</tt><big>(</big><em>key</em>, <em>**kwargs</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeCollection.sort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeCollection.sort" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.tree.treeobject.TreeCollectionObject">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.treeobject.</tt><tt class="descname">TreeCollectionObject</tt><big>(</big><em>tree</em>, <em>name</em>, <em>prefix</em>, <em>index</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeCollectionObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeCollectionObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#rootpy.tree.treeobject.TreeObject" title="rootpy.tree.treeobject.TreeObject"><tt class="xref py py-class docutils literal"><span class="pre">rootpy.tree.treeobject.TreeObject</span></tt></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rootpy.tree.treeobject.TreeObject">
+<em class="property">class </em><tt class="descclassname">rootpy.tree.treeobject.</tt><tt class="descname">TreeObject</tt><big>(</big><em>tree</em>, <em>name</em>, <em>prefix</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#TreeObject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.TreeObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <tt class="xref py py-class docutils literal"><span class="pre">object</span></tt></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="rootpy.tree.treeobject.mix_classes">
+<tt class="descclassname">rootpy.tree.treeobject.</tt><tt class="descname">mix_classes</tt><big>(</big><em>cls</em>, <em>mixins</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#mix_classes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.mix_classes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rootpy.tree.treeobject.one_to_many_assoc">
+<tt class="descclassname">rootpy.tree.treeobject.</tt><tt class="descname">one_to_many_assoc</tt><big>(</big><em>name</em>, <em>collection</em>, <em>index_branch</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#one_to_many_assoc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.one_to_many_assoc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="rootpy.tree.treeobject.one_to_one_assoc">
+<tt class="descclassname">rootpy.tree.treeobject.</tt><tt class="descname">one_to_one_assoc</tt><big>(</big><em>name</em>, <em>collection</em>, <em>index_branch</em><big>)</big><a class="reference internal" href="../_modules/rootpy/tree/treeobject.html#one_to_one_assoc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rootpy.tree.treeobject.one_to_one_assoc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+                    
+                        <div id="disqus_thread"></div>
+                        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    
+                </div>
+                <div class="span3">
+                    
+        <div class="sphinxsidebar">
+            <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4.10.8. tree Package</a><ul>
+<li><a class="reference internal" href="#id1">4.10.8.1. <tt class="docutils literal"><span class="pre">tree</span></tt> Package</a></li>
+<li><a class="reference internal" href="#module-rootpy.tree.categories">4.10.8.2. <tt class="docutils literal"><span class="pre">categories</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-rootpy.tree.chain">4.10.8.3. <tt class="docutils literal"><span class="pre">chain</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-rootpy.tree.cut">4.10.8.4. <tt class="docutils literal"><span class="pre">cut</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-rootpy.tree.cutflow">4.10.8.5. <tt class="docutils literal"><span class="pre">cutflow</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-rootpy.tree.filtering">4.10.8.6. <tt class="docutils literal"><span class="pre">filtering</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-rootpy.tree.tree">4.10.8.7. <tt class="docutils literal"><span class="pre">tree</span></tt> Module</a></li>
+<li><a class="reference internal" href="#module-rootpy.tree.treeobject">4.10.8.8. <tt class="docutils literal"><span class="pre">treeobject</span></tt> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="rootpy.root2array.html"
+                        title="previous chapter">4.10.7. root2array Package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../auto_examples/index.html"
+                        title="next chapter">NumPy Interface</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/modules/rootpy.tree.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+            </div>
+        </div>
+                </div>
+            
+        </div>
+    </div>
+    <div class="footer">
+        
+        <div class="container">
+                    &copy;
+                        Copyright 2013, rootpy developers.
+                Created using <a
+                        href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3
+                    .
+                <!--Theme <a href="https://github.com/scotch/sphinx-bootstrap">Sphinx-Bootstrap</a>
+                adapted from
+                <a href="http://twitter.github.com/bootstrap/">Twitter's
+                    Bootstrap</a> by <a href="http://www.scotchmedia.com">Scotch
+                    Media</a> -->
+        </div>
+    </div>
+
+
+    <!-- disqus -->
+    <script type="text/javascript">
+        var disqus_title = '4.10.8. tree Package &mdash; rootpy dev documentation';
+        var disqus_identifier ='code' + '.' + "rootpy" + window.location.pathname.replace('/', '.');
+    </script>
+
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = "rootpy"; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+<script type="text/javascript">
+    $('.nav .active').on('click', function () {
+        e.preventDefault()
+        $(this).siblings().toggle()
+    });
+</script>
+
+<!-- plusone -->
+<script type="text/javascript">
+    (function () {
+        var po = document.createElement('script');
+        po.type = 'text/javascript';
+        po.async = true;
+        po.src = 'https://apis.google.com/js/plusone.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(po, s);
+    })();
+</script>
+
+<!-- twitter -->
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
+
+</body>
+</html>
